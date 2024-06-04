@@ -165,6 +165,9 @@
     <EmbeddedResource Include="Vista\Clientes\frmVisualizarCliente.resx">
       <DependentUpon>frmVisualizarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Factura\frmListarFacturas.resx">
+      <DependentUpon>frmListarFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Factura\frmRegistrarFactura.resx">
       <DependentUpon>frmRegistrarFactura.cs</DependentUpon>
     </EmbeddedResource>

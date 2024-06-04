@@ -171,6 +171,7 @@ namespace SistemaFacturacion.Vista.Clientes
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlEncabezado);
             this.Name = "frmEditarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar cliente";
             this.Load += new System.EventHandler(this.frmEditarCliente_Load);
             this.pnlDatosCliente.ResumeLayout(false);

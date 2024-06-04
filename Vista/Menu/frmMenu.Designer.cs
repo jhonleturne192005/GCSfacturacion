@@ -34,15 +34,15 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlMenuIzquierdo = new System.Windows.Forms.Panel();
             this.pnlSubmenus = new System.Windows.Forms.Panel();
             this.pnlFactura = new System.Windows.Forms.Panel();
-            this.btnFactura = new System.Windows.Forms.Button();
             this.pnlProductos = new System.Windows.Forms.Panel();
-            this.btnProductos = new System.Windows.Forms.Button();
             this.pnlClientes = new System.Windows.Forms.Panel();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.pnlImagen = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlInterfaz = new System.Windows.Forms.Panel();
             this.tpOpciones = new System.Windows.Forms.ToolTip(this.components);
+            this.btnFactura = new System.Windows.Forms.Button();
+            this.btnProductos = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlMenuIzquierdo.SuspendLayout();
             this.pnlSubmenus.SuspendLayout();
             this.pnlFactura.SuspendLayout();
@@ -86,6 +86,44 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlFactura.Size = new System.Drawing.Size(60, 52);
             this.pnlFactura.TabIndex = 5;
             // 
+            // pnlProductos
+            // 
+            this.pnlProductos.Controls.Add(this.btnProductos);
+            this.pnlProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlProductos.Location = new System.Drawing.Point(0, 62);
+            this.pnlProductos.Name = "pnlProductos";
+            this.pnlProductos.Padding = new System.Windows.Forms.Padding(12);
+            this.pnlProductos.Size = new System.Drawing.Size(60, 52);
+            this.pnlProductos.TabIndex = 4;
+            // 
+            // pnlClientes
+            // 
+            this.pnlClientes.Controls.Add(this.btnClientes);
+            this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlClientes.Location = new System.Drawing.Point(0, 10);
+            this.pnlClientes.Name = "pnlClientes";
+            this.pnlClientes.Padding = new System.Windows.Forms.Padding(12);
+            this.pnlClientes.Size = new System.Drawing.Size(60, 52);
+            this.pnlClientes.TabIndex = 3;
+            // 
+            // pnlImagen
+            // 
+            this.pnlImagen.Controls.Add(this.pbLogo);
+            this.pnlImagen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlImagen.Location = new System.Drawing.Point(0, 0);
+            this.pnlImagen.Name = "pnlImagen";
+            this.pnlImagen.Padding = new System.Windows.Forms.Padding(12);
+            this.pnlImagen.Size = new System.Drawing.Size(60, 52);
+            this.pnlImagen.TabIndex = 0;
+            // 
+            // pnlInterfaz
+            // 
+            this.pnlInterfaz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInterfaz.Location = new System.Drawing.Point(60, 0);
+            this.pnlInterfaz.Name = "pnlInterfaz";
+            this.pnlInterfaz.Size = new System.Drawing.Size(1223, 668);
+            this.pnlInterfaz.TabIndex = 1;
+            // 
             // btnFactura
             // 
             this.btnFactura.BackgroundImage = global::SistemaFacturacion.Properties.Resources.factura_blanco;
@@ -101,16 +139,6 @@ namespace SistemaFacturacion.Vista.Menu
             this.btnFactura.UseVisualStyleBackColor = true;
             this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
-            // pnlProductos
-            // 
-            this.pnlProductos.Controls.Add(this.btnProductos);
-            this.pnlProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlProductos.Location = new System.Drawing.Point(0, 62);
-            this.pnlProductos.Name = "pnlProductos";
-            this.pnlProductos.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlProductos.Size = new System.Drawing.Size(60, 52);
-            this.pnlProductos.TabIndex = 4;
-            // 
             // btnProductos
             // 
             this.btnProductos.BackgroundImage = global::SistemaFacturacion.Properties.Resources.producto_blanco;
@@ -125,16 +153,6 @@ namespace SistemaFacturacion.Vista.Menu
             this.btnProductos.Size = new System.Drawing.Size(36, 28);
             this.btnProductos.TabIndex = 1;
             this.btnProductos.UseVisualStyleBackColor = true;
-            // 
-            // pnlClientes
-            // 
-            this.pnlClientes.Controls.Add(this.btnClientes);
-            this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlClientes.Location = new System.Drawing.Point(0, 10);
-            this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlClientes.Size = new System.Drawing.Size(60, 52);
-            this.pnlClientes.TabIndex = 3;
             // 
             // btnClientes
             // 
@@ -153,16 +171,6 @@ namespace SistemaFacturacion.Vista.Menu
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // pnlImagen
-            // 
-            this.pnlImagen.Controls.Add(this.pbLogo);
-            this.pnlImagen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlImagen.Location = new System.Drawing.Point(0, 0);
-            this.pnlImagen.Name = "pnlImagen";
-            this.pnlImagen.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlImagen.Size = new System.Drawing.Size(60, 52);
-            this.pnlImagen.TabIndex = 0;
-            // 
             // pbLogo
             // 
             this.pbLogo.BackgroundImage = global::SistemaFacturacion.Properties.Resources.logo_mejorado4;
@@ -174,14 +182,6 @@ namespace SistemaFacturacion.Vista.Menu
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
-            // pnlInterfaz
-            // 
-            this.pnlInterfaz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInterfaz.Location = new System.Drawing.Point(60, 0);
-            this.pnlInterfaz.Name = "pnlInterfaz";
-            this.pnlInterfaz.Size = new System.Drawing.Size(1223, 668);
-            this.pnlInterfaz.TabIndex = 1;
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +192,7 @@ namespace SistemaFacturacion.Vista.Menu
             this.Controls.Add(this.pnlMenuIzquierdo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Facturación";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlMenuIzquierdo.ResumeLayout(false);

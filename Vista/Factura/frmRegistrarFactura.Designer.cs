@@ -684,6 +684,7 @@ namespace SistemaFacturacion.Vista.Factura
             this.Controls.Add(this.pnlEncabezado);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "frmRegistrarFactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar factura";
             this.Load += new System.EventHandler(this.frmRegistrarFactura_Load);
             this.pnlEncabezado.ResumeLayout(false);

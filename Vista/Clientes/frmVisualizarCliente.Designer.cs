@@ -172,6 +172,7 @@ namespace SistemaFacturacion.Vista.Clientes
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmVisualizarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizar cliente";
             this.Load += new System.EventHandler(this.frmVisualizarCliente_Load);
             this.panel3.ResumeLayout(false);

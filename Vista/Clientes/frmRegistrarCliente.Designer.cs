@@ -78,7 +78,7 @@ namespace SistemaFacturacion.Vista.Clientes
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,6 +172,7 @@ namespace SistemaFacturacion.Vista.Clientes
             this.Controls.Add(this.pnlEncabezado);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegistrarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar cliente";
             this.Load += new System.EventHandler(this.frmRegistrarCliente_Load);
             this.pnlEncabezado.ResumeLayout(false);
