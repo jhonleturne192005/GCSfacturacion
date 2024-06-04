@@ -18,10 +18,6 @@ C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\bin\Debug\Sistema
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\bin\Debug\SistemaFacturacion.pdb
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.csproj.AssemblyReference.cache
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Properties.Resources.resources
-C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.frmListarClientes.resources
-C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Cliente.frmRegistrarCliente.resources
-C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Cliente.frmSeleccionarCliente.resources
-C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Cliente.frmVisualizarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Factura.frmRegistrarFactura.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Menu.frmMenu.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.csproj.GenerateResource.cache
@@ -90,3 +86,8 @@ C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\bin\Debug\zh-CHT\
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.csproj.CopyComplete
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\RdlCompile.cache
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\RdlCompile.compiled
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmEditarCliente.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmListarClientes.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmRegistrarCliente.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmSeleccionarCliente.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmVisualizarCliente.resources

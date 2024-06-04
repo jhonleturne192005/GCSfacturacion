@@ -1,7 +1,7 @@
 ﻿using SistemaFacturacion.Controlador;
 using SistemaFacturacion.DTO;
 using SistemaFacturacion.Utencilios;
-using SistemaFacturacion.Vista.Cliente;
+using SistemaFacturacion.Vista.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -164,7 +164,11 @@ namespace SistemaFacturacion.Vista.Factura
             pnlDatosFactura.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
             pnlEncabezadoProductos.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
             pnlEncabezado.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
+
+            pnlDgvProductos.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'R');
+            pnlBuscarProducto.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'R');
             pnlOpcionesProducto.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'T');
+            pnlOpcionesProducto.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'R');
         }
         
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -247,7 +251,7 @@ namespace SistemaFacturacion.Vista.Factura
             frmSeleccionar.ShowDialog();
 
             //Cargar los datos del cliente seleccionado
-            txtCedulaCliente.Text = frmSeleccionar.Cliente_seleccionado.Cedula;
+            txtCedulaCliente.Text = frmSeleccionar.Cliente_seleccionado.Id_Cliente;
             txtNombresCliente.Text = $"{frmSeleccionar.Cliente_seleccionado.Nombres} {frmSeleccionar.Cliente_seleccionado.Apellidos}";            
         }
 

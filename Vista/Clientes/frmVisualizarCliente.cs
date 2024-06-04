@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaFacturacion.Vista.Cliente
+namespace SistemaFacturacion.Vista.Clientes
 {
     public partial class frmVisualizarCliente : Form
     {
@@ -28,9 +28,12 @@ namespace SistemaFacturacion.Vista.Cliente
             clienteCtrl = new ClienteCtrl();
             DTO.Cliente cliente = clienteCtrl.getCliente(id_cliente);
 
-            txtCedula.Text = cliente.Cedula;
-            txtApellidos.Text = cliente.Apellidos;
-            txtNombres.Text = cliente.Nombres;
+            if (cliente != null)
+            {
+                txtCedula.Text = cliente.Id_Cliente;
+                txtApellidos.Text = cliente.Apellidos;
+                txtNombres.Text = cliente.Nombres;
+            }
         }
     }
 }

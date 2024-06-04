@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaFacturacion.Controlador;
+using SistemaFacturacion.Utencilios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,37 +9,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemaFacturacion.Controlador;
-using SistemaFacturacion.DTO;
-using SistemaFacturacion.Utencilios;
 
 namespace SistemaFacturacion.Vista.Clientes
 {
-    public partial class frmRegistrarCliente : Form
+    public partial class frmEditarCliente : Form
     {
-        ClienteCtrl clienteCtrl;
         DTO.Cliente clienteDto;
+        ClienteCtrl clienteCtrl;
 
-        public frmRegistrarCliente()
+        string id_cliente;
+        public frmEditarCliente(string id_cliente)
         {
             InitializeComponent();
+            this.id_cliente = id_cliente;
         }
-        private void frmRegistrarCliente_Load(object sender, EventArgs e)
+
+        private void frmEditarCliente_Load(object sender, EventArgs e)
         {
             clienteDto = new DTO.Cliente();
             clienteCtrl = new ClienteCtrl();
+
+            //Cargar los datos del cliente seleccionado
+            clienteDto = clienteCtrl.getCliente(id_cliente);
+
+            //Sí no se obtuvo nada al buscar el cliente que corresponda el id, 
+            //cerrar el formulario
+            if (clienteDto == null)
+            {
+                this.Close();                
+            }
+            else
+            {
+                //Cargar datos a los controles del formulario
+                txtCedula.Text = clienteDto.Id_Cliente;
+                txtApellidos.Text = clienteDto.Apellidos;
+                txtNombres.Text = clienteDto.Nombres;
+            }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             string cedula = txtCedula.Text;
             string nombres = txtNombres.Text;
             string apellidos = txtApellidos.Text;
 
             //Realizar validaciones
-            //Longitud de cédula
-            if (cedula.Length != 10) return;
-
             //Caracteres existentes en nombres
             if (string.IsNullOrWhiteSpace(nombres)) return;
 
@@ -45,18 +61,17 @@ namespace SistemaFacturacion.Vista.Clientes
             if (string.IsNullOrWhiteSpace(apellidos)) return;
 
             //Definir los valores correspondientes al objeto de tipo Cliente (DTO)
-            clienteDto.Id_Cliente = cedula;
             clienteDto.Nombres = nombres;
             clienteDto.Apellidos = apellidos;
 
             //Obtener la respuesta de la ejecución de la inserción de la función
-            Respuesta respuesta_insercion = clienteCtrl.insertarCliente(clienteDto);
-            
+            Respuesta respuesta_insercion = clienteCtrl.modificarCliente(clienteDto);
+
             //Mostrar el mensaje
             Mensaje.informacion(respuesta_insercion.Mensaje);
 
             //Sí se completó correctamente la transacción, cerrar el formulario
-            if (respuesta_insercion.Completado) this.Close();            
+            if (respuesta_insercion.Completado) this.Close();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using SistemaFacturacion.Controlador;
 using SistemaFacturacion.DTO;
 using SistemaFacturacion.Utencilios;
-using SistemaFacturacion.Vista.Cliente;
+using SistemaFacturacion.Vista.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaFacturacion.Vista
+namespace SistemaFacturacion.Vista.Clientes
 {
     public partial class frmListarClientes : Form
     {
@@ -46,10 +46,20 @@ namespace SistemaFacturacion.Vista
             for (int i = 0; i < data.Count; i++)
             {
                 int fila_indice = dgv.Rows.Add();
-                dgv.Rows[fila_indice].Cells[0].Value = data[i].Cedula;
+                dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_Cliente;
                 dgv.Rows[fila_indice].Cells[1].Value = data[i].Apellidos;
                 dgv.Rows[fila_indice].Cells[2].Value = data[i].Nombres;
             }
+        }
+
+        private void eliminarCliente(string id_cliente)
+        {
+            bool desea_eliminar = Mensaje.pregunta($"¿Está seguro que desea eliminar al cliente con la cédula {id_cliente}?");
+            if (desea_eliminar)
+            {
+                Respuesta r = clienteCtrl.eliminarCliente(id_cliente);
+                Mensaje.informacion(r.Mensaje);
+            }            
         }
 
         private void frmListarClientes_Load(object sender, EventArgs e)
@@ -95,16 +105,21 @@ namespace SistemaFacturacion.Vista
 
             if (e.ColumnIndex == eliminar_indice)
             {
-                
+                eliminarCliente(id_cliente);
+
+                cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
             }
             else if (e.ColumnIndex == modificar_indice)
             {
-                
+                frmEditarCliente frmEditarCliente = new frmEditarCliente(id_cliente);
+                frmEditarCliente.ShowDialog();
+
+                cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
             }
             else if (e.ColumnIndex == visualizar_indice)
             {
                 frmVisualizarCliente frmVerCliente = new frmVisualizarCliente(id_cliente);
-                frmVerCliente.Show();
+                frmVerCliente.ShowDialog();
             }
         }
 
@@ -112,6 +127,9 @@ namespace SistemaFacturacion.Vista
         {
             frmRegistrarCliente frmRegistrarCliente = new frmRegistrarCliente();
             frmRegistrarCliente.ShowDialog();
+
+            //Una vez se haya cerrado el formulario de registro, recargar la lista de clientes
+            cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
         }
     }
 }

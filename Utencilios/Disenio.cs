@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace SistemaFacturacion.Utencilios
 {
     class Disenio
     {
+     
         public static void dibujarBordesControl(object sender, PaintEventArgs e, char lado, int tamanio_borde = 1)
         {
             //Definir los parámetros de dibujo pará las líneas

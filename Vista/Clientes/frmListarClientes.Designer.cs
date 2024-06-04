@@ -1,5 +1,5 @@
 ﻿
-namespace SistemaFacturacion.Vista
+namespace SistemaFacturacion.Vista.Clientes
 {
     partial class frmListarClientes
     {
@@ -29,39 +29,39 @@ namespace SistemaFacturacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnPagAnterior = new System.Windows.Forms.Button();
             this.lblTituloNumRegistros = new System.Windows.Forms.Label();
             this.btnPagSiguiente = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.pnlDatosClientes = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblNumeroRegistros = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtTextoBuscar = new System.Windows.Forms.TextBox();
-            this.pnlOpcionesEncabezado = new System.Windows.Forms.Panel();
-            this.pnlOpcionesDgv = new System.Windows.Forms.Panel();
             this.pnlDgvClientes = new System.Windows.Forms.Panel();
+            this.pnlOpcionesDgv = new System.Windows.Forms.Panel();
+            this.lblNumeroRegistros = new System.Windows.Forms.Label();
+            this.pnlOpcionesEncabezado = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtTextoBuscar = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
             this.pnlDatosClientes.SuspendLayout();
-            this.pnlOpcionesEncabezado.SuspendLayout();
-            this.pnlOpcionesDgv.SuspendLayout();
             this.pnlDgvClientes.SuspendLayout();
+            this.pnlOpcionesDgv.SuspendLayout();
+            this.pnlOpcionesEncabezado.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCliente
@@ -73,14 +73,14 @@ namespace SistemaFacturacion.Vista
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCliente.ColumnHeadersHeight = 25;
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtIdentificacion,
@@ -89,14 +89,14 @@ namespace SistemaFacturacion.Vista
             this.btnVisualizar,
             this.btnModificar,
             this.btnEliminar});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCliente.EnableHeadersVisualStyles = false;
             this.dgvCliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -105,18 +105,18 @@ namespace SistemaFacturacion.Vista
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCliente.RowHeadersVisible = false;
             this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCliente.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvCliente.Size = new System.Drawing.Size(992, 404);
             this.dgvCliente.TabIndex = 0;
@@ -143,17 +143,44 @@ namespace SistemaFacturacion.Vista
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.ReadOnly = true;
             // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.HeaderText = "       ";
+            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
+            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.ReadOnly = true;
+            this.btnVisualizar.Width = 38;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.HeaderText = "       ";
+            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
+            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ReadOnly = true;
+            this.btnModificar.Width = 38;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "       ";
+            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Width = 38;
+            // 
             // btnPagAnterior
             // 
             this.btnPagAnterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPagAnterior.BackColor = System.Drawing.Color.White;
             this.btnPagAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPagAnterior.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPagAnterior.Location = new System.Drawing.Point(807, 16);
+            this.btnPagAnterior.Location = new System.Drawing.Point(765, 16);
             this.btnPagAnterior.Name = "btnPagAnterior";
-            this.btnPagAnterior.Size = new System.Drawing.Size(83, 32);
+            this.btnPagAnterior.Size = new System.Drawing.Size(108, 32);
             this.btnPagAnterior.TabIndex = 1;
-            this.btnPagAnterior.Text = "Anterior";
+            this.btnPagAnterior.Text = "<< Anterior";
             this.btnPagAnterior.UseVisualStyleBackColor = false;
             this.btnPagAnterior.Click += new System.EventHandler(this.btnPagAnterior_Click);
             // 
@@ -162,7 +189,7 @@ namespace SistemaFacturacion.Vista
             this.lblTituloNumRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTituloNumRegistros.AutoSize = true;
             this.lblTituloNumRegistros.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTituloNumRegistros.Location = new System.Drawing.Point(20, 24);
+            this.lblTituloNumRegistros.Location = new System.Drawing.Point(7, 24);
             this.lblTituloNumRegistros.Name = "lblTituloNumRegistros";
             this.lblTituloNumRegistros.Size = new System.Drawing.Size(80, 19);
             this.lblTituloNumRegistros.TabIndex = 3;
@@ -174,11 +201,11 @@ namespace SistemaFacturacion.Vista
             this.btnPagSiguiente.BackColor = System.Drawing.Color.White;
             this.btnPagSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPagSiguiente.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPagSiguiente.Location = new System.Drawing.Point(896, 16);
+            this.btnPagSiguiente.Location = new System.Drawing.Point(879, 16);
             this.btnPagSiguiente.Name = "btnPagSiguiente";
-            this.btnPagSiguiente.Size = new System.Drawing.Size(86, 32);
+            this.btnPagSiguiente.Size = new System.Drawing.Size(111, 32);
             this.btnPagSiguiente.TabIndex = 6;
-            this.btnPagSiguiente.Text = "Siguiente";
+            this.btnPagSiguiente.Text = "Siguiente >>";
             this.btnPagSiguiente.UseVisualStyleBackColor = false;
             this.btnPagSiguiente.Click += new System.EventHandler(this.btnPagSiguiente_Click);
             // 
@@ -215,64 +242,15 @@ namespace SistemaFacturacion.Vista
             this.pnlDatosClientes.Size = new System.Drawing.Size(1002, 538);
             this.pnlDatosClientes.TabIndex = 7;
             // 
-            // button1
+            // pnlDgvClientes
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.Location = new System.Drawing.Point(11, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lblNumeroRegistros
-            // 
-            this.lblNumeroRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNumeroRegistros.AutoSize = true;
-            this.lblNumeroRegistros.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblNumeroRegistros.Location = new System.Drawing.Point(104, 24);
-            this.lblNumeroRegistros.Name = "lblNumeroRegistros";
-            this.lblNumeroRegistros.Size = new System.Drawing.Size(74, 19);
-            this.lblNumeroRegistros.TabIndex = 5;
-            this.lblNumeroRegistros.Text = "0 registros";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(82)))), ((int)(((byte)(183)))));
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(881, 13);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(101, 30);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // txtTextoBuscar
-            // 
-            this.txtTextoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTextoBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTextoBuscar.Location = new System.Drawing.Point(99, 16);
-            this.txtTextoBuscar.Name = "txtTextoBuscar";
-            this.txtTextoBuscar.Size = new System.Drawing.Size(556, 27);
-            this.txtTextoBuscar.TabIndex = 1;
-            // 
-            // pnlOpcionesEncabezado
-            // 
-            this.pnlOpcionesEncabezado.Controls.Add(this.button1);
-            this.pnlOpcionesEncabezado.Controls.Add(this.txtTextoBuscar);
-            this.pnlOpcionesEncabezado.Controls.Add(this.btnAgregar);
-            this.pnlOpcionesEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOpcionesEncabezado.Location = new System.Drawing.Point(0, 0);
-            this.pnlOpcionesEncabezado.Name = "pnlOpcionesEncabezado";
-            this.pnlOpcionesEncabezado.Size = new System.Drawing.Size(1002, 62);
-            this.pnlOpcionesEncabezado.TabIndex = 7;
+            this.pnlDgvClientes.Controls.Add(this.dgvCliente);
+            this.pnlDgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgvClientes.Location = new System.Drawing.Point(0, 62);
+            this.pnlDgvClientes.Name = "pnlDgvClientes";
+            this.pnlDgvClientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pnlDgvClientes.Size = new System.Drawing.Size(1002, 404);
+            this.pnlDgvClientes.TabIndex = 9;
             // 
             // pnlOpcionesDgv
             // 
@@ -286,15 +264,64 @@ namespace SistemaFacturacion.Vista
             this.pnlOpcionesDgv.Size = new System.Drawing.Size(1002, 72);
             this.pnlOpcionesDgv.TabIndex = 8;
             // 
-            // pnlDgvClientes
+            // lblNumeroRegistros
             // 
-            this.pnlDgvClientes.Controls.Add(this.dgvCliente);
-            this.pnlDgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgvClientes.Location = new System.Drawing.Point(0, 62);
-            this.pnlDgvClientes.Name = "pnlDgvClientes";
-            this.pnlDgvClientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pnlDgvClientes.Size = new System.Drawing.Size(1002, 404);
-            this.pnlDgvClientes.TabIndex = 9;
+            this.lblNumeroRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblNumeroRegistros.AutoSize = true;
+            this.lblNumeroRegistros.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblNumeroRegistros.Location = new System.Drawing.Point(91, 24);
+            this.lblNumeroRegistros.Name = "lblNumeroRegistros";
+            this.lblNumeroRegistros.Size = new System.Drawing.Size(74, 19);
+            this.lblNumeroRegistros.TabIndex = 5;
+            this.lblNumeroRegistros.Text = "0 registros";
+            // 
+            // pnlOpcionesEncabezado
+            // 
+            this.pnlOpcionesEncabezado.Controls.Add(this.button1);
+            this.pnlOpcionesEncabezado.Controls.Add(this.txtTextoBuscar);
+            this.pnlOpcionesEncabezado.Controls.Add(this.btnAgregar);
+            this.pnlOpcionesEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOpcionesEncabezado.Location = new System.Drawing.Point(0, 0);
+            this.pnlOpcionesEncabezado.Name = "pnlOpcionesEncabezado";
+            this.pnlOpcionesEncabezado.Size = new System.Drawing.Size(1002, 62);
+            this.pnlOpcionesEncabezado.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button1.Location = new System.Drawing.Point(11, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 27);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtTextoBuscar
+            // 
+            this.txtTextoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTextoBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTextoBuscar.Location = new System.Drawing.Point(73, 16);
+            this.txtTextoBuscar.Name = "txtTextoBuscar";
+            this.txtTextoBuscar.Size = new System.Drawing.Size(201, 27);
+            this.txtTextoBuscar.TabIndex = 1;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(82)))), ((int)(((byte)(183)))));
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(867, 13);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(115, 30);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "+  Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -323,33 +350,6 @@ namespace SistemaFacturacion.Vista
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 136;
             // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.HeaderText = "       ";
-            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
-            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.ReadOnly = true;
-            this.btnVisualizar.Width = 38;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.HeaderText = "       ";
-            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
-            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.ReadOnly = true;
-            this.btnModificar.Width = 38;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "       ";
-            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
-            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            this.btnEliminar.Width = 38;
-            // 
             // frmListarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,11 +365,11 @@ namespace SistemaFacturacion.Vista
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezado.PerformLayout();
             this.pnlDatosClientes.ResumeLayout(false);
-            this.pnlOpcionesEncabezado.ResumeLayout(false);
-            this.pnlOpcionesEncabezado.PerformLayout();
+            this.pnlDgvClientes.ResumeLayout(false);
             this.pnlOpcionesDgv.ResumeLayout(false);
             this.pnlOpcionesDgv.PerformLayout();
-            this.pnlDgvClientes.ResumeLayout(false);
+            this.pnlOpcionesEncabezado.ResumeLayout(false);
+            this.pnlOpcionesEncabezado.PerformLayout();
             this.ResumeLayout(false);
 
         }

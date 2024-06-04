@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaFacturacion.Vista.Cliente
+namespace SistemaFacturacion.Vista.Clientes
 {
     public partial class frmSeleccionarCliente : Form
     {
@@ -46,7 +46,7 @@ namespace SistemaFacturacion.Vista.Cliente
             for (int i = 0; i < data.Count; i++)
             {
                 int fila_indice = dgv.Rows.Add();
-                dgv.Rows[fila_indice].Cells[0].Value = data[i].Cedula;
+                dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_Cliente;
                 dgv.Rows[fila_indice].Cells[1].Value = data[i].Apellidos;
                 dgv.Rows[fila_indice].Cells[2].Value = data[i].Nombres;
             }
@@ -87,7 +87,7 @@ namespace SistemaFacturacion.Vista.Cliente
         {
             if (dgvCliente.Rows[e.RowIndex].Cells[0].Value == null) return;
                         
-            cliente_seleccionado.Cedula = dgvCliente.Rows[e.RowIndex].Cells[0].Value.ToString();
+            cliente_seleccionado.Id_Cliente = dgvCliente.Rows[e.RowIndex].Cells[0].Value.ToString();
             cliente_seleccionado.Nombres = dgvCliente.Rows[e.RowIndex].Cells[1].Value.ToString();
             cliente_seleccionado.Apellidos = dgvCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
         }

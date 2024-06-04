@@ -19,34 +19,70 @@ namespace SistemaFacturacion.Controlador
             this.clienteDao = new ClienteDao();
         }
 
-        public string insertarCliente(Cliente cliente)
+        public Respuesta insertarCliente(Cliente cliente)
         {
             int estado_insercion = clienteDao.insertarCliente(cliente.getXml());
+
+            bool completado = false;
+            string mensaje = string.Empty;
             
             switch (estado_insercion)
             {
                 case 0:
-                    return "El cliente fue insertado correctamente";
+                    mensaje = "El cliente fue insertado correctamente";
+                    completado = true;
+                    break;
                 case 1:
-                    return "Ya existe un cliente con la identificación ingresada";
+                    mensaje = "Ya existe un cliente con la identificación ingresada";
+                    break;
                 default:
-                    return "Error en la inserción del cliente";
+                    mensaje = "se ha producido un error durante la inserción del cliente";
+                    break;
             }
+
+            return new Respuesta(completado, mensaje);
         }
 
-        public string modificarCliente(Cliente cliente)
+        public Respuesta modificarCliente(Cliente cliente)
         {
             int estado_modificacion = clienteDao.modificarCliente(cliente.getXml());
+
+            bool completado = false;
+            string mensaje = string.Empty;
 
             switch (estado_modificacion)
             {
                 case 0:
-                    return "El cliente fue insertado correctamente";
-                case 1:
-                    return "Ya existe un cliente con la identificación ingresada";
+                    mensaje = "El cliente fue modificado correctamente";
+                    completado = true;
+                    break;                
                 default:
-                    return "Error en la inserción del cliente";
+                    mensaje = "Se ha producido un error durante la modificación del cliente";
+                    break;
             }
+
+            return new Respuesta(completado, mensaje);
+        }
+
+        public Respuesta eliminarCliente(string id_cliente)
+        {
+            int estado_eliminacion = clienteDao.eliminarCliente(id_cliente);
+
+            bool completado = false;
+            string mensaje = string.Empty;
+
+            switch (estado_eliminacion)
+            {
+                case 0:
+                    mensaje = "El cliente fue eliminado correctamente";
+                    completado = true;
+                    break;
+                default:
+                    mensaje = "Se ha producido un error durante la eliminación el cliente";
+                    break;
+            }
+
+            return new Respuesta(completado, mensaje);
         }
 
         public List<Cliente> listarClientes(int numero_pagina, int numero_elementos)
@@ -58,7 +94,7 @@ namespace SistemaFacturacion.Controlador
             {                
                 DataRow drCliente = dtClientes.Rows[i];
                 Cliente cliente = new Cliente();
-                cliente.Cedula = drCliente[0].ToString();
+                cliente.Id_Cliente = drCliente[0].ToString();
                 cliente.Apellidos = drCliente[1].ToString();
                 cliente.Nombres = drCliente[2].ToString();
 
@@ -73,12 +109,11 @@ namespace SistemaFacturacion.Controlador
             Cliente cliente = null;
             DataTable dtClientes = clienteDao.getCliente(id_cliente);
 
-            for (int i = 0; i < dtClientes.Rows.Count; i++)
-            {
+            if (dtClientes.Rows.Count == 1) {
                 cliente = new Cliente();
 
-                DataRow drCliente = dtClientes.Rows[i];
-                cliente.Cedula = drCliente[0].ToString();
+                DataRow drCliente = dtClientes.Rows[0];
+                cliente.Id_Cliente = drCliente[0].ToString();
                 cliente.Apellidos = drCliente[1].ToString();
                 cliente.Nombres = drCliente[2].ToString();
             }

@@ -29,11 +29,15 @@ namespace SistemaFacturacion.DAO
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@xml_cliente", xmlCliente);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                //Obtener el estado resultante de la ejecución del procedimiento almacneado
-                reader.Read();
-                estado_insercion = int.Parse(reader[0].ToString());
+                //Parámetro de salida (estado de la inserción)                
+                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+                parametro_salida.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro_salida);
+
+                //Obtener el estado resultante de la ejecución del procedimiento almacenado
+                cmd.ExecuteNonQuery();
+                estado_insercion = int.Parse(parametro_salida.Value.ToString());
 
                 conexion.CerrarConexion();
             }
@@ -47,7 +51,7 @@ namespace SistemaFacturacion.DAO
 
         public int modificarCliente(string xmlCliente)
         {
-            int estado_insercion = -1;
+            int estado_modificacion = -1;
             try
             {
                 conexion.AbrirConexion();
@@ -56,11 +60,15 @@ namespace SistemaFacturacion.DAO
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@xml_cliente", xmlCliente);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                //Obtener el estado resultante de la ejecución del procedimiento almacneado
-                reader.Read();
-                estado_insercion = int.Parse(reader[0].ToString());
+                //Parámetro de salida(estado de la inserción)
+                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+                parametro_salida.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro_salida);
+
+                //Obtener el estado resultante de la ejecución del procedimiento almacenado
+                cmd.ExecuteNonQuery();
+                estado_modificacion = int.Parse(parametro_salida.Value.ToString());
 
                 conexion.CerrarConexion();
             }
@@ -69,7 +77,40 @@ namespace SistemaFacturacion.DAO
 
             }
 
-            return estado_insercion;
+            return estado_modificacion;
+        }
+
+        public int eliminarCliente(string id_cliente)
+        {
+            int estado_eliminacion = -1;
+
+            try
+            {
+                conexion.AbrirConexion();
+
+                SqlCommand cmd = new SqlCommand("sp_eliminar_cliente", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
+
+                //Parámetro de salida(estado de la inserción)
+                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+                parametro_salida.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro_salida);
+
+                //Obtener el estado resultante de la ejecución del procedimiento almacenado
+                cmd.ExecuteNonQuery();
+                estado_eliminacion = int.Parse(parametro_salida.Value.ToString());
+
+
+                conexion.CerrarConexion();
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return estado_eliminacion;
         }
 
         public DataTable listarClientes(int numero_pagina, int numero_elementos)

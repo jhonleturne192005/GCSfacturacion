@@ -29,22 +29,29 @@ namespace SistemaFacturacion.Vista.Factura
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFacturar = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.pnlFactura = new System.Windows.Forms.Panel();
             this.pnlDetalleFactura = new System.Windows.Forms.Panel();
             this.pnlProductosFactura = new System.Windows.Forms.Panel();
             this.dgvProductosFactura = new System.Windows.Forms.DataGridView();
+            this.txtCodigoProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombreProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCantidadProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPUFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtIva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodigoProductoAnterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTotalesFactura = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblIva = new System.Windows.Forms.Label();
@@ -63,25 +70,18 @@ namespace SistemaFacturacion.Vista.Factura
             this.btnSeleccionarCliente = new System.Windows.Forms.Button();
             this.lblTituloCliente = new System.Windows.Forms.Label();
             this.pnlProductos = new System.Windows.Forms.Panel();
-            this.btnSeleccionarProducto = new System.Windows.Forms.Button();
+            this.pnlDgvProductos = new System.Windows.Forms.Panel();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.txtCodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlEncabezadoProductos = new System.Windows.Forms.Panel();
-            this.lblTituloProductos = new System.Windows.Forms.Label();
-            this.pnlOpcionesProducto = new System.Windows.Forms.Panel();
-            this.txtCodigoProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNombreProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCantidadProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPUFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTotalProductoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCodigoProductoAnterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlBuscarProducto = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtProductoBuscar = new System.Windows.Forms.TextBox();
-            this.pnlBuscarProducto = new System.Windows.Forms.Panel();
-            this.pnlDgvProductos = new System.Windows.Forms.Panel();
+            this.pnlOpcionesProducto = new System.Windows.Forms.Panel();
+            this.btnSeleccionarProducto = new System.Windows.Forms.Button();
+            this.pnlEncabezadoProductos = new System.Windows.Forms.Panel();
+            this.lblTituloProductos = new System.Windows.Forms.Label();
             this.pnlEncabezado.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlFactura.SuspendLayout();
@@ -92,11 +92,11 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlCliente.SuspendLayout();
             this.pnlDatosFactura.SuspendLayout();
             this.pnlProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            this.pnlEncabezadoProductos.SuspendLayout();
-            this.pnlOpcionesProducto.SuspendLayout();
-            this.pnlBuscarProducto.SuspendLayout();
             this.pnlDgvProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.pnlBuscarProducto.SuspendLayout();
+            this.pnlOpcionesProducto.SuspendLayout();
+            this.pnlEncabezadoProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEncabezado
@@ -108,19 +108,6 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlEncabezado.Name = "pnlEncabezado";
             this.pnlEncabezado.Size = new System.Drawing.Size(1002, 54);
             this.pnlEncabezado.TabIndex = 0;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(15, 16);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(220, 25);
-            this.lblTitulo.TabIndex = 6;
-            this.lblTitulo.Text = "REGISTRO DE FACTURA";
             // 
             // btnFacturar
             // 
@@ -137,6 +124,19 @@ namespace SistemaFacturacion.Vista.Factura
             this.btnFacturar.Text = "Facturar";
             this.btnFacturar.UseVisualStyleBackColor = false;
             this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(15, 16);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(220, 25);
+            this.lblTitulo.TabIndex = 6;
+            this.lblTitulo.Text = "REGISTRO DE FACTURA";
             // 
             // pnlDatos
             // 
@@ -186,14 +186,14 @@ namespace SistemaFacturacion.Vista.Factura
             this.dgvProductosFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductosFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProductosFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductosFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductosFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductosFactura.ColumnHeadersHeight = 25;
             this.dgvProductosFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtCodigoProductoFactura,
@@ -203,14 +203,14 @@ namespace SistemaFacturacion.Vista.Factura
             this.txtTotalProductoFactura,
             this.txtIva,
             this.txtCodigoProductoAnterior});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductosFactura.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductosFactura.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductosFactura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductosFactura.EnableHeadersVisualStyles = false;
             this.dgvProductosFactura.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -218,22 +218,71 @@ namespace SistemaFacturacion.Vista.Factura
             this.dgvProductosFactura.Margin = new System.Windows.Forms.Padding(10, 10, 100, 10);
             this.dgvProductosFactura.Name = "dgvProductosFactura";
             this.dgvProductosFactura.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductosFactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductosFactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductosFactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            this.dgvProductosFactura.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvProductosFactura.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProductosFactura.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvProductosFactura.Size = new System.Drawing.Size(719, 328);
             this.dgvProductosFactura.TabIndex = 2;
             this.dgvProductosFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductosFactura_CellEndEdit);
             this.dgvProductosFactura.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvProductosFactura_RowsRemoved);
+            // 
+            // txtCodigoProductoFactura
+            // 
+            this.txtCodigoProductoFactura.HeaderText = "Código";
+            this.txtCodigoProductoFactura.Name = "txtCodigoProductoFactura";
+            this.txtCodigoProductoFactura.Width = 88;
+            // 
+            // txtNombreProductoFactura
+            // 
+            this.txtNombreProductoFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtNombreProductoFactura.HeaderText = "Nombre";
+            this.txtNombreProductoFactura.Name = "txtNombreProductoFactura";
+            this.txtNombreProductoFactura.ReadOnly = true;
+            // 
+            // txtCantidadProductoFactura
+            // 
+            this.txtCantidadProductoFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtCantidadProductoFactura.HeaderText = "Cantidad";
+            this.txtCantidadProductoFactura.Name = "txtCantidadProductoFactura";
+            // 
+            // dgvPUFactura
+            // 
+            this.dgvPUFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvPUFactura.HeaderText = "PU ($)";
+            this.dgvPUFactura.Name = "dgvPUFactura";
+            this.dgvPUFactura.ReadOnly = true;
+            // 
+            // txtTotalProductoFactura
+            // 
+            this.txtTotalProductoFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.txtTotalProductoFactura.HeaderText = "Total";
+            this.txtTotalProductoFactura.Name = "txtTotalProductoFactura";
+            this.txtTotalProductoFactura.ReadOnly = true;
+            this.txtTotalProductoFactura.Width = 71;
+            // 
+            // txtIva
+            // 
+            this.txtIva.HeaderText = "iva";
+            this.txtIva.Name = "txtIva";
+            this.txtIva.Visible = false;
+            this.txtIva.Width = 58;
+            // 
+            // txtCodigoProductoAnterior
+            // 
+            this.txtCodigoProductoAnterior.HeaderText = "CódigoAnterior";
+            this.txtCodigoProductoAnterior.Name = "txtCodigoProductoAnterior";
+            this.txtCodigoProductoAnterior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txtCodigoProductoAnterior.Visible = false;
+            this.txtCodigoProductoAnterior.Width = 153;
             // 
             // pnlTotalesFactura
             // 
@@ -461,19 +510,15 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlProductos.Size = new System.Drawing.Size(283, 538);
             this.pnlProductos.TabIndex = 0;
             // 
-            // btnSeleccionarProducto
+            // pnlDgvProductos
             // 
-            this.btnSeleccionarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSeleccionarProducto.BackColor = System.Drawing.Color.White;
-            this.btnSeleccionarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSeleccionarProducto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnSeleccionarProducto.Location = new System.Drawing.Point(163, 30);
-            this.btnSeleccionarProducto.Name = "btnSeleccionarProducto";
-            this.btnSeleccionarProducto.Size = new System.Drawing.Size(110, 32);
-            this.btnSeleccionarProducto.TabIndex = 9;
-            this.btnSeleccionarProducto.Text = "Seleccionar";
-            this.btnSeleccionarProducto.UseVisualStyleBackColor = false;
-            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click);
+            this.pnlDgvProductos.Controls.Add(this.dgvProductos);
+            this.pnlDgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgvProductos.Location = new System.Drawing.Point(0, 95);
+            this.pnlDgvProductos.Name = "pnlDgvProductos";
+            this.pnlDgvProductos.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.pnlDgvProductos.Size = new System.Drawing.Size(283, 361);
+            this.pnlDgvProductos.TabIndex = 5;
             // 
             // dgvProductos
             // 
@@ -484,27 +529,27 @@ namespace SistemaFacturacion.Vista.Factura
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProductos.ColumnHeadersHeight = 25;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtCodigoProducto,
             this.txtNombreProducto,
             this.txtPU});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductos.EnableHeadersVisualStyles = false;
             this.dgvProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -513,20 +558,20 @@ namespace SistemaFacturacion.Vista.Factura
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProductos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgvProductos.Size = new System.Drawing.Size(273, 361);
+            this.dgvProductos.Size = new System.Drawing.Size(268, 361);
             this.dgvProductos.TabIndex = 1;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -550,85 +595,15 @@ namespace SistemaFacturacion.Vista.Factura
             this.txtPU.Name = "txtPU";
             this.txtPU.ReadOnly = true;
             // 
-            // pnlEncabezadoProductos
+            // pnlBuscarProducto
             // 
-            this.pnlEncabezadoProductos.Controls.Add(this.lblTituloProductos);
-            this.pnlEncabezadoProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEncabezadoProductos.Location = new System.Drawing.Point(0, 0);
-            this.pnlEncabezadoProductos.Name = "pnlEncabezadoProductos";
-            this.pnlEncabezadoProductos.Size = new System.Drawing.Size(283, 46);
-            this.pnlEncabezadoProductos.TabIndex = 0;
-            // 
-            // lblTituloProductos
-            // 
-            this.lblTituloProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTituloProductos.AutoSize = true;
-            this.lblTituloProductos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloProductos.ForeColor = System.Drawing.Color.Black;
-            this.lblTituloProductos.Location = new System.Drawing.Point(15, 10);
-            this.lblTituloProductos.Name = "lblTituloProductos";
-            this.lblTituloProductos.Size = new System.Drawing.Size(104, 25);
-            this.lblTituloProductos.TabIndex = 8;
-            this.lblTituloProductos.Text = "Productos";
-            // 
-            // pnlOpcionesProducto
-            // 
-            this.pnlOpcionesProducto.Controls.Add(this.btnSeleccionarProducto);
-            this.pnlOpcionesProducto.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlOpcionesProducto.Location = new System.Drawing.Point(0, 456);
-            this.pnlOpcionesProducto.Name = "pnlOpcionesProducto";
-            this.pnlOpcionesProducto.Size = new System.Drawing.Size(283, 82);
-            this.pnlOpcionesProducto.TabIndex = 3;
-            // 
-            // txtCodigoProductoFactura
-            // 
-            this.txtCodigoProductoFactura.HeaderText = "Código";
-            this.txtCodigoProductoFactura.Name = "txtCodigoProductoFactura";
-            this.txtCodigoProductoFactura.Width = 88;
-            // 
-            // txtNombreProductoFactura
-            // 
-            this.txtNombreProductoFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtNombreProductoFactura.HeaderText = "Nombre";
-            this.txtNombreProductoFactura.Name = "txtNombreProductoFactura";
-            this.txtNombreProductoFactura.ReadOnly = true;
-            // 
-            // txtCantidadProductoFactura
-            // 
-            this.txtCantidadProductoFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtCantidadProductoFactura.HeaderText = "Cantidad";
-            this.txtCantidadProductoFactura.Name = "txtCantidadProductoFactura";
-            // 
-            // dgvPUFactura
-            // 
-            this.dgvPUFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvPUFactura.HeaderText = "PU ($)";
-            this.dgvPUFactura.Name = "dgvPUFactura";
-            this.dgvPUFactura.ReadOnly = true;
-            // 
-            // txtTotalProductoFactura
-            // 
-            this.txtTotalProductoFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.txtTotalProductoFactura.HeaderText = "Total";
-            this.txtTotalProductoFactura.Name = "txtTotalProductoFactura";
-            this.txtTotalProductoFactura.ReadOnly = true;
-            this.txtTotalProductoFactura.Width = 71;
-            // 
-            // txtIva
-            // 
-            this.txtIva.HeaderText = "iva";
-            this.txtIva.Name = "txtIva";
-            this.txtIva.Visible = false;
-            this.txtIva.Width = 56;
-            // 
-            // txtCodigoProductoAnterior
-            // 
-            this.txtCodigoProductoAnterior.HeaderText = "CódigoAnterior";
-            this.txtCodigoProductoAnterior.Name = "txtCodigoProductoAnterior";
-            this.txtCodigoProductoAnterior.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtCodigoProductoAnterior.Visible = false;
-            this.txtCodigoProductoAnterior.Width = 151;
+            this.pnlBuscarProducto.Controls.Add(this.btnBuscar);
+            this.pnlBuscarProducto.Controls.Add(this.txtProductoBuscar);
+            this.pnlBuscarProducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBuscarProducto.Location = new System.Drawing.Point(0, 46);
+            this.pnlBuscarProducto.Name = "pnlBuscarProducto";
+            this.pnlBuscarProducto.Size = new System.Drawing.Size(283, 49);
+            this.pnlBuscarProducto.TabIndex = 4;
             // 
             // btnBuscar
             // 
@@ -653,25 +628,50 @@ namespace SistemaFacturacion.Vista.Factura
             this.txtProductoBuscar.TabIndex = 20;
             this.txtProductoBuscar.TextChanged += new System.EventHandler(this.txtTextoBuscar_TextChanged);
             // 
-            // pnlBuscarProducto
+            // pnlOpcionesProducto
             // 
-            this.pnlBuscarProducto.Controls.Add(this.btnBuscar);
-            this.pnlBuscarProducto.Controls.Add(this.txtProductoBuscar);
-            this.pnlBuscarProducto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBuscarProducto.Location = new System.Drawing.Point(0, 46);
-            this.pnlBuscarProducto.Name = "pnlBuscarProducto";
-            this.pnlBuscarProducto.Size = new System.Drawing.Size(283, 49);
-            this.pnlBuscarProducto.TabIndex = 4;
+            this.pnlOpcionesProducto.Controls.Add(this.btnSeleccionarProducto);
+            this.pnlOpcionesProducto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlOpcionesProducto.Location = new System.Drawing.Point(0, 456);
+            this.pnlOpcionesProducto.Name = "pnlOpcionesProducto";
+            this.pnlOpcionesProducto.Size = new System.Drawing.Size(283, 82);
+            this.pnlOpcionesProducto.TabIndex = 3;
             // 
-            // pnlDgvProductos
+            // btnSeleccionarProducto
             // 
-            this.pnlDgvProductos.Controls.Add(this.dgvProductos);
-            this.pnlDgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgvProductos.Location = new System.Drawing.Point(0, 95);
-            this.pnlDgvProductos.Name = "pnlDgvProductos";
-            this.pnlDgvProductos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pnlDgvProductos.Size = new System.Drawing.Size(283, 361);
-            this.pnlDgvProductos.TabIndex = 5;
+            this.btnSeleccionarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSeleccionarProducto.BackColor = System.Drawing.Color.White;
+            this.btnSeleccionarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSeleccionarProducto.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnSeleccionarProducto.Location = new System.Drawing.Point(163, 30);
+            this.btnSeleccionarProducto.Name = "btnSeleccionarProducto";
+            this.btnSeleccionarProducto.Size = new System.Drawing.Size(110, 32);
+            this.btnSeleccionarProducto.TabIndex = 9;
+            this.btnSeleccionarProducto.Text = "Seleccionar";
+            this.btnSeleccionarProducto.UseVisualStyleBackColor = false;
+            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click);
+            // 
+            // pnlEncabezadoProductos
+            // 
+            this.pnlEncabezadoProductos.Controls.Add(this.lblTituloProductos);
+            this.pnlEncabezadoProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlEncabezadoProductos.Location = new System.Drawing.Point(0, 0);
+            this.pnlEncabezadoProductos.Name = "pnlEncabezadoProductos";
+            this.pnlEncabezadoProductos.Size = new System.Drawing.Size(283, 46);
+            this.pnlEncabezadoProductos.TabIndex = 0;
+            // 
+            // lblTituloProductos
+            // 
+            this.lblTituloProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTituloProductos.AutoSize = true;
+            this.lblTituloProductos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloProductos.ForeColor = System.Drawing.Color.Black;
+            this.lblTituloProductos.Location = new System.Drawing.Point(15, 10);
+            this.lblTituloProductos.Name = "lblTituloProductos";
+            this.lblTituloProductos.Size = new System.Drawing.Size(104, 25);
+            this.lblTituloProductos.TabIndex = 8;
+            this.lblTituloProductos.Text = "Productos";
             // 
             // frmRegistrarFactura
             // 
@@ -699,13 +699,13 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlDatosFactura.ResumeLayout(false);
             this.pnlDatosFactura.PerformLayout();
             this.pnlProductos.ResumeLayout(false);
+            this.pnlDgvProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            this.pnlEncabezadoProductos.ResumeLayout(false);
-            this.pnlEncabezadoProductos.PerformLayout();
-            this.pnlOpcionesProducto.ResumeLayout(false);
             this.pnlBuscarProducto.ResumeLayout(false);
             this.pnlBuscarProducto.PerformLayout();
-            this.pnlDgvProductos.ResumeLayout(false);
+            this.pnlOpcionesProducto.ResumeLayout(false);
+            this.pnlEncabezadoProductos.ResumeLayout(false);
+            this.pnlEncabezadoProductos.PerformLayout();
             this.ResumeLayout(false);
 
         }
