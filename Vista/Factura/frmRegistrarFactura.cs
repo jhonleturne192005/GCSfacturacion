@@ -188,6 +188,17 @@ namespace SistemaFacturacion.Vista.Factura
             agregarProductoFactura(dgvProductosFactura.RowCount - 1, id_producto, true);
         }
 
+        private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProductos.RowCount == 0) return;
+
+            //Función que envía la fila del producto seleccionado al detalle de la factura
+            int id_producto = int.Parse(dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            //Agregar el producto al detalle
+            agregarProductoFactura(dgvProductosFactura.RowCount - 1, id_producto, true);
+        }
+
         private void dgvProductosFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //Obtener la celda que se finalizó de editar
@@ -247,7 +258,7 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
         {
-            frmSeleccionarCliente frmSeleccionar = new frmSeleccionarCliente();
+            frmListarClientes frmSeleccionar = new frmListarClientes(1);
             frmSeleccionar.ShowDialog();
 
             //Cargar los datos del cliente seleccionado

@@ -574,6 +574,7 @@ namespace SistemaFacturacion.Vista.Factura
             this.dgvProductos.Size = new System.Drawing.Size(268, 361);
             this.dgvProductos.TabIndex = 1;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
             // txtCodigoProducto
             // 

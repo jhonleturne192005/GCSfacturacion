@@ -17,12 +17,36 @@ namespace SistemaFacturacion.Vista.Clientes
     public partial class frmListarClientes : Form
     {
         ClienteCtrl clienteCtrl;
+
+        //Variables de control de la paginación
         int pagina_actual;
         int elementos_pagina;
+
+        //Lista que contiene los clientes de la página actual
+        List<Cliente> lstClientes;
+
+        //Variables para cuando el formulario se use para seleccionar un cliente
+        Cliente cliente_seleccionado;
+        public Cliente Cliente_seleccionado { get { return cliente_seleccionado; } }
+
 
         public frmListarClientes()
         {
             InitializeComponent();
+        }
+
+        public frmListarClientes(int tipo)
+        {
+            InitializeComponent();
+
+            //Seleccionar
+            if (tipo == 1)
+            {
+                cliente_seleccionado = new Cliente();
+                btnAgregar.Visible = false;
+                btnSeleccionar.Visible = true;
+                btnSeleccionar.Location = btnAgregar.Location;
+            }
         }
 
         private void aplicarPaginacion() 
@@ -42,6 +66,8 @@ namespace SistemaFacturacion.Vista.Clientes
 
         private void cargarDGV(DataGridView dgv, List<DTO.Cliente> data)
         {
+            lstClientes = data;
+
             dgv.RowCount = 0;
             for (int i = 0; i < data.Count; i++)
             {
@@ -54,7 +80,7 @@ namespace SistemaFacturacion.Vista.Clientes
 
         private void eliminarCliente(string id_cliente)
         {
-            bool desea_eliminar = Mensaje.pregunta($"¿Está seguro que desea eliminar al cliente con la cédula {id_cliente}?");
+            bool desea_eliminar = Mensaje.pregunta($"¿Está seguro que desea eliminar al cliente con la identificación {id_cliente}?");
             if (desea_eliminar)
             {
                 Respuesta r = clienteCtrl.eliminarCliente(id_cliente);
@@ -65,7 +91,7 @@ namespace SistemaFacturacion.Vista.Clientes
         private void frmListarClientes_Load(object sender, EventArgs e)
         {
             //Una vez se incialice el formulario, mostrar la lista de clientes:
-            clienteCtrl = new ClienteCtrl();
+            clienteCtrl = new ClienteCtrl();            
 
             //Configuración inicial de paginación para los registros en el datagridview
             pagina_actual = 1;
@@ -101,7 +127,9 @@ namespace SistemaFacturacion.Vista.Clientes
             int eliminar_indice = dgvCliente.ColumnCount - 1;
             int modificar_indice = eliminar_indice - 1;
             int visualizar_indice = modificar_indice - 1;
-            string id_cliente = dgvCliente.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            //string id_cliente = dgvCliente.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string id_cliente = lstClientes[e.RowIndex].Id_Cliente;
 
             if (e.ColumnIndex == eliminar_indice)
             {
@@ -121,6 +149,12 @@ namespace SistemaFacturacion.Vista.Clientes
                 frmVisualizarCliente frmVerCliente = new frmVisualizarCliente(id_cliente);
                 frmVerCliente.ShowDialog();
             }
+
+        }
+        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Cargar los datos del cliente seleccionado
+            cliente_seleccionado = lstClientes[e.RowIndex];
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -131,5 +165,14 @@ namespace SistemaFacturacion.Vista.Clientes
             //Una vez se haya cerrado el formulario de registro, recargar la lista de clientes
             cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
         }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (Cliente_seleccionado != null)
+            {
+                this.Close();
+            }
+        }
+
     }
 }

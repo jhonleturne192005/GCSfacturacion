@@ -30,9 +30,20 @@ namespace SistemaFacturacion.Vista.Menu
             formulario.Show();
         }
 
+        private void rescalarIconosBotones()
+        {
+            Size tamanioImagen = this.btnClientes.Image.Size;
+            Size tamanioBoton = this.btnClientes.Size;
+
+            int rescalaW = 30 * tamanioBoton.Width / 100;            
+            //this.btnClientes.Image = (Image)(new Bitmap(this.button2.Image, new Size(rescalaW, rescalaW)));
+        }
+
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            tpOpciones.SetToolTip(btnClientes, "Clientes");
+            tpOpciones.SetToolTip(btnProductos, "Productos");
+            tpOpciones.SetToolTip(btnFactura, "Facturas");
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -43,6 +54,11 @@ namespace SistemaFacturacion.Vista.Menu
         private void btnFactura_Click(object sender, EventArgs e)
         {
             abrirFormulario(new frmRegistrarFactura());
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
