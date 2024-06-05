@@ -16,14 +16,13 @@ namespace SistemaFacturacion.Vista.Clientes
 {
     public partial class frmListarClientes : Form
     {
-        ClienteCtrl clienteCtrl;
-
         //Variables de control de la paginación
-        int pagina_actual;
-        int elementos_pagina;
+        int PAGINA_ACTUAL;
+        int ELEMENTOS_PAGINA;
 
         //Lista que contiene los clientes de la página actual
         List<Cliente> lstClientes;
+        ClienteCtrl clienteCtrl;
 
         //Variables para cuando el formulario se use para seleccionar un cliente
         Cliente cliente_seleccionado;
@@ -53,12 +52,12 @@ namespace SistemaFacturacion.Vista.Clientes
         {
             lblNumeroRegistros.Text = dgvCliente.RowCount.ToString() + " registros";
 
-            if (pagina_actual < 2)            
+            if (PAGINA_ACTUAL < 2)            
                 btnPagAnterior.Enabled = false;            
             else
                 btnPagAnterior.Enabled = true;
 
-            if (dgvCliente.RowCount < elementos_pagina)            
+            if (dgvCliente.RowCount < ELEMENTOS_PAGINA)            
                 btnPagSiguiente.Enabled = false;
             else
                 btnPagSiguiente.Enabled = true;
@@ -94,11 +93,11 @@ namespace SistemaFacturacion.Vista.Clientes
             clienteCtrl = new ClienteCtrl();            
 
             //Configuración inicial de paginación para los registros en el datagridview
-            pagina_actual = 1;
-            elementos_pagina = 30;
+            PAGINA_ACTUAL = 1;
+            ELEMENTOS_PAGINA = 30;
 
             //Cargar los datos en el datagridview
-            cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
+            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
             aplicarPaginacion();
 
             //Dibujar los bordes según los lados deseados
@@ -108,22 +107,24 @@ namespace SistemaFacturacion.Vista.Clientes
 
         private void btnPagAnterior_Click(object sender, EventArgs e)
         {
-            pagina_actual = pagina_actual - 1;
-            cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
+            PAGINA_ACTUAL = PAGINA_ACTUAL - 1;
+            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
 
             aplicarPaginacion();
         }
 
         private void btnPagSiguiente_Click(object sender, EventArgs e)
         {
-            pagina_actual = pagina_actual + 1;
-            cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
+            PAGINA_ACTUAL = PAGINA_ACTUAL + 1;
+            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
 
             aplicarPaginacion();
         }
 
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             int eliminar_indice = dgvCliente.ColumnCount - 1;
             int modificar_indice = eliminar_indice - 1;
             int visualizar_indice = modificar_indice - 1;
@@ -135,14 +136,14 @@ namespace SistemaFacturacion.Vista.Clientes
             {
                 eliminarCliente(id_cliente);
 
-                cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
+                cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
             }
             else if (e.ColumnIndex == modificar_indice)
             {
                 frmEditarCliente frmEditarCliente = new frmEditarCliente(id_cliente);
                 frmEditarCliente.ShowDialog();
 
-                cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
+                cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
             }
             else if (e.ColumnIndex == visualizar_indice)
             {
@@ -153,7 +154,10 @@ namespace SistemaFacturacion.Vista.Clientes
         }
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             //Cargar los datos del cliente seleccionado
+            MessageBox.Show(e.RowIndex.ToString());
             cliente_seleccionado = lstClientes[e.RowIndex];
         }
 
@@ -163,7 +167,7 @@ namespace SistemaFacturacion.Vista.Clientes
             frmRegistrarCliente.ShowDialog();
 
             //Una vez se haya cerrado el formulario de registro, recargar la lista de clientes
-            cargarDGV(dgvCliente, clienteCtrl.listarClientes(pagina_actual, elementos_pagina));
+            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
@@ -173,6 +177,5 @@ namespace SistemaFacturacion.Vista.Clientes
                 this.Close();
             }
         }
-
     }
 }

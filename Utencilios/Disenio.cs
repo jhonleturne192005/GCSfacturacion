@@ -11,7 +11,6 @@ namespace SistemaFacturacion.Utencilios
 {
     class Disenio
     {
-     
         public static void dibujarBordesControl(object sender, PaintEventArgs e, char lado, int tamanio_borde = 1)
         {
             //Definir los parámetros de dibujo pará las líneas
