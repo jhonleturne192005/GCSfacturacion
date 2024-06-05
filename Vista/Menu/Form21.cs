@@ -30,7 +30,8 @@ namespace SistemaFacturacion.Vista.Menu
 
             //pnlInterfaz.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'L');
             pnlMenuIzquierdo.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev);
-           
+            pnlLogo.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
+
 
         }
         private void abrirFormulario(Form formulario)

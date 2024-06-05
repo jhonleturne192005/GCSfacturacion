@@ -30,8 +30,6 @@ namespace SistemaFacturacion.Vista.Menu
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Nodo0");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Nodo1");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form21));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Listar clientes");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Clientes", new System.Windows.Forms.TreeNode[] {
@@ -44,7 +42,6 @@ namespace SistemaFacturacion.Vista.Menu
             treeNode5});
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Reportes");
             this.pnlMenuIzquierdo = new System.Windows.Forms.Panel();
-            this.treeView3 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlOpciones = new System.Windows.Forms.Panel();
@@ -62,46 +59,29 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlMenuIzquierdo.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMenuIzquierdo.Controls.Add(this.pnlOpciones);
             this.pnlMenuIzquierdo.Controls.Add(this.pnlLogo);
-            this.pnlMenuIzquierdo.Controls.Add(this.treeView3);
             this.pnlMenuIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuIzquierdo.Location = new System.Drawing.Point(0, 0);
             this.pnlMenuIzquierdo.Name = "pnlMenuIzquierdo";
-            this.pnlMenuIzquierdo.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlMenuIzquierdo.Size = new System.Drawing.Size(182, 668);
+            this.pnlMenuIzquierdo.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlMenuIzquierdo.Size = new System.Drawing.Size(196, 668);
             this.pnlMenuIzquierdo.TabIndex = 2;
-            // 
-            // treeView3
-            // 
-            this.treeView3.ImageIndex = 0;
-            this.treeView3.ImageList = this.imageList1;
-            this.treeView3.Location = new System.Drawing.Point(60, 64);
-            this.treeView3.Name = "treeView3";
-            treeNode8.Name = "Nodo0";
-            treeNode8.Text = "Nodo0";
-            treeNode9.Name = "Nodo1";
-            treeNode9.Text = "Nodo1";
-            this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            this.treeView3.SelectedImageIndex = 0;
-            this.treeView3.Size = new System.Drawing.Size(121, 236);
-            this.treeView3.TabIndex = 1;
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "usuarios_negro.png");
+            this.imageList1.Images.SetKeyName(1, "retroceder.png");
             // 
             // pnlLogo
             // 
             this.pnlLogo.BackColor = System.Drawing.SystemColors.Control;
             this.pnlLogo.Controls.Add(this.pictureBox1);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(2, 2);
+            this.pnlLogo.Location = new System.Drawing.Point(10, 10);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlLogo.Size = new System.Drawing.Size(178, 84);
+            this.pnlLogo.Size = new System.Drawing.Size(176, 84);
             this.pnlLogo.TabIndex = 3;
             // 
             // pnlOpciones
@@ -109,10 +89,10 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlOpciones.BackColor = System.Drawing.SystemColors.Control;
             this.pnlOpciones.Controls.Add(this.tvOpciones);
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOpciones.Location = new System.Drawing.Point(2, 86);
+            this.pnlOpciones.Location = new System.Drawing.Point(10, 94);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.pnlOpciones.Size = new System.Drawing.Size(178, 580);
+            this.pnlOpciones.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlOpciones.Size = new System.Drawing.Size(176, 564);
             this.pnlOpciones.TabIndex = 4;
             // 
             // tvOpciones
@@ -120,15 +100,16 @@ namespace SistemaFacturacion.Vista.Menu
             this.tvOpciones.BackColor = System.Drawing.SystemColors.Control;
             this.tvOpciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvOpciones.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvOpciones.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvOpciones.ForeColor = System.Drawing.SystemColors.Desktop;
             this.tvOpciones.ImageIndex = 0;
             this.tvOpciones.ImageList = this.imageList1;
-            this.tvOpciones.Location = new System.Drawing.Point(0, 10);
+            this.tvOpciones.Location = new System.Drawing.Point(10, 10);
             this.tvOpciones.Name = "tvOpciones";
             treeNode1.Name = "nListarCliente";
             treeNode1.Tag = "0";
             treeNode1.Text = "Listar clientes";
+            treeNode2.ImageKey = "retroceder.png";
             treeNode2.Name = "nClientes";
             treeNode2.Tag = "0";
             treeNode2.Text = "Clientes";
@@ -149,17 +130,17 @@ namespace SistemaFacturacion.Vista.Menu
             treeNode6,
             treeNode7});
             this.tvOpciones.SelectedImageIndex = 0;
-            this.tvOpciones.Size = new System.Drawing.Size(178, 570);
+            this.tvOpciones.Size = new System.Drawing.Size(156, 544);
             this.tvOpciones.TabIndex = 1;
             this.tvOpciones.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvOpciones_NodeMouseClick);
             // 
             // pnlInterfaz
             // 
             this.pnlInterfaz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInterfaz.Location = new System.Drawing.Point(182, 0);
+            this.pnlInterfaz.Location = new System.Drawing.Point(196, 0);
             this.pnlInterfaz.Name = "pnlInterfaz";
             this.pnlInterfaz.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pnlInterfaz.Size = new System.Drawing.Size(1101, 668);
+            this.pnlInterfaz.Size = new System.Drawing.Size(1087, 668);
             this.pnlInterfaz.TabIndex = 3;
             // 
             // pictureBox1
@@ -171,7 +152,7 @@ namespace SistemaFacturacion.Vista.Menu
             this.pictureBox1.Location = new System.Drawing.Point(5, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(168, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(166, 74);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -196,7 +177,6 @@ namespace SistemaFacturacion.Vista.Menu
 
         #endregion
         private System.Windows.Forms.Panel pnlMenuIzquierdo;
-        private System.Windows.Forms.TreeView treeView3;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel pnlOpciones;
         private System.Windows.Forms.TreeView tvOpciones;
