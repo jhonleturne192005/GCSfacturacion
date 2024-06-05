@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaFacturacion.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,58 @@ namespace SistemaFacturacion.Vista.Factura
 {
     public partial class frmListarFacturas : Form
     {
+        //Variables de control de la paginación
+        int PAGINA_ACTUAL = 1;
+        int ELEMENTOS_PAGINA = 30;
+
+        FacturaCtrl facturaCtrl;
+
+        List<DTO.Factura> lstFactura;
         public frmListarFacturas()
         {
             InitializeComponent();
+        }
+
+        private void cargarDGV(DataGridView dgv, List<DTO.Factura> data)
+        {
+            lstFactura = data;
+
+            dgv.RowCount = 0;
+            for (int i = 0; i < data.Count - 1; i++)
+            {
+                int fila_indice = dgv.Rows.Add();
+                dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_factura;
+                dgv.Rows[fila_indice].Cells[1].Value = $"{data[i].Id_cliente.Apellidos} {data[i].Id_cliente.Nombres}";
+                dgv.Rows[fila_indice].Cells[3].Value = data[i].Subtotal;
+                dgv.Rows[fila_indice].Cells[4].Value = data[i].Total - data[i].Subtotal;
+                dgv.Rows[fila_indice].Cells[5].Value = data[i].Total;
+            }
+        }
+
+        private void frmListarFacturas_Load(object sender, EventArgs e)
+        {
+            facturaCtrl = new FacturaCtrl();
+
+            cargarDGV(dgvFacturas, facturaCtrl.listarFacturas(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
+        }
+
+        private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (e.ColumnIndex == dgvFacturas.ColumnCount)
+            {
+                MessageBox.Show("Facturar");
+            }
+            if (e.ColumnIndex == dgvFacturas.ColumnCount - 1)
+            {
+                MessageBox.Show("Visualizar");
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            new frmRegistrarFactura().ShowDialog();
         }
     }
 }

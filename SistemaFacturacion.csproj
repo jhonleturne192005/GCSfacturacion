@@ -107,12 +107,6 @@
     <Compile Include="Vista\Clientes\frmRegistrarCliente.Designer.cs">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Clientes\frmSeleccionarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Clientes\frmSeleccionarCliente.Designer.cs">
-      <DependentUpon>frmSeleccionarCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Clientes\frmVisualizarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +124,12 @@
     </Compile>
     <Compile Include="Vista\Factura\frmRegistrarFactura.Designer.cs">
       <DependentUpon>frmRegistrarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Menu\Form21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Menu\Form21.Designer.cs">
+      <DependentUpon>Form21.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Menu\frmMenu.cs">
       <SubType>Form</SubType>
@@ -159,9 +159,6 @@
     <EmbeddedResource Include="Vista\Clientes\frmRegistrarCliente.resx">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Clientes\frmSeleccionarCliente.resx">
-      <DependentUpon>frmSeleccionarCliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Clientes\frmVisualizarCliente.resx">
       <DependentUpon>frmVisualizarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Factura\frmRegistrarFactura.resx">
       <DependentUpon>frmRegistrarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Menu\Form21.resx">
+      <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Menu\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

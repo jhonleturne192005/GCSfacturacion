@@ -17,8 +17,8 @@ namespace SistemaFacturacion.Vista.Clientes
     public partial class frmListarClientes : Form
     {
         //Variables de control de la paginación
-        int PAGINA_ACTUAL;
-        int ELEMENTOS_PAGINA;
+        int PAGINA_ACTUAL = 1;
+        int ELEMENTOS_PAGINA = 30;
 
         //Lista que contiene los clientes de la página actual
         List<Cliente> lstClientes;
@@ -34,12 +34,12 @@ namespace SistemaFacturacion.Vista.Clientes
             InitializeComponent();
         }
 
-        public frmListarClientes(int tipo)
+        public frmListarClientes(bool seleccionar)
         {
             InitializeComponent();
 
             //Seleccionar
-            if (tipo == 1)
+            if (seleccionar == true)
             {
                 cliente_seleccionado = new Cliente();
                 btnAgregar.Visible = false;
@@ -68,10 +68,10 @@ namespace SistemaFacturacion.Vista.Clientes
             lstClientes = data;
 
             dgv.RowCount = 0;
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < data.Count - 1; i++)
             {
                 int fila_indice = dgv.Rows.Add();
-                dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_Cliente;
+                dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_cliente;
                 dgv.Rows[fila_indice].Cells[1].Value = data[i].Apellidos;
                 dgv.Rows[fila_indice].Cells[2].Value = data[i].Nombres;
             }
@@ -90,14 +90,10 @@ namespace SistemaFacturacion.Vista.Clientes
         private void frmListarClientes_Load(object sender, EventArgs e)
         {
             //Una vez se incialice el formulario, mostrar la lista de clientes:
-            clienteCtrl = new ClienteCtrl();            
-
-            //Configuración inicial de paginación para los registros en el datagridview
-            PAGINA_ACTUAL = 1;
-            ELEMENTOS_PAGINA = 30;
+            clienteCtrl = new ClienteCtrl();
 
             //Cargar los datos en el datagridview
-            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
+            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA + 1));
             aplicarPaginacion();
 
             //Dibujar los bordes según los lados deseados
@@ -130,7 +126,7 @@ namespace SistemaFacturacion.Vista.Clientes
             int visualizar_indice = modificar_indice - 1;
 
             //string id_cliente = dgvCliente.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string id_cliente = lstClientes[e.RowIndex].Id_Cliente;
+            string id_cliente = lstClientes[e.RowIndex].Id_cliente;
 
             if (e.ColumnIndex == eliminar_indice)
             {
@@ -157,7 +153,6 @@ namespace SistemaFacturacion.Vista.Clientes
             if (e.RowIndex < 0) return;
 
             //Cargar los datos del cliente seleccionado
-            MessageBox.Show(e.RowIndex.ToString());
             cliente_seleccionado = lstClientes[e.RowIndex];
         }
 

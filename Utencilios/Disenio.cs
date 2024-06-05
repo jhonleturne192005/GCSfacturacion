@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaFacturacion.Vista.Menu;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;

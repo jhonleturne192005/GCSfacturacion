@@ -53,7 +53,8 @@ namespace SistemaFacturacion.Vista.Menu
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frmRegistrarFactura());
+            //abrirFormulario(new frmRegistrarFactura());
+            abrirFormulario(new frmListarFacturas());
         }
 
         private void pbLogo_Click(object sender, EventArgs e)

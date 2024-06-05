@@ -94,7 +94,7 @@ namespace SistemaFacturacion.Controlador
             {                
                 DataRow drCliente = dtClientes.Rows[i];
                 Cliente cliente = new Cliente();
-                cliente.Id_Cliente = drCliente[0].ToString();
+                cliente.Id_cliente = drCliente[0].ToString();
                 cliente.Apellidos = drCliente[1].ToString();
                 cliente.Nombres = drCliente[2].ToString();
 
@@ -113,7 +113,7 @@ namespace SistemaFacturacion.Controlador
                 cliente = new Cliente();
 
                 DataRow drCliente = dtClientes.Rows[0];
-                cliente.Id_Cliente = drCliente[0].ToString();
+                cliente.Id_cliente = drCliente[0].ToString();
                 cliente.Apellidos = drCliente[1].ToString();
                 cliente.Nombres = drCliente[2].ToString();
             }

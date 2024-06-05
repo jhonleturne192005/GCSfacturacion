@@ -16,8 +16,15 @@ namespace SistemaFacturacion.Vista.Factura
 {
     public partial class frmRegistrarFactura : Form
     {
+        //Controladores
         ProductoCtrl productoCtrl;
         ClienteCtrl clienteCtrl;
+        FacturaCtrl facturaCtrl;
+
+        //DTO para el control de objetos
+        DTO.Factura facturaDto;
+
+        //Variables de control para la selección de items
         int fila_producto_seleccionada;
 
 
@@ -32,9 +39,9 @@ namespace SistemaFacturacion.Vista.Factura
             for (int i = 0; i < data.Count; i++)
             {
                 int fila_indice = dgv.Rows.Add();
-                dgv.Rows[fila_indice].Cells[0].Value = data[i].id_producto;
-                dgv.Rows[fila_indice].Cells[1].Value = data[i].nombre_producto;
-                dgv.Rows[fila_indice].Cells[2].Value = Math.Round(data[i].precio_unitario, 2);
+                dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_producto;
+                dgv.Rows[fila_indice].Cells[1].Value = data[i].Nombre_producto;
+                dgv.Rows[fila_indice].Cells[2].Value = Math.Round(data[i].Precio_unitario, 2);
             }
         }
 
@@ -42,35 +49,28 @@ namespace SistemaFacturacion.Vista.Factura
         {
             dgvProductosFactura.Rows[indice_fila].Cells[0].Value = dgvProductosFactura.Rows[indice_fila].Cells[6].Value;
         }
+               
 
-        private bool existeProductoFactura(int id_producto, bool proviene_dgv_productos)
+        private void actualizarDetalleDGV(int indice_fila, DTO.FacturaDetalle detalle)
         {
-            //Considerar que va a existir por lo menos una vez, debido a que es el código que está ingresando
-            //el usuario, por lo tanto la condición de salida es que el contador sea igual a 2.
-            int contador = 0;
-            int contador_existe_producto = proviene_dgv_productos ? 1 : 2;
+            //Actualizar los datos al detalle del índice correspondiente
+            dgvProductosFactura.Rows[indice_fila].Cells[0].Value = detalle.Producto.Id_producto;
+            dgvProductosFactura.Rows[indice_fila].Cells[1].Value = detalle.Producto.Nombre_producto;
+            dgvProductosFactura.Rows[indice_fila].Cells[2].Value = detalle.Cantidad;
+            dgvProductosFactura.Rows[indice_fila].Cells[3].Value = Math.Round(detalle.Subtotal, 2);
+            dgvProductosFactura.Rows[indice_fila].Cells[4].Value = Math.Round(detalle.Total, 2);
+            dgvProductosFactura.Rows[indice_fila].Cells[5].Value = detalle.Producto.Iva;
 
-            for (int i = 0; i < dgvProductosFactura.RowCount; i++)
-            { 
-                //Sí no existe valor en la celda del id_producto, continuar a la siguiente iteración
-                if (dgvProductosFactura.Rows[i].Cells[0].Value == null) continue;                
-
-                //Sí es igual entonces incrementar el contador
-                if (dgvProductosFactura.Rows[i].Cells[0].Value.ToString() == id_producto.ToString())
-                    contador = contador + 1;
-                
-                if (contador == contador_existe_producto) return true;
-            }
-
-            return false;
+            //Guardar el id del producto que determinado válido para posteriores validaciones
+            dgvProductosFactura.Rows[indice_fila].Cells[6].Value = detalle.Producto.Id_producto;
         }
 
-        private bool agregarProductoFactura(int indice_fila, int id_producto, bool proviene_dgv_productos)
+        private bool agregarProductoFactura(int indice_fila, int id_producto)
         {
             //Verificar que le producto no haya sido registrado en la factura
-            if (existeProductoFactura(id_producto, proviene_dgv_productos))
+            if (facturaDto.existeProductoFactura(id_producto))
             {
-                MessageBox.Show("El producto seleccionado ya ha sido registrado en la factura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Mensaje.advertencia("El producto seleccionado ya ha sido registrado en la factura");                
                 return false;
             }
 
@@ -80,77 +80,58 @@ namespace SistemaFacturacion.Vista.Factura
             //Sí el producto no existe mostrar el mensaje de advertencia la usuario
             if (producto == null)
             {
-                MessageBox.Show("El código del producto ingresado no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Mensaje.advertencia("El código del producto ingresado no existe");
                 return false;
             }
 
-            //Insertar los valores en la fila correspondiente
-            dgvProductosFactura.Rows[indice_fila].Cells[0].Value = producto.id_producto;
-            dgvProductosFactura.Rows[indice_fila].Cells[1].Value = producto.nombre_producto;
-            dgvProductosFactura.Rows[indice_fila].Cells[2].Value = 1; //Cantidad
-            dgvProductosFactura.Rows[indice_fila].Cells[3].Value = Math.Round(producto.precio_unitario, 2);
-            dgvProductosFactura.Rows[indice_fila].Cells[4].Value = Math.Round(producto.precio_unitario, 2); //Total
-            dgvProductosFactura.Rows[indice_fila].Cells[5].Value = producto.iva;
+            //Agregar el producto a la lista de productos del detalle de la factura
+            FacturaDetalle factura_detalle = new FacturaDetalle(producto, 1);
+            facturaDto.agregarDetalleFactura(indice_fila, factura_detalle);
 
-            //Actualizar el código previo del producto en el detalle de la factura en la fila correspondiente
-            dgvProductosFactura.Rows[indice_fila].Cells[6].Value = producto.id_producto;
+            //Insertar los valores en la fila correspondiente
+            actualizarDetalleDGV(indice_fila, factura_detalle);
 
             //Agregar una nueva fila en la lista de productos solo sí se ingresó correctamente y
-            //en la penúltima fila            
-            if (indice_fila == dgvProductosFactura.RowCount - 1) dgvProductosFactura.Rows.Add();
+            //en la penúltima fila
+            if (indice_fila == dgvProductosFactura.RowCount - 1)
+            {                
+                dgvProductosFactura.Rows.Add();
+            }
 
             //Después de insertar los datos actualizarl los totales de la factura
             calcularTotalesFactura();
             return true;           
         }
 
-        private void calcularSubtotalProductoFactura(int indice_fila)
+        private void calcularDetalleFactura(int indice, decimal cantidad)
         {
-            decimal cantidad = decimal.Parse(dgvProductosFactura.Rows[indice_fila].Cells[2].Value.ToString());
-            decimal precio_unitario = decimal.Parse(dgvProductosFactura.Rows[indice_fila].Cells[3].Value.ToString());
+            facturaDto.Factura_Detalle[indice].Cantidad = cantidad;
+            facturaDto.Factura_Detalle[indice].calcular();
 
-            dgvProductosFactura.Rows[indice_fila].Cells[4].Value = Math.Round(cantidad * precio_unitario, 2);
+            actualizarDetalleDGV(indice, facturaDto.Factura_Detalle[indice]);            
         }
 
         private void calcularTotalesFactura()
         {
-            decimal subtotal = 0; //Total sin impuestos
-            decimal total = 0;
-            decimal iva_acumulado = 0;
-
-            for (int i = 0; i < dgvProductosFactura.RowCount; i++)
-            {
-                //Validar que los datos de los productos en el detalle no sean nulos
-                if (dgvProductosFactura.Rows[i].Cells[2].Value == null) continue;
-                if (dgvProductosFactura.Rows[i].Cells[3].Value == null) continue;
-                if (dgvProductosFactura.Rows[i].Cells[5].Value == null) continue;
-
-                //Almacenar los datos en variables
-                decimal cantidad_producto = decimal.Parse(dgvProductosFactura.Rows[i].Cells[2].Value.ToString());
-                decimal precio_unitario = decimal.Parse(dgvProductosFactura.Rows[i].Cells[3].Value.ToString());
-                decimal iva_producto = decimal.Parse(dgvProductosFactura.Rows[i].Cells[5].Value.ToString());
-
-                //Subtotal = precio_unitario * cantidad
-                decimal subtotal_producto = precio_unitario * cantidad_producto;
-                decimal total_producto = subtotal_producto * (1 + iva_producto / 100);
-
-                subtotal = subtotal + subtotal_producto;
-                total = total + total_producto;
-            }
+            //Calcular el subtotal y total de la factura
+            facturaDto.calcular();
             
             //Calcular le IVA
-            iva_acumulado = total - subtotal;
+            decimal iva_acumulado = facturaDto.Total - facturaDto.Subtotal;
 
             //Establecer los valores totales:
-            lblSubtotal.Text = $"$ {Math.Round(subtotal, 2)}";
+            lblSubtotal.Text = $"$ {Math.Round(facturaDto.Subtotal, 2)}";
+            lblTotal.Text = $"$ {Math.Round(facturaDto.Total, 2)}";
             lblIva.Text = $"$ {Math.Round(iva_acumulado, 2)}";
-            lblTotal.Text = $"$ {Math.Round(total, 2)}";
         }
 
         private void frmRegistrarFactura_Load(object sender, EventArgs e)
         {
             productoCtrl = new ProductoCtrl();
             clienteCtrl = new ClienteCtrl();
+            facturaCtrl = new FacturaCtrl();
+
+            facturaDto = new DTO.Factura();
 
             //Cargar la lista de productos
             //cargarProductosDGV(dgvProductos, productoCtrl.listarProductos());
@@ -184,8 +165,8 @@ namespace SistemaFacturacion.Vista.Factura
             //Función que envía la fila del producto seleccionado al detalle de la factura
             int id_producto = int.Parse(dgvProductos.Rows[fila_producto_seleccionada].Cells[0].Value.ToString());
 
-            //Agregar el producto al detalle
-            agregarProductoFactura(dgvProductosFactura.RowCount - 1, id_producto, true);
+            //Agregar el producto al detalle en al penúltima posición
+            agregarProductoFactura(dgvProductosFactura.RowCount - 1, id_producto);
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -195,8 +176,8 @@ namespace SistemaFacturacion.Vista.Factura
             //Función que envía la fila del producto seleccionado al detalle de la factura
             int id_producto = int.Parse(dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            //Agregar el producto al detalle
-            agregarProductoFactura(dgvProductosFactura.RowCount - 1, id_producto, true);
+            //Agregar el producto al detalle en al penúltima posición
+            agregarProductoFactura(dgvProductosFactura.RowCount - 1, id_producto);
         }
 
         private void dgvProductosFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -205,7 +186,8 @@ namespace SistemaFacturacion.Vista.Factura
             DataGridViewCell dgvFilaSeleccionada = dgvProductosFactura.Rows[e.RowIndex].Cells[e.ColumnIndex];
             bool se_inserto_producto = false;
 
-            if (e.ColumnIndex == 0) { //Código del producto
+            //Modificación del código del producto
+            if (e.ColumnIndex == 0) { 
 
                 //Verificar que el valor de la celda no sea nulo, sí es nulo restaurar al valor previo
                 if (dgvFilaSeleccionada.Value == null)
@@ -219,13 +201,14 @@ namespace SistemaFacturacion.Vista.Factura
                 if (!int.TryParse(dgvFilaSeleccionada.Value.ToString(), out id_producto)) return;
 
                 //Verificar si es posible agregar el producto a lista de detalle de la factura
-                se_inserto_producto = agregarProductoFactura(e.RowIndex, id_producto, false);
+                se_inserto_producto = agregarProductoFactura(e.RowIndex, id_producto);
 
                 //Sí no se pudo insertar restaurar el código al valor anterior
                 if (!se_inserto_producto) restaurarCodigoProductoFactura(e.RowIndex);
                 
-            }            
-            else if (e.ColumnIndex == 2) { //Cantidad
+            }
+            //Modificación de la cantidad del producto
+            else if (e.ColumnIndex == 2) { 
 
                 //Verificar que el valor de la celda no sea nulo, sí lo es colocar por defecto el valor de 1
                 if (dgvFilaSeleccionada.Value == null) dgvFilaSeleccionada.Value = 1;
@@ -237,33 +220,44 @@ namespace SistemaFacturacion.Vista.Factura
                     return;
                 }
 
-                //Verificar sí existen datos para realizar los cálculos
+                //Obtener la cantidad ingresada por el usuario
+                //Sí no es un valor numérico o lo es pero negativo dejar por defecto la unidad como cantidad
                 decimal cantidad = 0;
+                if (!decimal.TryParse(dgvFilaSeleccionada.Value.ToString(), out cantidad))
+                {
+                    dgvFilaSeleccionada.Value = 1;
+                }
+                if (cantidad < 0)
+                {
+                    dgvFilaSeleccionada.Value = 1;
+                }
 
-                //Verificar que los datos de las celdas sean decimales válidos, caso contrario dejar el valor de 1
-                if (!decimal.TryParse(dgvFilaSeleccionada.Value.ToString(), out cantidad)) dgvFilaSeleccionada.Value = 1;                
-
-                //Calcular el total y subtotal del producto y el general
-                calcularSubtotalProductoFactura(e.RowIndex);
-
-                //Actualizar los totales de la factura
+                //Actualizar los cálculos
+                calcularDetalleFactura(e.RowIndex, cantidad);
                 calcularTotalesFactura();
             }
         }
         private void dgvProductosFactura_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
+            //Remover de la lista de productos el índice seleccionado
+            facturaDto.Factura_Detalle.RemoveAt(e.RowIndex);
+
             //Actualizar los totales de la factura
             calcularTotalesFactura();
         }
 
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
         {
-            frmListarClientes frmSeleccionar = new frmListarClientes(1);
+            frmListarClientes frmSeleccionar = new frmListarClientes(seleccionar: true);
             frmSeleccionar.ShowDialog();
 
             //Cargar los datos del cliente seleccionado
-            txtCedulaCliente.Text = frmSeleccionar.Cliente_seleccionado.Id_Cliente;
-            txtNombresCliente.Text = $"{frmSeleccionar.Cliente_seleccionado.Nombres} {frmSeleccionar.Cliente_seleccionado.Apellidos}";            
+            txtCedulaCliente.Text = frmSeleccionar.Cliente_seleccionado.Id_cliente;
+            txtNombresCliente.Text = $"{frmSeleccionar.Cliente_seleccionado.Nombres} {frmSeleccionar.Cliente_seleccionado.Apellidos}";
+
+            facturaDto.Id_cliente = frmSeleccionar.Cliente_seleccionado;
         }
 
         private void txtCedulaCliente_Leave(object sender, EventArgs e)
@@ -277,7 +271,8 @@ namespace SistemaFacturacion.Vista.Factura
                 return;
             }
 
-            txtNombresCliente.Text = $"{cliente.Nombres} {cliente.Apellidos}";            
+            txtNombresCliente.Text = $"{cliente.Nombres} {cliente.Apellidos}";
+            facturaDto.Id_cliente = cliente;
         }
 
         private void txtTextoBuscar_TextChanged(object sender, EventArgs e)
@@ -290,13 +285,19 @@ namespace SistemaFacturacion.Vista.Factura
         private void btnFacturar_Click(object sender, EventArgs e)
         {
             //Verificar que existan productos seleccionados en la factura
-            if (dgvProductosFactura.RowCount < 2)
+            if (facturaDto.Factura_Detalle.Count == 0 || facturaDto.Id_cliente == null)
             {
-                MessageBox.Show("No hay productos a registrar en la factura. Por favor, registre productos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Mensaje.advertencia("No hay productos a registrar en la factura. Por favor, registre productos");
                 return;
             }
 
-            //Parsear los datos de la factura (cliente y productos) para registrarlos.
+            //Insertar la factura
+            facturaCtrl.insertarFactura(facturaDto);
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

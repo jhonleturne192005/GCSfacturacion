@@ -45,7 +45,7 @@ namespace SistemaFacturacion.Vista.Clientes
             if (string.IsNullOrWhiteSpace(apellidos)) return;
 
             //Definir los valores correspondientes al objeto de tipo Cliente (DTO)
-            clienteDto.Id_Cliente = cedula;
+            clienteDto.Id_cliente = cedula;
             clienteDto.Nombres = nombres;
             clienteDto.Apellidos = apellidos;
 

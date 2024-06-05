@@ -89,6 +89,6 @@ C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\RdlComp
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmEditarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmListarClientes.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmRegistrarCliente.resources
-C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmSeleccionarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmVisualizarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Factura.frmListarFacturas.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Menu.Form21.resources
