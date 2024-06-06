@@ -1,6 +1,7 @@
 ﻿using SistemaFacturacion.Utencilios;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,19 +24,55 @@ namespace SistemaFacturacion.DAO
             {
                 conexion.AbrirConexion();
 
-                SqlCommand cmd = new SqlCommand("sp_insertar_facturas", conexion.ConexionSQL);
+                SqlCommand cmd = new SqlCommand("sp_insertar_factura", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@xml_factura", xmlFactura);
-                cmd.ExecuteReader();
+
+                //Parámetro de salida (estado de la inserción)                
+                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+                parametro_salida.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro_salida);
+
+                //Obtener el estado resultante de la ejecución del procedimiento almacenado
+                cmd.ExecuteNonQuery();
+                estado_insercion = int.Parse(parametro_salida.Value.ToString());
 
                 conexion.CerrarConexion();
             }
             catch (Exception ex)
             {
-
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
             return estado_insercion;
+        }
+
+        public DataTable listarFactura(int numero_pagina, int numero_elementos)
+        {
+            DataTable dtFacturas = new DataTable();
+            try
+            {
+                conexion.AbrirConexion();
+                SqlDataAdapter dataApdater = new SqlDataAdapter();
+
+                SqlCommand cmd = new SqlCommand("sp_paginacion_listar_facturas", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
+                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
+
+                dataApdater.SelectCommand = cmd;
+                dataApdater.Fill(dtFacturas);
+
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex + "Test");
+            }
+
+            return dtFacturas;
         }
     }
 }

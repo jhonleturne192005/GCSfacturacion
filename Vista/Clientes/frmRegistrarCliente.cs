@@ -38,14 +38,30 @@ namespace SistemaFacturacion.Vista.Clientes
             //Longitud de cédula
             if (cedula.Length != 10) return;
 
+            //Verificar que la cédula contenga números y no caracteres
+            int verificar_cedula = 0;
+            if (!int.TryParse(cedula, out verificar_cedula))
+            {
+                Mensaje.advertencia("La cédula del cliente contiene caracterés no válidos");
+                return;
+            }
+
             //Caracteres existentes en nombres
-            if (string.IsNullOrWhiteSpace(nombres)) return;
+            if (string.IsNullOrWhiteSpace(nombres))
+            {
+                Mensaje.advertencia("Los nombres del cliente son requeridos");
+                return;
+            }
 
             //Caracteres existentes en apellidos
-            if (string.IsNullOrWhiteSpace(apellidos)) return;
+            if (string.IsNullOrWhiteSpace(apellidos))
+            {
+                Mensaje.advertencia("Los apellidos del cliente son requeridos");
+                return;
+            }
 
             //Definir los valores correspondientes al objeto de tipo Cliente (DTO)
-            clienteDto.Id_Cliente = cedula;
+            clienteDto.Id_cliente = cedula;
             clienteDto.Nombres = nombres;
             clienteDto.Apellidos = apellidos;
 

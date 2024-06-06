@@ -11,7 +11,7 @@ namespace SistemaFacturacion.DTO
 {
     public class Cliente
     {
-        public string Id_Cliente { get; set; }
+        public string Id_cliente { get; set; }
         public string Apellidos { get; set; }
         public string Nombres { get; set; }
 

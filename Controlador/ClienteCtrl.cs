@@ -36,7 +36,7 @@ namespace SistemaFacturacion.Controlador
                     mensaje = "Ya existe un cliente con la identificación ingresada";
                     break;
                 default:
-                    mensaje = "se ha producido un error durante la inserción del cliente";
+                    mensaje = "Se ha producido un error durante la inserción del cliente";
                     break;
             }
 
@@ -87,21 +87,40 @@ namespace SistemaFacturacion.Controlador
 
         public List<Cliente> listarClientes(int numero_pagina, int numero_elementos)
         {
-            List<Cliente> clientes = new List<Cliente>();
+            List<Cliente> lstClientes = new List<Cliente>();
             DataTable dtClientes = clienteDao.listarClientes(numero_pagina, numero_elementos);
 
             for (int i = 0; i < dtClientes.Rows.Count; i++)
             {                
                 DataRow drCliente = dtClientes.Rows[i];
                 Cliente cliente = new Cliente();
-                cliente.Id_Cliente = drCliente[0].ToString();
+                cliente.Id_cliente = drCliente[0].ToString();
                 cliente.Apellidos = drCliente[1].ToString();
                 cliente.Nombres = drCliente[2].ToString();
 
-                clientes.Add(cliente);
+                lstClientes.Add(cliente);
             }
 
-            return clientes;
+            return lstClientes;
+        }
+
+        public List<Cliente> buscarClientes(int numero_pagina, int numero_elementos, string texto_buscar)
+        {
+            List<Cliente> lstClientes = new List<Cliente>();
+            DataTable dtClientes = clienteDao.buscarClientes(numero_pagina, numero_elementos, texto_buscar);
+
+            for (int i = 0; i < dtClientes.Rows.Count; i++)
+            {
+                DataRow drCliente = dtClientes.Rows[i];
+                Cliente cliente = new Cliente();
+                cliente.Id_cliente = drCliente[0].ToString();
+                cliente.Apellidos = drCliente[1].ToString();
+                cliente.Nombres = drCliente[2].ToString();
+
+                lstClientes.Add(cliente);
+            }
+
+            return lstClientes;
         }
 
         public Cliente getCliente(string id_cliente)
@@ -113,7 +132,7 @@ namespace SistemaFacturacion.Controlador
                 cliente = new Cliente();
 
                 DataRow drCliente = dtClientes.Rows[0];
-                cliente.Id_Cliente = drCliente[0].ToString();
+                cliente.Id_cliente = drCliente[0].ToString();
                 cliente.Apellidos = drCliente[1].ToString();
                 cliente.Nombres = drCliente[2].ToString();
             }

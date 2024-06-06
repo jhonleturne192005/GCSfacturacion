@@ -42,11 +42,16 @@ namespace SistemaFacturacion.Vista.Menu
         }
 
 
+<<<<<<< HEAD
         private void PersonalizarDiseño()
         {
             pnlSubClientes.Visible = false;
             pnlSubFactura.Visible = false;
             pnlSubProductos.Visible = false;
+=======
+            int rescalaH = tamanioBoton.Height;//;30 * tamanioBoton.Width / 100;            
+            btnClientes.Image = (Image)(new Bitmap(this.btnClientes.Image, new Size(rescalaH, rescalaH)));
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
         }
 
         private void OcultarSubmenu()
@@ -106,9 +111,14 @@ namespace SistemaFacturacion.Vista.Menu
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             MostrarSubMenu(pnlSubFactura);
             //abrirFormulario(new frmRegistrarFactura());
 
+=======
+            //abrirFormulario(new frmRegistrarFactura());
+            abrirFormulario(new frmListarFacturas());
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
         }
 
         private void pbLogo_Click(object sender, EventArgs e)

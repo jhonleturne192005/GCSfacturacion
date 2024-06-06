@@ -89,9 +89,9 @@ C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\RdlComp
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmEditarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmListarClientes.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmRegistrarCliente.resources
-C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmSeleccionarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Clientes.frmVisualizarCliente.resources
 C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Factura.frmListarFacturas.resources
+<<<<<<< HEAD
 C:\Users\ORLAND\proyectos\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\ORLAND\proyectos\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\ORLAND\proyectos\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -169,3 +169,6 @@ C:\Users\ORLAND\proyectos\obj\Debug\SistemaFacturacion.csproj.CoreCompileInputs.
 C:\Users\ORLAND\proyectos\obj\Debug\SistemaF.2777D44C.Up2Date
 C:\Users\ORLAND\proyectos\obj\Debug\SistemaFacturacion.exe
 C:\Users\ORLAND\proyectos\obj\Debug\SistemaFacturacion.pdb
+=======
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Menu.Form21.resources
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033

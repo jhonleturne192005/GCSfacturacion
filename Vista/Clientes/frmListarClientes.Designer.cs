@@ -37,6 +37,12 @@ namespace SistemaFacturacion.Vista.Clientes
             this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
+=======
+            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
             this.btnPagAnterior = new System.Windows.Forms.Button();
             this.lblTituloNumRegistros = new System.Windows.Forms.Label();
             this.btnPagSiguiente = new System.Windows.Forms.Button();
@@ -53,10 +59,13 @@ namespace SistemaFacturacion.Vista.Clientes
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+<<<<<<< HEAD
             this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.button1 = new System.Windows.Forms.Button();
+=======
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
             this.pnlDatosClientes.SuspendLayout();
@@ -149,6 +158,36 @@ namespace SistemaFacturacion.Vista.Clientes
             this.txtNombres.ReadOnly = true;
             this.txtNombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+<<<<<<< HEAD
+=======
+            // btnVisualizar
+            // 
+            this.btnVisualizar.HeaderText = "       ";
+            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
+            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.ReadOnly = true;
+            this.btnVisualizar.Width = 38;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.HeaderText = "       ";
+            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
+            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ReadOnly = true;
+            this.btnModificar.Width = 38;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "       ";
+            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Width = 38;
+            // 
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
             // btnPagAnterior
             // 
             this.btnPagAnterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -293,7 +332,11 @@ namespace SistemaFacturacion.Vista.Clientes
             this.txtTextoBuscar.Name = "txtTextoBuscar";
             this.txtTextoBuscar.Size = new System.Drawing.Size(566, 30);
             this.txtTextoBuscar.TabIndex = 1;
+<<<<<<< HEAD
             this.txtTextoBuscar.Text = "Escriba un cliente a buscar...";
+=======
+            this.txtTextoBuscar.TextChanged += new System.EventHandler(this.txtTextoBuscar_TextChanged);
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
             // 
             // btnAgregar
             // 
@@ -338,6 +381,7 @@ namespace SistemaFacturacion.Vista.Clientes
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 136;
             // 
+<<<<<<< HEAD
             // btnVisualizar
             // 
             this.btnVisualizar.HeaderText = "       ";
@@ -378,6 +422,8 @@ namespace SistemaFacturacion.Vista.Clientes
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = true;
             // 
+=======
+>>>>>>> 54ef9dd90730b9e7abee87acf2adb1ba00dc5033
             // frmListarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

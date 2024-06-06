@@ -43,7 +43,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return estado_insercion;
@@ -74,7 +74,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return estado_modificacion;
@@ -107,7 +107,7 @@ namespace SistemaFacturacion.DAO
             }
             catch(Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return estado_eliminacion;
@@ -134,7 +134,34 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
+                conexion.CerrarConexion();
+            }
 
+            return dataTable;
+        }
+
+        public DataTable buscarClientes(int numero_pagina, int numero_elementos, string texto_buscar)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                conexion.AbrirConexion();
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_cliente", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
+                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
+                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
+
+                dataAdapter.SelectCommand = cmd;
+                dataAdapter.Fill(dataTable);
+
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                conexion.CerrarConexion();
             }
 
             return dataTable;
@@ -159,7 +186,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return dataTable;

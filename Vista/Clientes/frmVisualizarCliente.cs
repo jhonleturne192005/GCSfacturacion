@@ -30,7 +30,7 @@ namespace SistemaFacturacion.Vista.Clientes
 
             if (cliente != null)
             {
-                txtCedula.Text = cliente.Id_Cliente;
+                txtCedula.Text = cliente.Id_cliente;
                 txtApellidos.Text = cliente.Apellidos;
                 txtNombres.Text = cliente.Nombres;
             }

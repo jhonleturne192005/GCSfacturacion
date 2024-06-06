@@ -41,7 +41,7 @@ namespace SistemaFacturacion.Vista.Clientes
             else
             {
                 //Cargar datos a los controles del formulario
-                txtCedula.Text = clienteDto.Id_Cliente;
+                txtCedula.Text = clienteDto.Id_cliente;
                 txtApellidos.Text = clienteDto.Apellidos;
                 txtNombres.Text = clienteDto.Nombres;
             }
