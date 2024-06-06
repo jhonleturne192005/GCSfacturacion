@@ -74,5 +74,32 @@ namespace SistemaFacturacion.DAO
 
             return dtFacturas;
         }
+
+        public DataSet visualizarFactura(int id_factura)
+        {            
+            DataSet ds = new DataSet();
+            try
+            {
+                conexion.AbrirConexion();
+                SqlDataAdapter dataApdater = new SqlDataAdapter();
+
+                SqlCommand cmd = new SqlCommand("sp_visualizar_factura", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_factura", id_factura);
+
+                dataApdater.SelectCommand = cmd;
+                dataApdater.Fill(ds);
+
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex + "Test");
+            }
+
+            return ds;
+        }
     }
+
 }

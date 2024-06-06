@@ -151,6 +151,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Factura\rpFactura - copia - copia.rdlc" />
+    <EmbeddedResource Include="Reportes\Factura\rpFactura - copia.rdlc" />
     <EmbeddedResource Include="Vista\Clientes\frmEditarCliente.resx">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,11 +177,12 @@
     <EmbeddedResource Include="Vista\Menu\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Factura\rpEncabezado.rdlc" />
-    <EmbeddedResource Include="Reportes\Factura\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\Factura\rpFactura.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SistemaFacturacion.DTO.Cliente.datasource" />
+    <None Include="Properties\DataSources\SistemaFacturacion.DTO.Factura.datasource" />
+    <None Include="Properties\DataSources\SistemaFacturacion.DTO.FacturaDetalle.datasource" />
+    <None Include="Properties\DataSources\SistemaFacturacion.DTO.Producto.datasource" />
     <None Include="Properties\DataSources\SistemaFacturacion.Modelo.csClienteModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -252,6 +255,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

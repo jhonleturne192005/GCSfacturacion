@@ -29,8 +29,13 @@ namespace SistemaFacturacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.FacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.FacturaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -42,12 +47,22 @@ namespace SistemaFacturacion
             // 
             // reportViewer1
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.Factura.rpFactura.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 68);
+            reportDataSource1.Name = "dtFactura";
+            reportDataSource1.Value = this.FacturaBindingSource;
+            reportDataSource2.Name = "dtFacturaDetalle";
+            reportDataSource2.Value = this.FacturaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.Factura.rpFactura - copia - copia.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 61);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(776, 335);
             this.reportViewer1.TabIndex = 1;
+            // 
+            // FacturaBindingSource
+            // 
+            this.FacturaBindingSource.DataSource = typeof(SistemaFacturacion.DTO.Factura);
             // 
             // Form1
             // 
@@ -59,6 +74,7 @@ namespace SistemaFacturacion
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.FacturaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -67,6 +83,7 @@ namespace SistemaFacturacion
 
         private System.Windows.Forms.Panel panel1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource FacturaBindingSource;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using SistemaFacturacion.Controlador;
+using SistemaFacturacion.DAO;
 using SistemaFacturacion.DTO;
 using SistemaFacturacion.Utencilios;
 using System;
@@ -24,27 +25,37 @@ namespace SistemaFacturacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            panel1.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, new char[3] {'D', 'L', 'T'});
+            ////panel1.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, new char[3] {'D', 'L', 'T'});
+            ////List<Cliente> dataList = new List<Cliente>();
+            ////ClienteCtrl ctrl = new ClienteCtrl();
+            ////dataList = ctrl.listarClientes(1, 200);
+
+            ////MessageBox.Show(dataList.Count+"");
+            ///
+            this.reportViewer1.RefreshReport();
+            // Crear una lista de objetos con los datos que deseas mostrar en el reporte
+
             List<Cliente> dataList = new List<Cliente>();
             ClienteCtrl ctrl = new ClienteCtrl();
-            dataList = ctrl.listarClientes(1, 200);
+            FacturaCtrl fctrl = new FacturaCtrl();
+            
+            dataList = ctrl.listarClientes(1, 1);
+            //dataList.RemoveRange(1, dataList.Count - 1);
 
-            MessageBox.Show(dataList.Count+"");
-            //this.reportViewer1.RefreshReport();
-            //// Crear una lista de objetos con los datos que deseas mostrar en el reporte
+            List<DTO.Factura> fct = fctrl.listarFacturas(1, 100);
+            FacturaDao fdao = new FacturaDao();
 
-            //List<Cliente> dataList = new List<Cliente>();
-            //csClienteCtrl ctrl = new csClienteCtrl();
-            //dataList = ctrl.listarClientes(1, 200);
+            DataSet dsFactura = fdao.visualizarFactura(3);           
 
-            //// Asignar la lista como origen de datos para el ReportViewer
-            //reportViewer1.LocalReport.DataSources.Clear();
-            //reportViewer1.LocalReport.LoadSubreportDefinition("Subrepor1", File.OpenRead(@"C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\Reportes\Factura\Report1.rdlc"));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataList));
+            // Asignar la lista como origen de datos para el ReportViewer
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtCliente", dataList));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFactura", dsFactura.Tables[0]));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFacturaDetalle", dsFactura.Tables[1]));
 
-            //// Especificar el nombre del archivo .r
-            //// Refrescar el reporte
-            //reportViewer1.RefreshReport();
+            // Especificar el nombre del archivo .r
+            // Refrescar el reporte
+            reportViewer1.RefreshReport();
         }
     }
 }
