@@ -253,6 +253,7 @@
     <None Include="Resources\logo_mejorado.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\logo_mejorado4.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
