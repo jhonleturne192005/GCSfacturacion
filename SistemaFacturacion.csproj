@@ -179,6 +179,7 @@
     <EmbeddedResource Include="Reportes\Factura\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\Factura\rpFactura.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SistemaFacturacion.DTO.Cliente.datasource" />
     <None Include="Properties\DataSources\SistemaFacturacion.Modelo.csClienteModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -251,8 +252,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\Bases\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

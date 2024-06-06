@@ -191,8 +191,11 @@ namespace SistemaFacturacion.Vista.Clientes
 
         private void txtTextoBuscar_TextChanged(object sender, EventArgs e)
         {
+            //Reiniciar la paginación puesto que es una nueva búsqueda
+            PAGINA_ACTUAL = 1;
+
             //Realizar la búsqueda haciendo uso de la paginación
-            cargarDGV(dgvCliente, clienteCtrl.buscarClientes(numero_pagina: 0, ELEMENTOS_PAGINA, txtTextoBuscar.Text));
+            cargarDGV(dgvCliente, clienteCtrl.buscarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA, txtTextoBuscar.Text));
         }
     }
 }

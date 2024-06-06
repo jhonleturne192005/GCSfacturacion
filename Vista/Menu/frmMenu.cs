@@ -35,8 +35,8 @@ namespace SistemaFacturacion.Vista.Menu
             Size tamanioImagen = this.btnClientes.Image.Size;
             Size tamanioBoton = this.btnClientes.Size;
 
-            int rescalaW = 30 * tamanioBoton.Width / 100;            
-            //this.btnClientes.Image = (Image)(new Bitmap(this.button2.Image, new Size(rescalaW, rescalaW)));
+            int rescalaH = tamanioBoton.Height;//;30 * tamanioBoton.Width / 100;            
+            btnClientes.Image = (Image)(new Bitmap(this.btnClientes.Image, new Size(rescalaH, rescalaH)));
         }
 
         private void frmMenu_Load(object sender, EventArgs e)

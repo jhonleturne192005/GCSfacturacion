@@ -43,7 +43,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return estado_insercion;
@@ -74,7 +74,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return estado_modificacion;
@@ -107,7 +107,7 @@ namespace SistemaFacturacion.DAO
             }
             catch(Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return estado_eliminacion;
@@ -134,7 +134,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return dataTable;
@@ -161,7 +161,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                conexion.CerrarConexion();
             }
 
             return dataTable;
@@ -186,7 +186,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                conexion.CerrarConexion();
             }
 
             return dataTable;
