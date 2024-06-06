@@ -18,43 +18,43 @@ namespace SistemaFacturacion
 {
     public partial class Form1 : Form
     {
+        int id_factura;
         public Form1()
         {
             InitializeComponent();
+            id_factura = 3;
+        }
+        public Form1(int idFactura)
+        {
+            InitializeComponent();
+            this.id_factura = idFactura;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ////panel1.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, new char[3] {'D', 'L', 'T'});
-            ////List<Cliente> dataList = new List<Cliente>();
-            ////ClienteCtrl ctrl = new ClienteCtrl();
-            ////dataList = ctrl.listarClientes(1, 200);
-
-            ////MessageBox.Show(dataList.Count+"");
-            ///
+           
             this.reportViewer1.RefreshReport();
-            // Crear una lista de objetos con los datos que deseas mostrar en el reporte
-
-            List<Cliente> dataList = new List<Cliente>();
-            ClienteCtrl ctrl = new ClienteCtrl();
-            FacturaCtrl fctrl = new FacturaCtrl();
-            
-            dataList = ctrl.listarClientes(1, 1);
-            //dataList.RemoveRange(1, dataList.Count - 1);
-
-            List<DTO.Factura> fct = fctrl.listarFacturas(1, 100);
+                   
             FacturaDao fdao = new FacturaDao();
-
-            DataSet dsFactura = fdao.visualizarFactura(3);           
+            DataSet dsFactura = fdao.visualizarFactura(this.id_factura);           
 
             // Asignar la lista como origen de datos para el ReportViewer
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtCliente", dataList));
+
+            string ruta = "";
+            OpenFileDialog fd = new OpenFileDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                ruta = fd.FileName;
+            }
+
+            reportViewer1.LocalReport.SetParameters(new ReportParameter("pRutaLogo", @"File:\" + ruta));
+         
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFactura", dsFactura.Tables[0]));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFacturaDetalle", dsFactura.Tables[1]));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFacturaIVA", dsFactura.Tables[2]));
 
-            // Especificar el nombre del archivo .r
-            // Refrescar el reporte
+         
             reportViewer1.RefreshReport();
         }
     }

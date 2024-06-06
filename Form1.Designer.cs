@@ -47,17 +47,19 @@ namespace SistemaFacturacion
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "dtFactura";
             reportDataSource1.Value = this.FacturaBindingSource;
             reportDataSource2.Name = "dtFacturaDetalle";
             reportDataSource2.Value = this.FacturaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.EnableExternalImages = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.Factura.rpFactura - copia - copia.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 61);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 335);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 1;
             // 
             // FacturaBindingSource

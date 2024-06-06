@@ -30,10 +30,10 @@ namespace SistemaFacturacion.Controlador
 
                 Producto producto = new Producto();
 
-                producto.id_producto = int.Parse(drProducto[0].ToString());
-                producto.nombre_producto = drProducto[1].ToString();
-                producto.precio_unitario = decimal.Parse(drProducto[2].ToString());
-                producto.iva = decimal.Parse(drProducto[3].ToString());
+                producto.Id_producto = int.Parse(drProducto[0].ToString());
+                producto.Nombre_producto = drProducto[1].ToString();
+                producto.Precio_unitario = decimal.Parse(drProducto[2].ToString());
+                producto.Iva = decimal.Parse(drProducto[3].ToString());
 
                 lstProductos.Add(producto);
             }
@@ -51,10 +51,10 @@ namespace SistemaFacturacion.Controlador
                 producto = producto = new Producto();
                 DataRow drProducto = dtProducto.Rows[i];
 
-                producto.id_producto = int.Parse(drProducto[0].ToString());
-                producto.nombre_producto = drProducto[1].ToString();
-                producto.precio_unitario = decimal.Parse(drProducto[2].ToString());
-                producto.iva = decimal.Parse(drProducto[3].ToString());
+                producto.Id_producto = int.Parse(drProducto[0].ToString());
+                producto.Nombre_producto = drProducto[1].ToString();
+                producto.Precio_unitario = decimal.Parse(drProducto[2].ToString());
+                producto.Iva = decimal.Parse(drProducto[3].ToString());
             }
 
             return producto;
@@ -71,10 +71,10 @@ namespace SistemaFacturacion.Controlador
 
                 Producto producto = new Producto();
 
-                producto.id_producto = int.Parse(drProducto[0].ToString());
-                producto.nombre_producto = drProducto[1].ToString();
-                producto.precio_unitario = decimal.Parse(drProducto[2].ToString());
-                producto.iva = decimal.Parse(drProducto[3].ToString());
+                producto.Id_producto = int.Parse(drProducto[0].ToString());
+                producto.Nombre_producto = drProducto[1].ToString();
+                producto.Precio_unitario = decimal.Parse(drProducto[2].ToString());
+                producto.Iva = decimal.Parse(drProducto[3].ToString());
 
                 lstProductos.Add(producto);
             }
@@ -94,10 +94,10 @@ namespace SistemaFacturacion.Controlador
 
                 Producto producto = new Producto();
 
-                producto.id_producto = int.Parse(drProducto[0].ToString());
-                producto.nombre_producto = drProducto[1].ToString();
-                producto.precio_unitario = decimal.Parse(drProducto[2].ToString());
-                producto.iva = decimal.Parse(drProducto[3].ToString());
+                producto.Id_producto = int.Parse(drProducto[0].ToString());
+                producto.Nombre_producto = drProducto[1].ToString();
+                producto.Precio_unitario = decimal.Parse(drProducto[2].ToString());
+                producto.Iva = decimal.Parse(drProducto[3].ToString());
 
                 lstProductos.Add(producto);
             }

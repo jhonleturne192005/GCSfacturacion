@@ -63,11 +63,13 @@ namespace SistemaFacturacion.Vista.Factura
 
             if (e.ColumnIndex == dgvFacturas.ColumnCount)
             {
-                MessageBox.Show("Facturar");
+                Form1 frmReporte = new Form1();
+                frmReporte.Show();
             }
             if (e.ColumnIndex == dgvFacturas.ColumnCount - 1)
             {
-                MessageBox.Show("Visualizar");
+                Form1 frmReporte = new Form1();
+                frmReporte.Show();
             }
         }
 
