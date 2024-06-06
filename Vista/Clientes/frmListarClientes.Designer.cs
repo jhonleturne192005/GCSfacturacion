@@ -29,11 +29,14 @@ namespace SistemaFacturacion.Vista.Clientes
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPagAnterior = new System.Windows.Forms.Button();
             this.lblTituloNumRegistros = new System.Windows.Forms.Label();
             this.btnPagSiguiente = new System.Windows.Forms.Button();
@@ -45,18 +48,15 @@ namespace SistemaFacturacion.Vista.Clientes
             this.lblNumeroRegistros = new System.Windows.Forms.Label();
             this.pnlOpcionesEncabezado = new System.Windows.Forms.Panel();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtTextoBuscar = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.pnlEncabezado.SuspendLayout();
             this.pnlDatosClientes.SuspendLayout();
@@ -75,14 +75,14 @@ namespace SistemaFacturacion.Vista.Clientes
             this.dgvCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCliente.ColumnHeadersHeight = 25;
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtIdentificacion,
@@ -91,14 +91,14 @@ namespace SistemaFacturacion.Vista.Clientes
             this.btnVisualizar,
             this.btnModificar,
             this.btnEliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCliente.EnableHeadersVisualStyles = false;
             this.dgvCliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -107,23 +107,47 @@ namespace SistemaFacturacion.Vista.Clientes
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCliente.RowHeadersVisible = false;
             this.dgvCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCliente.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvCliente.Size = new System.Drawing.Size(992, 404);
             this.dgvCliente.TabIndex = 0;
             this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
+            // 
+            // txtIdentificacion
+            // 
+            this.txtIdentificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtIdentificacion.HeaderText = "Identificación";
+            this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.ReadOnly = true;
+            this.txtIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtApellidos.HeaderText = "Apellidos";
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.ReadOnly = true;
+            this.txtApellidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtNombres.HeaderText = "Nombres";
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.ReadOnly = true;
+            this.txtNombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnPagAnterior
             // 
@@ -259,26 +283,17 @@ namespace SistemaFacturacion.Vista.Clientes
             this.btnSeleccionar.Visible = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.Location = new System.Drawing.Point(11, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // txtTextoBuscar
             // 
             this.txtTextoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTextoBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTextoBuscar.Location = new System.Drawing.Point(73, 16);
+            this.txtTextoBuscar.Location = new System.Drawing.Point(70, 13);
+            this.txtTextoBuscar.Multiline = true;
             this.txtTextoBuscar.Name = "txtTextoBuscar";
-            this.txtTextoBuscar.Size = new System.Drawing.Size(201, 27);
+            this.txtTextoBuscar.Size = new System.Drawing.Size(566, 30);
             this.txtTextoBuscar.TabIndex = 1;
+            this.txtTextoBuscar.Text = "Escriba un cliente a buscar...";
             // 
             // btnAgregar
             // 
@@ -323,30 +338,6 @@ namespace SistemaFacturacion.Vista.Clientes
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 136;
             // 
-            // txtIdentificacion
-            // 
-            this.txtIdentificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtIdentificacion.HeaderText = "Identificación";
-            this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.ReadOnly = true;
-            this.txtIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtApellidos.HeaderText = "Apellidos";
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.ReadOnly = true;
-            this.txtApellidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtNombres.HeaderText = "Nombres";
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.ReadOnly = true;
-            this.txtNombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // btnVisualizar
             // 
             this.btnVisualizar.HeaderText = "       ";
@@ -373,6 +364,19 @@ namespace SistemaFacturacion.Vista.Clientes
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.ReadOnly = true;
             this.btnEliminar.Width = 38;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::SistemaFacturacion.Properties.Resources.buscar;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button1.Location = new System.Drawing.Point(10, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 43);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmListarClientes
             // 

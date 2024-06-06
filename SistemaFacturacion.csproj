@@ -236,6 +236,7 @@
     <None Include="Resources\logo_mejorado3.png" />
     <None Include="Resources\logo_mejorado2.png" />
     <None Include="Resources\logo_mejorado1.png" />
+    <Content Include="Resources\buscar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

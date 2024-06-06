@@ -1,0 +1,146 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ORLAND\\proyectos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|c:\\users\\orland\\proyectos\\vista\\menu\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:vista\\menu\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\vista\\menu\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:vista\\menu\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\vista\\menu\\frmmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:vista\\menu\\frmmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\vista\\clientes\\frmlistarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:vista\\clientes\\frmlistarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\vista\\clientes\\frmseleccionarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:vista\\clientes\\frmseleccionarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\controlador\\clientectrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:controlador\\clientectrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\vista\\clientes\\frmlistarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:vista\\clientes\\frmlistarclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|C:\\Users\\ORLAND\\proyectos\\dao\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51D8FCA-C6C2-4F03-83DA-E3A96B5883C4}|SistemaFacturacion.csproj|solutionrelative:dao\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmMenu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Vista\\Menu\\frmMenu.Designer.cs",
+              "RelativeDocumentMoniker": "Vista\\Menu\\frmMenu.Designer.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Vista\\Menu\\frmMenu.Designer.cs",
+              "RelativeToolTip": "Vista\\Menu\\frmMenu.Designer.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwHwBAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T03:26:48.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMenu.cs",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Vista\\Menu\\frmMenu.cs",
+              "RelativeDocumentMoniker": "Vista\\Menu\\frmMenu.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Vista\\Menu\\frmMenu.cs",
+              "RelativeToolTip": "Vista\\Menu\\frmMenu.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAuwBEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T03:22:03.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMenu.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Vista\\Menu\\frmMenu.cs",
+              "RelativeDocumentMoniker": "Vista\\Menu\\frmMenu.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Vista\\Menu\\frmMenu.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vista\\Menu\\frmMenu.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T01:06:15.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmListarClientes.cs",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Vista\\Clientes\\frmListarClientes.cs",
+              "RelativeDocumentMoniker": "Vista\\Clientes\\frmListarClientes.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Vista\\Clientes\\frmListarClientes.cs",
+              "RelativeToolTip": "Vista\\Clientes\\frmListarClientes.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwDwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T13:33:52.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmSeleccionarCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Vista\\Clientes\\frmSeleccionarCliente.cs",
+              "RelativeDocumentMoniker": "Vista\\Clientes\\frmSeleccionarCliente.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Vista\\Clientes\\frmSeleccionarCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vista\\Clientes\\frmSeleccionarCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T13:31:54.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClienteDao.cs",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\DAO\\ClienteDao.cs",
+              "RelativeDocumentMoniker": "DAO\\ClienteDao.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\DAO\\ClienteDao.cs",
+              "RelativeToolTip": "DAO\\ClienteDao.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAuwDEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T15:58:55.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClienteCtrl.cs",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Controlador\\ClienteCtrl.cs",
+              "RelativeDocumentMoniker": "Controlador\\ClienteCtrl.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Controlador\\ClienteCtrl.cs",
+              "RelativeToolTip": "Controlador\\ClienteCtrl.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T16:02:50.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmListarClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ORLAND\\proyectos\\Vista\\Clientes\\frmListarClientes.cs",
+              "RelativeDocumentMoniker": "Vista\\Clientes\\frmListarClientes.cs",
+              "ToolTip": "C:\\Users\\ORLAND\\proyectos\\Vista\\Clientes\\frmListarClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vista\\Clientes\\frmListarClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T13:31:52.568Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
