@@ -33,8 +33,6 @@ namespace SistemaFacturacion.Vista.Factura
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTextoBuscar = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -42,13 +40,6 @@ namespace SistemaFacturacion.Vista.Factura
             this.lblNumeroRegistros = new System.Windows.Forms.Label();
             this.pnlDgvClientes = new System.Windows.Forms.Panel();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
-            this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtImpuestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnImprimir = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlOpcionesDgv = new System.Windows.Forms.Panel();
             this.lblTituloNumRegistros = new System.Windows.Forms.Label();
             this.btnPagAnterior = new System.Windows.Forms.Button();
@@ -56,7 +47,16 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlDatosClientes = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtImpuestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnImprimir = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlOpcionesEncabezado.SuspendLayout();
             this.pnlDgvClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
@@ -64,24 +64,6 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlDatosClientes.SuspendLayout();
             this.pnlEncabezado.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn3.Image = global::SistemaFacturacion.Properties.Resources.borrar;
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 136;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Modificar";
-            this.dataGridViewImageColumn1.Image = global::SistemaFacturacion.Properties.Resources.editar;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 137;
             // 
             // button1
             // 
@@ -212,62 +194,6 @@ namespace SistemaFacturacion.Vista.Factura
             this.dgvFacturas.TabIndex = 0;
             this.dgvFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacturas_CellContentClick);
             // 
-            // txtIdentificacion
-            // 
-            this.txtIdentificacion.HeaderText = "ID";
-            this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.ReadOnly = true;
-            this.txtIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.txtIdentificacion.Width = 31;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtCliente.HeaderText = "Cliente";
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.HeaderText = "Subtotal";
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.ReadOnly = true;
-            this.txtSubtotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.txtSubtotal.Width = 79;
-            // 
-            // txtImpuestos
-            // 
-            this.txtImpuestos.HeaderText = "Impuestos";
-            this.txtImpuestos.Name = "txtImpuestos";
-            this.txtImpuestos.ReadOnly = true;
-            this.txtImpuestos.Width = 112;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.HeaderText = "Total";
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Width = 71;
-            // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.HeaderText = "       ";
-            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
-            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.ReadOnly = true;
-            this.btnVisualizar.Width = 38;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.HeaderText = "";
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.ReadOnly = true;
-            this.btnImprimir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnImprimir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnImprimir.Width = 17;
-            // 
             // pnlOpcionesDgv
             // 
             this.pnlOpcionesDgv.Controls.Add(this.lblTituloNumRegistros);
@@ -350,6 +276,24 @@ namespace SistemaFacturacion.Vista.Factura
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "FACTURAS";
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Modificar";
+            this.dataGridViewImageColumn1.Image = global::SistemaFacturacion.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 137;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn3.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 136;
+            // 
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.HeaderText = "Eliminar";
@@ -358,6 +302,63 @@ namespace SistemaFacturacion.Vista.Factura
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 136;
+            // 
+            // txtIdentificacion
+            // 
+            this.txtIdentificacion.HeaderText = "ID";
+            this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.ReadOnly = true;
+            this.txtIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtIdentificacion.Width = 31;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtCliente.HeaderText = "Cliente";
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.HeaderText = "Subtotal";
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.ReadOnly = true;
+            this.txtSubtotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtSubtotal.Width = 79;
+            // 
+            // txtImpuestos
+            // 
+            this.txtImpuestos.HeaderText = "Impuestos";
+            this.txtImpuestos.Name = "txtImpuestos";
+            this.txtImpuestos.ReadOnly = true;
+            this.txtImpuestos.Width = 112;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.HeaderText = "Total";
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Width = 71;
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.HeaderText = "       ";
+            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
+            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.ReadOnly = true;
+            this.btnVisualizar.Width = 38;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.HeaderText = "";
+            this.btnImprimir.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
+            this.btnImprimir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.ReadOnly = true;
+            this.btnImprimir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnImprimir.Width = 5;
             // 
             // frmListarFacturas
             // 

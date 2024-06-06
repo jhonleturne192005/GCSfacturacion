@@ -55,6 +55,8 @@ namespace SistemaFacturacion.Controlador
 
                 facturaDto.Subtotal = decimal.Parse(drfactura[4].ToString());
                 facturaDto.Total = decimal.Parse(drfactura[5].ToString());
+
+                lstFacturas.Add(facturaDto);
             }
 
             return lstFacturas;

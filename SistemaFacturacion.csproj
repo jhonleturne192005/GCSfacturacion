@@ -87,6 +87,7 @@
     <Compile Include="Utencilios\DatosConexion.cs" />
     <Compile Include="Utencilios\Disenio.cs" />
     <Compile Include="Utencilios\Mensaje.cs" />
+    <Compile Include="Utencilios\Paginacion.cs" />
     <Compile Include="Utencilios\Respuesta.cs" />
     <Compile Include="Utencilios\XmlParser.cs" />
     <Compile Include="Vista\Clientes\frmEditarCliente.cs">

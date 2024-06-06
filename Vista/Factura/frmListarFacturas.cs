@@ -1,4 +1,5 @@
 ﻿using SistemaFacturacion.Controlador;
+using SistemaFacturacion.Utencilios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,9 @@ namespace SistemaFacturacion.Vista.Factura
     {
         //Variables de control de la paginación
         int PAGINA_ACTUAL = 1;
-        int ELEMENTOS_PAGINA = 30;
+        int ELEMENTOS_PAGINA = 30 + 1;
+
+        int ELEMENTOS_OBTENIDOS = 0;
 
         FacturaCtrl facturaCtrl;
 
@@ -27,6 +30,7 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void cargarDGV(DataGridView dgv, List<DTO.Factura> data)
         {
+            ELEMENTOS_OBTENIDOS = data.Count;
             lstFactura = data;
 
             dgv.RowCount = 0;
@@ -35,17 +39,22 @@ namespace SistemaFacturacion.Vista.Factura
                 int fila_indice = dgv.Rows.Add();
                 dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_factura;
                 dgv.Rows[fila_indice].Cells[1].Value = $"{data[i].Id_cliente.Apellidos} {data[i].Id_cliente.Nombres}";
-                dgv.Rows[fila_indice].Cells[3].Value = data[i].Subtotal;
-                dgv.Rows[fila_indice].Cells[4].Value = data[i].Total - data[i].Subtotal;
-                dgv.Rows[fila_indice].Cells[5].Value = data[i].Total;
+                dgv.Rows[fila_indice].Cells[2].Value = Math.Round(data[i].Subtotal, 2);
+                dgv.Rows[fila_indice].Cells[3].Value = Math.Round(data[i].Total - data[i].Subtotal, 2);
+                dgv.Rows[fila_indice].Cells[4].Value = Math.Round(data[i].Total, 2);
             }
         }
 
         private void frmListarFacturas_Load(object sender, EventArgs e)
         {
+            ELEMENTOS_OBTENIDOS = 0;
             facturaCtrl = new FacturaCtrl();
 
             cargarDGV(dgvFacturas, facturaCtrl.listarFacturas(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
+
+            //Dibujar los bordes según los lados deseados
+            pnlEncabezado.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
+            pnlOpcionesEncabezado.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
         }
 
         private void dgvFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)

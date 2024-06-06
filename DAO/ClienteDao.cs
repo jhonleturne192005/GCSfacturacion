@@ -140,6 +140,33 @@ namespace SistemaFacturacion.DAO
             return dataTable;
         }
 
+        public DataTable buscarClientes(int numero_pagina, int numero_elementos, string texto_buscar)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                conexion.AbrirConexion();
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_cliente", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
+                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
+                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
+
+                dataAdapter.SelectCommand = cmd;
+                dataAdapter.Fill(dataTable);
+
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+            return dataTable;
+        }
+
         public DataTable getCliente(string id_cliente)
         {
             DataTable dataTable = new DataTable();

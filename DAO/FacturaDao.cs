@@ -54,9 +54,10 @@ namespace SistemaFacturacion.DAO
             try
             {
                 conexion.AbrirConexion();
+                SqlDataAdapter dataApdater = new SqlDataAdapter();
 
                 SqlCommand cmd = new SqlCommand("sp_paginacion_listar_facturas", conexion.ConexionSQL);
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
                 cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
@@ -68,7 +69,7 @@ namespace SistemaFacturacion.DAO
             }
             catch (Exception ex)
             {
-
+                System.Windows.Forms.MessageBox.Show(ex + "Test");
             }
 
             return dtFacturas;

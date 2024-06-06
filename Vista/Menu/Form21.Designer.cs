@@ -130,6 +130,8 @@ namespace SistemaFacturacion.Vista.Menu
             treeNode6,
             treeNode7});
             this.tvOpciones.SelectedImageIndex = 0;
+            this.tvOpciones.ShowLines = false;
+            this.tvOpciones.ShowRootLines = false;
             this.tvOpciones.Size = new System.Drawing.Size(156, 544);
             this.tvOpciones.TabIndex = 1;
             this.tvOpciones.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvOpciones_NodeMouseClick);

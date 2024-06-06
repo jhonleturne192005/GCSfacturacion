@@ -292,7 +292,11 @@ namespace SistemaFacturacion.Vista.Factura
             }
 
             //Insertar la factura
-            facturaCtrl.insertarFactura(facturaDto);
+            Respuesta r = facturaCtrl.insertarFactura(facturaDto);
+            if(r.Completado)
+            {
+                Mensaje.pregunta("La factura se registró correctamente. ¿Desea visualizarla?");
+            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
