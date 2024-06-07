@@ -15,20 +15,10 @@ namespace SistemaFacturacion.Vista.Menu
 {
     public partial class frmMenu : Form
     {
+        bool desplegado;
         public frmMenu()
         {
             InitializeComponent();
-
-            rescalarIconosBotones(btnListarclientesp);
-            rescalarIconosBotones(btnRegistrarclientesp);
-
-            rescalarIconosBotones(btnListarfacturasp);
-            rescalarIconosBotones(btnRegistrarfacturasp);
-
-            rescalarIconosBotones(btnListarproductosp);
-            rescalarIconosBotones(btnRegistrarproductosp);
-
-            PersonalizarDiseño();
         }
 
         private void abrirFormulario(Form formulario)
@@ -42,50 +32,21 @@ namespace SistemaFacturacion.Vista.Menu
             formulario.Show();
         }
 
-
-
-        private void PersonalizarDiseño()
+        private void activarSubmenu(Panel panel)
         {
-            pnlSubClientes.Visible = false;
-            pnlSubFactura.Visible = false;
-            pnlSubProductos.Visible = false;
-
-            //int rescalaH = tamanioBoton.Height;//;30 * tamanioBoton.Width / 100;            
-            //btnClientes.Image = (Image)(new Bitmap(this.btnClientes.Image, new Size(rescalaH, rescalaH)));
-        }
-
-        private void OcultarSubmenu()
-        {
-            if (pnlSubClientes.Visible == true)
-                pnlSubClientes.Visible = false;
-
-            if (pnlSubFactura.Visible == true)
-                pnlSubFactura.Visible = false;
-
-
-            if (pnlSubProductos.Visible == true)
-                pnlSubProductos.Visible = false;
-
-        }
-
-        private void MostrarSubMenu(Panel Sub)
-        {
-            if (Sub.Visible == false)
+            
+            if (panel.Visible == true)
             {
-                OcultarSubmenu();
-                Sub.Visible = true;
+                panel.Visible = false;
             }
             else
             {
-                Sub.Visible = false;
+                panel.Visible = true;
             }
-            
-
-            
         }
+
         private void rescalarIconosBotones(Button btnPrueba)
         {
-            Size tamanioImagen = btnPrueba.Image.Size;
             Size tamanioBoton = btnPrueba.Size;
 
             int rescalaH = tamanioBoton.Height;//;30 * tamanioBoton.Width / 100;            
@@ -99,71 +60,60 @@ namespace SistemaFacturacion.Vista.Menu
             tpOpciones.SetToolTip(btnClientes, "Clientes");
             tpOpciones.SetToolTip(btnProductos, "Productos");
             tpOpciones.SetToolTip(btnFactura, "Facturas");
+
+            rescalarIconosBotones(btnClientes);
+            rescalarIconosBotones(btnProductos);
+            rescalarIconosBotones(btnFactura);
+            rescalarIconosBotones(btnFacturar);
+
+            desplegado = false;
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(pnlSubClientes);
-            //abrirFormulario(new frmListarClientes());
-
-
-        }
-
-        private void btnFactura_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(pnlSubFactura);
-            //abrirFormulario(new frmRegistrarFactura());
-
-
-            //abrirFormulario(new frmRegistrarFactura());
-            abrirFormulario(new frmListarFacturas());
-        }
-
-        private void pbLogo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pnlClientes_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlClientes_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnListarclientesp_Click(object sender, EventArgs e)
-        {
             abrirFormulario(new frmListarClientes());
-            OcultarSubmenu();
-           
-        }
-
-        private void btnRegistrarclientesp_Click(object sender, EventArgs e)
-        {
-            OcultarSubmenu();
+            //activarSubmenu(pnlOpcionesClientes);
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(pnlSubProductos);
+            abrirFormulario(new frmListarProductos());
+            //activarSubmenu(pnlOpcionesProducto);
         }
 
-        private void btnRegistrarfacturasp_Click(object sender, EventArgs e)
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new frmListarFacturas());
+            //activarSubmenu(pnlOpcionesFactura);
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
         {
             abrirFormulario(new frmRegistrarFactura());
         }
 
-        private void btnListarproductosp_Click(object sender, EventArgs e)
+        private void pbLogo_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frmListarProductos());
+            if (pnlMenuIzquierdo.Size == pnlMenuIzquierdo.MaximumSize)
+            {
+                pnlMenuIzquierdo.Size = pnlMenuIzquierdo.MinimumSize;
+            }
+            else
+            {
+                pnlMenuIzquierdo.Size = pnlMenuIzquierdo.MaximumSize;
+            }
         }
 
-        private void btnRegistrarproductosp_Click(object sender, EventArgs e)
+        private void btnListarFactura_Click(object sender, EventArgs e)
         {
-            //abrirFormulario(new frmRegistrarProducto());
+            abrirFormulario(new frmListarFacturas());
         }
+
+        private void btnRegistrarFactura_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new frmRegistrarFactura());
+        }
+
+        
     }
 }

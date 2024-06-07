@@ -30,16 +30,16 @@ namespace SistemaFacturacion.Vista.Productofrm
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblivaproducto = new System.Windows.Forms.Label();
+            this.lblprecioproducto = new System.Windows.Forms.Label();
+            this.lblidproducto = new System.Windows.Forms.Label();
+            this.lblproductonombre = new System.Windows.Forms.Label();
+            this.lbluno = new System.Windows.Forms.Label();
             this.lbldos = new System.Windows.Forms.Label();
             this.lbltres = new System.Windows.Forms.Label();
             this.lblcuatro = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblproductonombre = new System.Windows.Forms.Label();
-            this.lblprecioproducto = new System.Windows.Forms.Label();
-            this.lblivaproducto = new System.Windows.Forms.Label();
-            this.lbluno = new System.Windows.Forms.Label();
-            this.lblidproducto = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,58 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(392, 273);
             this.panel3.TabIndex = 17;
+            // 
+            // lblivaproducto
+            // 
+            this.lblivaproducto.AutoSize = true;
+            this.lblivaproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblivaproducto.Location = new System.Drawing.Point(20, 245);
+            this.lblivaproducto.Name = "lblivaproducto";
+            this.lblivaproducto.Size = new System.Drawing.Size(46, 18);
+            this.lblivaproducto.TabIndex = 6;
+            this.lblivaproducto.Text = "NULL";
+            // 
+            // lblprecioproducto
+            // 
+            this.lblprecioproducto.AutoSize = true;
+            this.lblprecioproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprecioproducto.Location = new System.Drawing.Point(20, 174);
+            this.lblprecioproducto.Name = "lblprecioproducto";
+            this.lblprecioproducto.Size = new System.Drawing.Size(46, 18);
+            this.lblprecioproducto.TabIndex = 6;
+            this.lblprecioproducto.Text = "NULL";
+            // 
+            // lblidproducto
+            // 
+            this.lblidproducto.AutoSize = true;
+            this.lblidproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidproducto.Location = new System.Drawing.Point(25, 41);
+            this.lblidproducto.Name = "lblidproducto";
+            this.lblidproducto.Size = new System.Drawing.Size(46, 18);
+            this.lblidproducto.TabIndex = 6;
+            this.lblidproducto.Text = "NULL";
+            this.lblidproducto.Click += new System.EventHandler(this.lblproductonombre_Click);
+            // 
+            // lblproductonombre
+            // 
+            this.lblproductonombre.AutoSize = true;
+            this.lblproductonombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblproductonombre.Location = new System.Drawing.Point(23, 107);
+            this.lblproductonombre.Name = "lblproductonombre";
+            this.lblproductonombre.Size = new System.Drawing.Size(46, 18);
+            this.lblproductonombre.TabIndex = 6;
+            this.lblproductonombre.Text = "NULL";
+            this.lblproductonombre.Click += new System.EventHandler(this.lblproductonombre_Click);
+            // 
+            // lbluno
+            // 
+            this.lbluno.AutoSize = true;
+            this.lbluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluno.Location = new System.Drawing.Point(22, 9);
+            this.lbluno.Name = "lbluno";
+            this.lbluno.Size = new System.Drawing.Size(28, 20);
+            this.lbluno.TabIndex = 1;
+            this.lbluno.Text = "ID";
             // 
             // lbldos
             // 
@@ -112,62 +164,11 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.panel1.Size = new System.Drawing.Size(392, 46);
             this.panel1.TabIndex = 15;
             // 
-            // lblproductonombre
-            // 
-            this.lblproductonombre.AutoSize = true;
-            this.lblproductonombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblproductonombre.Location = new System.Drawing.Point(23, 107);
-            this.lblproductonombre.Name = "lblproductonombre";
-            this.lblproductonombre.Size = new System.Drawing.Size(46, 18);
-            this.lblproductonombre.TabIndex = 6;
-            this.lblproductonombre.Text = "NULL";
-            this.lblproductonombre.Click += new System.EventHandler(this.lblproductonombre_Click);
-            // 
-            // lblprecioproducto
-            // 
-            this.lblprecioproducto.AutoSize = true;
-            this.lblprecioproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprecioproducto.Location = new System.Drawing.Point(20, 174);
-            this.lblprecioproducto.Name = "lblprecioproducto";
-            this.lblprecioproducto.Size = new System.Drawing.Size(46, 18);
-            this.lblprecioproducto.TabIndex = 6;
-            this.lblprecioproducto.Text = "NULL";
-            // 
-            // lblivaproducto
-            // 
-            this.lblivaproducto.AutoSize = true;
-            this.lblivaproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblivaproducto.Location = new System.Drawing.Point(20, 245);
-            this.lblivaproducto.Name = "lblivaproducto";
-            this.lblivaproducto.Size = new System.Drawing.Size(46, 18);
-            this.lblivaproducto.TabIndex = 6;
-            this.lblivaproducto.Text = "NULL";
-            // 
-            // lbluno
-            // 
-            this.lbluno.AutoSize = true;
-            this.lbluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluno.Location = new System.Drawing.Point(22, 9);
-            this.lbluno.Name = "lbluno";
-            this.lbluno.Size = new System.Drawing.Size(28, 20);
-            this.lbluno.TabIndex = 1;
-            this.lbluno.Text = "ID";
-            // 
-            // lblidproducto
-            // 
-            this.lblidproducto.AutoSize = true;
-            this.lblidproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidproducto.Location = new System.Drawing.Point(25, 41);
-            this.lblidproducto.Name = "lblidproducto";
-            this.lblidproducto.Size = new System.Drawing.Size(46, 18);
-            this.lblidproducto.TabIndex = 6;
-            this.lblidproducto.Text = "NULL";
-            this.lblidproducto.Click += new System.EventHandler(this.lblproductonombre_Click);
-            // 
             // frmProductoVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(392, 319);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

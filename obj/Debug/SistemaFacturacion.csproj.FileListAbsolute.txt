@@ -175,3 +175,7 @@ C:\Users\USUARIO\Desktop\ultimaversion\bin\Debug\ru\Microsoft.ReportViewer.WinFo
 C:\Users\USUARIO\Desktop\ultimaversion\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USUARIO\Desktop\ultimaversion\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\USUARIO\Desktop\ultimaversion\obj\Debug\SistemaFacturacion.csproj.CopyComplete
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Productofrm.frmActualizarProducto.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Productofrm.frmListarProductos.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Productofrm.frmProductoVista.resources
+C:\Users\LUIS CASANOVA\source\repos\SistemaFacturacion - copia\obj\Debug\SistemaFacturacion.Vista.Productofrm.frmRegistrarProducto.resources
