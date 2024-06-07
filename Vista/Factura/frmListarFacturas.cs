@@ -80,7 +80,8 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void txtTextoBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            PAGINA_ACTUAL = 1;
+            cargarDGV(dgvFacturas, facturaCtrl.buscarFacturas(PAGINA_ACTUAL, ELEMENTOS_PAGINA, txtTextoBuscar.Text));
         }
     }
 }

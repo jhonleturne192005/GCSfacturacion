@@ -75,6 +75,34 @@ namespace SistemaFacturacion.DAO
             return dtFacturas;
         }
 
+        public DataTable buscarFactura(int numero_pagina, int numero_elementos, string texto_buscar)
+        {
+            DataTable dtFacturas = new DataTable();
+            try
+            {
+                conexion.AbrirConexion();
+                SqlDataAdapter dataApdater = new SqlDataAdapter();
+
+                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_facturas", conexion.ConexionSQL);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
+                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
+                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
+
+                dataApdater.SelectCommand = cmd;
+                dataApdater.Fill(dtFacturas);
+
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex + "Test");
+            }
+
+            return dtFacturas;
+        }
+
         public DataSet visualizarFactura(int id_factura)
         {            
             DataSet ds = new DataSet();
