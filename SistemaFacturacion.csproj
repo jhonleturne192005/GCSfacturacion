@@ -138,6 +138,30 @@
     <Compile Include="Vista\Menu\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Productofrm\frmActualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmActualizarProducto.Designer.cs">
+      <DependentUpon>frmActualizarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmListarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmListarProductos.Designer.cs">
+      <DependentUpon>frmListarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmProductoVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmProductoVista.Designer.cs">
+      <DependentUpon>frmProductoVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmRegistrarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Productofrm\frmRegistrarProducto.Designer.cs">
+      <DependentUpon>frmRegistrarProducto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +202,18 @@
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Factura\rpFactura.rdlc" />
+    <EmbeddedResource Include="Vista\Productofrm\frmActualizarProducto.resx">
+      <DependentUpon>frmActualizarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Productofrm\frmListarProductos.resx">
+      <DependentUpon>frmListarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Productofrm\frmProductoVista.resx">
+      <DependentUpon>frmProductoVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Productofrm\frmRegistrarProducto.resx">
+      <DependentUpon>frmRegistrarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SistemaFacturacion.DTO.Cliente.datasource" />
     <None Include="Properties\DataSources\SistemaFacturacion.DTO.Factura.datasource" />
