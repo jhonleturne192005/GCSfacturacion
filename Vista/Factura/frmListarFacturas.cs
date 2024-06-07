@@ -77,5 +77,10 @@ namespace SistemaFacturacion.Vista.Factura
         {
             new frmRegistrarFactura().ShowDialog();
         }
+
+        private void txtTextoBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

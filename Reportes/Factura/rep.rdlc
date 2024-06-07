@@ -41,12 +41,7 @@
           <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>SistemaFacturacion.DTO</rd:DataSetName>
-        <rd:TableName>Factura</rd:TableName>
-        <rd:ObjectDataSourceType>SistemaFacturacion.DTO.Factura, SistemaFacturacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
+      </Fields>      
     </DataSet>
     <DataSet Name="dtFacturaDetalle">
       <Query>
@@ -74,12 +69,7 @@
           <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>SistemaFacturacion.DTO</rd:DataSetName>
-        <rd:TableName>Factura</rd:TableName>
-        <rd:ObjectDataSourceType>SistemaFacturacion.DTO.Factura, SistemaFacturacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
+      </Fields>    
     </DataSet>
     <DataSet Name="dtFacturaIVA">
       <Query>
@@ -95,12 +85,7 @@
           <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>SistemaFacturacion.DTO</rd:DataSetName>
-        <rd:TableName>Factura</rd:TableName>
-        <rd:ObjectDataSourceType>SistemaFacturacion.DTO.Factura, SistemaFacturacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
+      </Fields>     
     </DataSet>
   </DataSets>
   <ReportSections>

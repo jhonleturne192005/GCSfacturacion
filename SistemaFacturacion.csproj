@@ -151,8 +151,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Factura\rep.rdlc" />
     <EmbeddedResource Include="Reportes\Factura\rpFactura - copia - copia.rdlc" />
-    <EmbeddedResource Include="Reportes\Factura\rpFactura - copia.rdlc" />
     <EmbeddedResource Include="Vista\Clientes\frmEditarCliente.resx">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
