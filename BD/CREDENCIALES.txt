@@ -1,0 +1,5 @@
+Nombre: facturacion
+Usuario: sa
+Contraseña: ao9l3iffTySuuNygXumK4JV4W4S7vG6Y8Hgtiyxkv4Jo01XS2t
+Port: 9011
+IP: aplicaciones.uteq.edu.ec

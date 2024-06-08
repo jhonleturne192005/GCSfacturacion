@@ -18,188 +18,72 @@ namespace SistemaFacturacion.DAO
             conexion = new Conexion();
         }
 
- 
         public DataTable listarProductos(int numero_pagina, int numero_elementos)
         {
-            DataTable dataTable = new DataTable();
-            try
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_paginacion_listar_productos", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-
-            return dataTable;
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos)
+            };
+            return this.conexion.listar(lst_parametros, "sp_paginacion_listar_productos");
         }
 
         public DataTable getProducto(int id_producto)
         {
-            DataTable dataTable = new DataTable();
-            try
-            {
-                conexion.AbrirConexion();
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_get_producto", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_producto", id_producto);
-
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            return dataTable;
+            return this.conexion.buscar(null, "sp_get_producto", new SqlParameter("@id_producto", id_producto));
         }
 
         public DataTable buscarProducto(string texto_buscar)
         {
-            DataTable dataTable = new DataTable();
-            try
-            {
-                conexion.AbrirConexion();
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_buscar_producto", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            return dataTable;
+            return this.conexion.buscar(null, "sp_buscar_producto", new SqlParameter("@texto_buscar", texto_buscar));
         }
-
 
         public DataTable buscarProducto(string texto_buscar,int numero_pagina, int numero_elementos)
         {
-            DataTable dataTable = new DataTable();
-            try
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_producto", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            return dataTable;
+                new SqlParameter("@texto_buscar", texto_buscar),
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos)
+            };
+            return this.conexion.listar(lst_parametros, "sp_paginacion_buscar_producto");
         }
-
 
         public int insertarProducto(string xmlProducto)
         {
-            //int estado_insercion = -1;
-            int estado_insercion = 0;
-            try
+            SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+            parametro_salida.Direction = ParameterDirection.Output;
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-
-                SqlCommand cmd = new SqlCommand("sp_insertar_producto", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@xml_producto", xmlProducto);
-                
-
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-                cmd.ExecuteNonQuery();
-                estado_insercion = int.Parse(parametro_salida.Value.ToString());
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return estado_insercion;
+                new SqlParameter("@xml_producto", xmlProducto),
+                parametro_salida,
+            };
+            return this.conexion.guardar(lst_parametros, "sp_insertar_producto");
         }
-
 
         public int actualizarProducto(string xmlProducto)
         {
-            //int estado_insercion = -1;
-            int estado_insercion = 0;
-            try
+            //MessageBox.Show(xmlProducto);
+            //SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+            //parametro_salida.Direction = ParameterDirection.Output;
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-
-                SqlCommand cmd = new SqlCommand("sp_modificar_producto", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@xml_producto", xmlProducto);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            return estado_insercion;
+                new SqlParameter("@xml_producto", xmlProducto),
+                //parametro_salida,
+            };
+            return this.conexion.actualizar(lst_parametros, "sp_modificar_producto");
         }
-
 
         public int eliminarProducto(int id_producto)
         {
-            //int estado_insercion = -1;
-            int estado_eliminacion = 0;
-            try
+            SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+            parametro_salida.Direction = ParameterDirection.Output;
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-
-                SqlCommand cmd = new SqlCommand("sp_eliminar_producto", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@id_producto", id_producto);
-
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-                cmd.ExecuteNonQuery();
-                estado_eliminacion = int.Parse(parametro_salida.Value.ToString());
-                //MessageBox.Show(estado_insercion.ToString());
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            return estado_eliminacion;
+                new SqlParameter("@id_producto", id_producto),
+                parametro_salida,
+            };
+            return this.conexion.eliminar(lst_parametros, "sp_eliminar_producto");
         }
 
 

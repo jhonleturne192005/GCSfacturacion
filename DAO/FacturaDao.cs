@@ -19,114 +19,40 @@ namespace SistemaFacturacion.DAO
 
         public int insertarFactura(string xmlFactura)
         {
-            int estado_insercion = -1;
-            try
+            SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
+            parametro_salida.Direction = ParameterDirection.Output;
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-
-                SqlCommand cmd = new SqlCommand("sp_insertar_factura", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@xml_factura", xmlFactura);
-
-                //Parámetro de salida (estado de la inserción)                
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-
-                //Obtener el estado resultante de la ejecución del procedimiento almacenado
-                cmd.ExecuteNonQuery();
-                estado_insercion = int.Parse(parametro_salida.Value.ToString());
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-            return estado_insercion;
+                new SqlParameter("@xml_factura", xmlFactura),
+                parametro_salida,
+            };
+            return this.conexion.guardar(lst_parametros, "sp_insertar_factura");
         }
 
         public DataTable listarFactura(int numero_pagina, int numero_elementos)
         {
-            DataTable dtFacturas = new DataTable();
-            try
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
-
-                SqlCommand cmd = new SqlCommand("sp_paginacion_listar_facturas", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-
-                dataApdater.SelectCommand = cmd;
-                dataApdater.Fill(dtFacturas);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex + "Test");
-            }
-
-            return dtFacturas;
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos),
+            };
+            return this.conexion.listar(lst_parametros, "sp_paginacion_listar_facturas");
         }
 
         public DataTable buscarFactura(int numero_pagina, int numero_elementos, string texto_buscar)
         {
-            DataTable dtFacturas = new DataTable();
-            try
+            List<SqlParameter> lst_parametros = new List<SqlParameter>()
             {
-                conexion.AbrirConexion();
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
-
-                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_facturas", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
-
-                dataApdater.SelectCommand = cmd;
-                dataApdater.Fill(dtFacturas);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex + "Test");
-            }
-
-            return dtFacturas;
+                new SqlParameter("@texto_buscar", texto_buscar),
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos)
+            };
+            return this.conexion.listar(lst_parametros, "sp_paginacion_buscar_facturas");
         }
 
         public DataSet visualizarFactura(int id_factura)
         {            
-            DataSet ds = new DataSet();
-            try
-            {
-                conexion.AbrirConexion();
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
-
-                SqlCommand cmd = new SqlCommand("sp_visualizar_factura", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@id_factura", id_factura);
-
-                dataApdater.SelectCommand = cmd;
-                dataApdater.Fill(ds);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex + "Test");
-            }
-
-            return ds;
+            return this.conexion.buscarMT(null, "sp_visualizar_factura", new SqlParameter("@id_factura", id_factura));
         }
     }
 
