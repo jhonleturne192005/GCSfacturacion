@@ -1,5 +1,6 @@
 using SistemaFacturacion.DAO;
 using SistemaFacturacion.DTO;
+using SistemaFacturacion.Utencilios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,75 @@ namespace SistemaFacturacion.Controlador
             productoDao = new ProductoDao();
         }
 
+        public Respuesta insertarProducto(Producto producto)
+        {
+            int estado = productoDao.insertarProducto(producto.getXml());
+
+            bool completado = false;
+            string mensaje = string.Empty;
+
+            switch (estado)
+            {
+                case 0:
+                    mensaje = "El producto fue insertado correctamente";
+                    completado = true;
+                    break;
+                case 1:
+                    mensaje = "Error no existe nombre de producto";
+                    break;
+                case 2:
+                    mensaje = "Error el IVA debe estar en un rango de 0 a 100";
+                    break;
+                default:
+                    mensaje = "Error en la inserción del producto";
+                    break;
+            }
+
+            return new Respuesta(completado, mensaje);
+        }
+        public Respuesta modificarProducto(Producto producto)
+        {
+            int estado = productoDao.modificarProducto(producto.getXml());
+
+            bool completado = false;
+            string mensaje = string.Empty;
+
+            switch (estado)
+            {
+                case 0:
+                    mensaje = "El producto fue actualizado correctamente";
+                    completado = true;
+                    break;
+                case 1:
+                    mensaje = "Ya existe un cliente con la identificación ingresada";
+                    break;
+                default:
+                    mensaje = "Error en la actualizacion del producto";
+                    break;
+            }
+
+            return new Respuesta(completado, mensaje);
+        }
+        public Respuesta eliminarProducto(int id_producto)
+        {
+            int estado = productoDao.eliminarProducto(id_producto);
+
+            bool completado = false;
+            string mensaje = string.Empty;
+
+            switch (estado)
+            {
+                case 0:
+                    mensaje = "El producto fue eliminado correctamente";
+                    completado = true;
+                    break;
+                default:
+                    mensaje = "Error en la eliminación del producto";
+                    break;
+            }
+
+            return new Respuesta(completado, mensaje);
+        }
         public List<Producto> listarProductos(int pagina_actual, int elementos_pagina)
         {
             List<Producto> lstProductos = new List<Producto>();
@@ -40,7 +110,6 @@ namespace SistemaFacturacion.Controlador
 
             return lstProductos;
         }
-
         public Producto getProducto(int id_producto)
         {
             Producto producto = null;
@@ -59,7 +128,6 @@ namespace SistemaFacturacion.Controlador
 
             return producto;
         }
-
         public List<Producto> buscarProducto(string texto_buscar)
         {
             List<Producto> lstProductos = new List<Producto>();
@@ -81,9 +149,7 @@ namespace SistemaFacturacion.Controlador
 
             return lstProductos;
         }
-
-
-        public List<Producto> buscarProducto(string texto_buscar, int numero_pagina, int numero_elementos)
+        public List<Producto> buscarProducto(int numero_pagina, int numero_elementos, string texto_buscar)
         {
             List<Producto> lstProductos = new List<Producto>();
             DataTable dtProductos = productoDao.buscarProducto(texto_buscar, numero_pagina, numero_elementos);
@@ -104,60 +170,6 @@ namespace SistemaFacturacion.Controlador
 
             return lstProductos;
         }
-
-        public string[] insertarProducto(Producto producto)
-        {
-            //MessageBox.Show(producto.getXml());
-            int estado_insersion = productoDao.insertarProducto(producto.getXml());
-
-            switch (estado_insersion)
-            {
-                case 0:
-                    return  new string[]{ "0","El producto fue insertado correctamente"};
-                case 1:
-                    return new string[] { "1", "Error no existe nombre de producto" };
-                case 2:
-                    return new string[] { "2", "Error el IVA debe estar en un rango de 0 a 100" };
-                default:
-                    return new string[] { "3", "Error en la inserción del producto" };
-            }
-
-        }
-
-
-        public string actualizarProducto(Producto producto)
-        {
-            //MessageBox.Show(producto.getXml());
-            int estado_insersion = productoDao.actualizarProducto(producto.getXml());
-
-            switch (estado_insersion)
-            {
-                case 0:
-                    return "El producto fue actualizado correctamente";
-                case 1:
-                    return "Ya existe un cliente con la identificación ingresada";
-                default:
-                    return "Error en la actualizacion del producto";
-            }
-        }
-
-
-        public string eliminarProducto(int id_producto)
-        {
-            //MessageBox.Show(producto.getXml());
-            int estado_insersion = productoDao.eliminarProducto(id_producto);
-
-            switch (estado_insersion)
-            {
-                case 0:
-                    return "El producto fue eliminado correctamente";
-                default:
-                    return "Error en la eliminación del producto";
-            }
-        }
-
-
-
     }
 }
 

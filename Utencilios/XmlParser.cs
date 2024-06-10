@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,37 @@ namespace SistemaFacturacion.Utencilios
           
 
             return strWriter.ToString();
+        }
+
+        public static DataTable xmlADataTable(string xmlString)
+        {
+            DataSet dataSet = new DataSet();
+            DataTable dt = null;
+
+            using (StringReader sr = new StringReader(xmlString))
+            {
+                dataSet.ReadXml(sr);
+                if (dataSet.Tables.Count > 0)
+                {
+                    dt = dataSet.Tables[0];
+                }
+            }
+
+
+            foreach (DataRow row in dt.Rows)
+            {
+                foreach (DataColumn col in dt.Columns)
+                {
+                    if (col.DataType == typeof(decimal))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Test");
+                        //Reemplazar el punto decimal con coma si es necesario
+                        row[col] = row[col].ToString().Replace('.', ',');
+                    }
+                }
+            }
+
+            return dt;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace SistemaFacturacion.DTO
 {
@@ -64,5 +65,6 @@ namespace SistemaFacturacion.DTO
         //Transformaciones de objetos a xml
         public string getXml() { return XmlParser.parsearXml(this); }
         public static string getXml(List<Factura> lstFacturas) { return XmlParser.parsearXml(lstFacturas); }
+
     }
 }

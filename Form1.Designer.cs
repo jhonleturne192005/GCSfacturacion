@@ -30,15 +30,11 @@ namespace SistemaFacturacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.FacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.FacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FacturaBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // FacturaBindingSource
-            // 
-            this.FacturaBindingSource.DataSource = typeof(SistemaFacturacion.DTO.Factura);
             // 
             // panel1
             // 
@@ -51,12 +47,16 @@ namespace SistemaFacturacion
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.LocalReport.EnableExternalImages = true;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.Factura.rep.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.RepFactura.rpFactura - copia - copia.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 1;
+            // 
+            // FacturaBindingSource
+            // 
+            this.FacturaBindingSource.DataSource = typeof(SistemaFacturacion.DTO.Factura);
             // 
             // Form1
             // 

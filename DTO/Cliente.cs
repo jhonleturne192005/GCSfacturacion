@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace SistemaFacturacion.DTO
@@ -19,5 +20,6 @@ namespace SistemaFacturacion.DTO
 
         public string getXml() { return XmlParser.parsearXml(this); }
         public static string getXml(List<Cliente> lstClientes) { return XmlParser.parsearXml(lstClientes); }
+        
     }
 }

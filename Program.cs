@@ -1,7 +1,11 @@
-﻿using SistemaFacturacion.Vista;
+﻿using SistemaFacturacion.Utencilios;
+using SistemaFacturacion.Vista;
+using SistemaFacturacion.Vista.Clientes;
+using SistemaFacturacion.Vista.FrmReportes;
 using SistemaFacturacion.Vista.Menu;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,8 +22,13 @@ namespace SistemaFacturacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
-            //Application.Run(new Form1());
+            Reportes r = new Reportes("");
+            //r.getReportes("RepCliente");
+
+            Application.Run(new frmMenuVD());
+            //Application.Run(new frmMenuVD());
+            //Application.Run(new frmMnu());
+            //Application.Run(new Form21());
         }
     }
 }

@@ -33,29 +33,7 @@ namespace SistemaFacturacion
         private void Form1_Load(object sender, EventArgs e)
         {
            
-            this.reportViewer1.RefreshReport();
-                   
-            FacturaDao fdao = new FacturaDao();
-            DataSet dsFactura = fdao.visualizarFactura(this.id_factura);           
-
-            // Asignar la lista como origen de datos para el ReportViewer
-            reportViewer1.LocalReport.DataSources.Clear();
-
-            string ruta = "";
-            OpenFileDialog fd = new OpenFileDialog();
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
-                ruta = fd.FileName;
-            }
-
-            reportViewer1.LocalReport.SetParameters(new ReportParameter("pRutaLogo", @"File:\" + ruta));
-         
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFactura", dsFactura.Tables[0]));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFacturaDetalle", dsFactura.Tables[1]));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dtFacturaIVA", dsFactura.Tables[2]));
-
-         
-            reportViewer1.RefreshReport();
+            
         }
     }
 }

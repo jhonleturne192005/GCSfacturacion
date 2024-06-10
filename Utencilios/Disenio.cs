@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,24 @@ namespace SistemaFacturacion.Utencilios
 {
     class Disenio
     {
+        public static Image cambiarColorImagen(Color color, Image imagen)
+        {
+            ColorMatrix matrizColor = new ColorMatrix(new float[][] {
+                new float[] {1, 0, 0, 0, 0},
+                new float[] {0, 1, 0, 0, 0},
+                new float[] {0, 0, 1, 0, 0},
+                new float[] {0, 0, 0, 1, 0},
+                new float[] {(color.R / 255f) - 1, (color.G / 255f) - 1, (color.B / 255f) - 1, 0, 1}
+            });
+
+            Bitmap bmp = new Bitmap(imagen.Width, imagen.Height);
+            Graphics gfx = Graphics.FromImage(bmp);
+            ImageAttributes atributosImagen = new ImageAttributes();
+            atributosImagen.SetColorMatrix(matrizColor);
+            gfx.DrawImage(imagen, new Rectangle(0, 0, imagen.Width, imagen.Height), 0, 0, imagen.Width, imagen.Height, GraphicsUnit.Pixel, atributosImagen);
+
+            return bmp;
+        }
         public static void dibujarBordesControl(object sender, PaintEventArgs e, char lado, int tamanio_borde = 1)
         {
             //Definir los parámetros de dibujo pará las líneas

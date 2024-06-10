@@ -18,14 +18,17 @@ namespace SistemaFacturacion.Controlador
         }
         public Respuesta insertarFactura(DTO.Factura factura)
         {
-            int estado_insercion = facturaDao.insertarFactura(factura.getXml());
+            string [] insercion_factura = facturaDao.insertarFactura(factura.getXml());
 
-            bool completado = false;
+            string estado_insercion = insercion_factura[0];
+            string id_factura = insercion_factura[1];
+
             string mensaje = string.Empty;
+            bool completado = false;
 
             switch (estado_insercion)
             {
-                case 0:
+                case "0":
                     mensaje = "La factura fue insertada correctamente";
                     completado = true;
                     break;
@@ -34,7 +37,7 @@ namespace SistemaFacturacion.Controlador
                     break;
             }
 
-            return new Respuesta(completado, mensaje);
+            return new Respuesta(completado, mensaje, id_factura);
         }
         public List<DTO.Factura> listarFacturas(int numero_pagina, int numero_elementos)
         {

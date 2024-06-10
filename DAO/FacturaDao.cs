@@ -1,4 +1,5 @@
-﻿using SistemaFacturacion.Utencilios;
+﻿using SistemaFacturacion.AccesoDatos;
+using SistemaFacturacion.Utencilios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace SistemaFacturacion.DAO
 {
@@ -17,117 +19,66 @@ namespace SistemaFacturacion.DAO
             conexion = new Conexion();
         }
 
-        public int insertarFactura(string xmlFactura)
+        public string [] insertarFactura(string xmlFactura)
         {
-            int estado_insercion = -1;
-            try
+            //Parámetros de salida:
+            SqlParameter estado = new SqlParameter("@estado", SqlDbType.TinyInt);
+            SqlParameter id_factura = new SqlParameter("@id_factura", SqlDbType.BigInt);                        
+
+            estado.Direction = ParameterDirection.Output;
+            id_factura.Direction = ParameterDirection.Output;
+
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
+                new SqlParameter("@xml_factura", xmlFactura),
+                estado,
+                id_factura
+            };
 
-                SqlCommand cmd = new SqlCommand("sp_insertar_factura", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@xml_factura", xmlFactura);
-
-                //Parámetro de salida (estado de la inserción)                
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-
-                //Obtener el estado resultante de la ejecución del procedimiento almacenado
-                cmd.ExecuteNonQuery();
-                estado_insercion = int.Parse(parametro_salida.Value.ToString());
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-            return estado_insercion;
+            return conexion.ejecutarDmlSp("sp_insertar_factura", parametros, 2);
         }
 
         public DataTable listarFactura(int numero_pagina, int numero_elementos)
         {
-            DataTable dtFacturas = new DataTable();
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos),
+            };
 
-                SqlCommand cmd = new SqlCommand("sp_paginacion_listar_facturas", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
+            return conexion.obtenerDatosSp("sp_paginacion_listar_facturas", parametros);
+        }
 
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-
-                dataApdater.SelectCommand = cmd;
-                dataApdater.Fill(dtFacturas);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
+        public DataTable listarDetalleFactura(int id_factura)
+        {
+            SqlParameter[] parametros =
             {
-                System.Windows.Forms.MessageBox.Show(ex + "Test");
-            }
+                new SqlParameter("@id_factura", id_factura)
+            };
 
-            return dtFacturas;
+            return conexion.obtenerDatosSp("sp_paginacion_listar_facturas", parametros);
         }
 
         public DataTable buscarFactura(int numero_pagina, int numero_elementos, string texto_buscar)
         {
-            DataTable dtFacturas = new DataTable();
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
+                new SqlParameter("@texto_buscar", texto_buscar),
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos),
+            };
 
-                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_facturas", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
-
-                dataApdater.SelectCommand = cmd;
-                dataApdater.Fill(dtFacturas);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex + "Test");
-            }
-
-            return dtFacturas;
+            return conexion.obtenerDatosSp("sp_paginacion_buscar_facturas", parametros);
         }
 
-        public DataSet visualizarFactura(int id_factura)
-        {            
-            DataSet ds = new DataSet();
-            try
+        public XmlDocument getXmlFactura(int id_factura)
+        {
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
-                SqlDataAdapter dataApdater = new SqlDataAdapter();
+                new SqlParameter("@id_factura", id_factura)
+            };
 
-                SqlCommand cmd = new SqlCommand("sp_visualizar_factura", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@id_factura", id_factura);
-
-                dataApdater.SelectCommand = cmd;
-                dataApdater.Fill(ds);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex + "Test");
-            }
-
-            return ds;
+            return conexion.obtenerXmlRp("sp_rp_get_factura", parametros);
         }
     }
-
 }

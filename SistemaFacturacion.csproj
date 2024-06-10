@@ -64,6 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos\Conexion.cs" />
+    <Compile Include="AccesoDatos\DatosConexion.cs" />
     <Compile Include="Controlador\ClienteCtrl.cs" />
     <Compile Include="Controlador\FacturaCtrl.cs" />
     <Compile Include="Controlador\ProductoCtrl.cs" />
@@ -82,85 +84,98 @@
     <Compile Include="DTO\Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportesCtrl\FacturaRepCtrl.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Utencilios\Conexion.cs" />
-    <Compile Include="Utencilios\DatosConexion.cs" />
+    <Compile Include="Utencilios\DatosEstaticos.cs" />
     <Compile Include="Utencilios\Disenio.cs" />
     <Compile Include="Utencilios\Mensaje.cs" />
-    <Compile Include="Utencilios\Paginacion.cs" />
+    <Compile Include="Utencilios\Reportes.cs" />
     <Compile Include="Utencilios\Respuesta.cs" />
+    <Compile Include="Utencilios\RespuestaReporte.cs" />
     <Compile Include="Utencilios\XmlParser.cs" />
-    <Compile Include="Vista\Clientes\frmEditarCliente.cs">
+    <Compile Include="Vista\FrmClientes\frmEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Clientes\frmEditarCliente.Designer.cs">
+    <Compile Include="Vista\FrmClientes\frmEditarCliente.Designer.cs">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Clientes\frmListarClientes.cs">
+    <Compile Include="Vista\FrmClientes\frmListarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Clientes\frmListarClientes.Designer.cs">
+    <Compile Include="Vista\FrmClientes\frmListarClientes.Designer.cs">
       <DependentUpon>frmListarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Clientes\frmRegistrarCliente.cs">
+    <Compile Include="Vista\FrmClientes\frmRegistrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Clientes\frmRegistrarCliente.Designer.cs">
+    <Compile Include="Vista\FrmClientes\frmRegistrarCliente.Designer.cs">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Clientes\frmVisualizarCliente.cs">
+    <Compile Include="Vista\FrmClientes\frmVisualizarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Clientes\frmVisualizarCliente.Designer.cs">
+    <Compile Include="Vista\FrmClientes\frmVisualizarCliente.Designer.cs">
       <DependentUpon>frmVisualizarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Factura\frmListarFacturas.cs">
+    <Compile Include="Vista\FrmFacturas\frmListarFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Factura\frmListarFacturas.Designer.cs">
+    <Compile Include="Vista\FrmFacturas\frmListarFacturas.Designer.cs">
       <DependentUpon>frmListarFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Factura\frmRegistrarFactura.cs">
+    <Compile Include="Vista\FrmFacturas\frmRegistrarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Factura\frmRegistrarFactura.Designer.cs">
+    <Compile Include="Vista\FrmFacturas\frmRegistrarFactura.Designer.cs">
       <DependentUpon>frmRegistrarFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Menu\Form21.cs">
+    <Compile Include="Vista\FrmMenu\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Menu\Form21.Designer.cs">
-      <DependentUpon>Form21.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Menu\frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Menu\frmMenu.Designer.cs">
+    <Compile Include="Vista\FrmMenu\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmActualizarProducto.cs">
+    <Compile Include="Vista\FrmMenu\frmMenuVD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmActualizarProducto.Designer.cs">
-      <DependentUpon>frmActualizarProducto.cs</DependentUpon>
+    <Compile Include="Vista\FrmMenu\frmMenuVD.Designer.cs">
+      <DependentUpon>frmMenuVD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmListarProductos.cs">
+    <Compile Include="Vista\FrmMenu\frmMnu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmListarProductos.Designer.cs">
+    <Compile Include="Vista\FrmMenu\frmMnu.Designer.cs">
+      <DependentUpon>frmMnu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmProductos\frmEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmProductos\frmEditarProducto.Designer.cs">
+      <DependentUpon>frmEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmProductos\frmListarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmProductos\frmListarProductos.Designer.cs">
       <DependentUpon>frmListarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmProductoVista.cs">
+    <Compile Include="Vista\FrmProductos\frmVisualizarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmProductoVista.Designer.cs">
-      <DependentUpon>frmProductoVista.cs</DependentUpon>
+    <Compile Include="Vista\FrmProductos\frmVisualizarProducto.Designer.cs">
+      <DependentUpon>frmVisualizarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmRegistrarProducto.cs">
+    <Compile Include="Vista\FrmProductos\frmRegistrarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Productofrm\frmRegistrarProducto.Designer.cs">
+    <Compile Include="Vista\FrmProductos\frmRegistrarProducto.Designer.cs">
       <DependentUpon>frmRegistrarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FrmReportes\frmVisualizarReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmReportes\frmVisualizarReporte.Designer.cs">
+      <DependentUpon>frmVisualizarReporte.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -175,44 +190,49 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\Factura\rep.rdlc" />
-    <EmbeddedResource Include="Reportes\Factura\rpFactura - copia - copia.rdlc" />
-    <EmbeddedResource Include="Vista\Clientes\frmEditarCliente.resx">
+    <EmbeddedResource Include="ReportesRdlc\RepCliente\rpTopClientesVenta.rdlc" />
+    <EmbeddedResource Include="ReportesRdlc\RepFactura\rpFactura.rdlc" />
+    <EmbeddedResource Include="Vista\FrmClientes\frmEditarCliente.resx">
       <DependentUpon>frmEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Clientes\frmListarClientes.resx">
+    <EmbeddedResource Include="Vista\FrmClientes\frmListarClientes.resx">
       <DependentUpon>frmListarClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Clientes\frmRegistrarCliente.resx">
+    <EmbeddedResource Include="Vista\FrmClientes\frmRegistrarCliente.resx">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Clientes\frmVisualizarCliente.resx">
+    <EmbeddedResource Include="Vista\FrmClientes\frmVisualizarCliente.resx">
       <DependentUpon>frmVisualizarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Factura\frmListarFacturas.resx">
+    <EmbeddedResource Include="Vista\FrmFacturas\frmListarFacturas.resx">
       <DependentUpon>frmListarFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Factura\frmRegistrarFactura.resx">
+    <EmbeddedResource Include="Vista\FrmFacturas\frmRegistrarFactura.resx">
       <DependentUpon>frmRegistrarFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Menu\Form21.resx">
-      <DependentUpon>Form21.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Menu\frmMenu.resx">
+    <EmbeddedResource Include="Vista\FrmMenu\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Factura\rpFactura.rdlc" />
-    <EmbeddedResource Include="Vista\Productofrm\frmActualizarProducto.resx">
-      <DependentUpon>frmActualizarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FrmMenu\frmMenuVD.resx">
+      <DependentUpon>frmMenuVD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Productofrm\frmListarProductos.resx">
+    <EmbeddedResource Include="Vista\FrmMenu\frmMnu.resx">
+      <DependentUpon>frmMnu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmProductos\frmEditarProducto.resx">
+      <DependentUpon>frmEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmProductos\frmListarProductos.resx">
       <DependentUpon>frmListarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Productofrm\frmProductoVista.resx">
-      <DependentUpon>frmProductoVista.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FrmProductos\frmVisualizarProducto.resx">
+      <DependentUpon>frmVisualizarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Productofrm\frmRegistrarProducto.resx">
+    <EmbeddedResource Include="Vista\FrmProductos\frmRegistrarProducto.resx">
       <DependentUpon>frmRegistrarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmReportes\frmVisualizarReporte.resx">
+      <DependentUpon>frmVisualizarReporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SistemaFacturacion.DTO.Cliente.datasource" />
@@ -277,6 +297,9 @@
     <None Include="Resources\logo_mejorado3.png" />
     <None Include="Resources\logo_mejorado2.png" />
     <None Include="Resources\logo_mejorado1.png" />
+    <None Include="Resources\search_icon.png" />
+    <None Include="Resources\invoice_icon.png" />
+    <None Include="Resources\cart.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -294,5 +317,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

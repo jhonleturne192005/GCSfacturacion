@@ -1,4 +1,5 @@
-﻿using SistemaFacturacion.Utencilios;
+﻿using SistemaFacturacion.AccesoDatos;
+using SistemaFacturacion.Utencilios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,177 +20,67 @@ namespace SistemaFacturacion.DAO
         }
 
         public int insertarCliente(string xmlCliente)
-        {
-            int estado_insercion = -1;
-            try
+        {          
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
-                
-                SqlCommand cmd = new SqlCommand("sp_insertar_cliente", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
+                new SqlParameter("@xml_cliente", xmlCliente)         
+            };
 
-                cmd.Parameters.AddWithValue("@xml_cliente", xmlCliente);
-
-                //Parámetro de salida (estado de la inserción)                
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-
-                //Obtener el estado resultante de la ejecución del procedimiento almacenado
-                cmd.ExecuteNonQuery();
-                estado_insercion = int.Parse(parametro_salida.Value.ToString());
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                conexion.CerrarConexion();
-            }
-
-            return estado_insercion;
+            return conexion.ejecutarDmlSp("sp_insertar_cliente", parametros);
         }
 
         public int modificarCliente(string xmlCliente)
         {
-            int estado_modificacion = -1;
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
+                new SqlParameter("@xml_cliente", xmlCliente),
+            };
 
-                SqlCommand cmd = new SqlCommand("sp_modificar_cliente", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@xml_cliente", xmlCliente);
-
-                //Parámetro de salida(estado de la inserción)
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-
-                //Obtener el estado resultante de la ejecución del procedimiento almacenado
-                cmd.ExecuteNonQuery();
-                estado_modificacion = int.Parse(parametro_salida.Value.ToString());
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                conexion.CerrarConexion();
-            }
-
-            return estado_modificacion;
+            return conexion.ejecutarDmlSp("sp_modificar_cliente", parametros);
         }
 
         public int eliminarCliente(string id_cliente)
-        {
-            int estado_eliminacion = -1;
+        {            
 
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
+                new SqlParameter("@id_cliente", id_cliente),
+            };
 
-                SqlCommand cmd = new SqlCommand("sp_eliminar_cliente", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
-
-                //Parámetro de salida(estado de la inserción)
-                SqlParameter parametro_salida = new SqlParameter("@estado", SqlDbType.TinyInt);
-                parametro_salida.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro_salida);
-
-                //Obtener el estado resultante de la ejecución del procedimiento almacenado
-                cmd.ExecuteNonQuery();
-                estado_eliminacion = int.Parse(parametro_salida.Value.ToString());
-
-
-                conexion.CerrarConexion();
-            }
-            catch(Exception ex)
-            {
-                conexion.CerrarConexion();
-            }
-
-            return estado_eliminacion;
+            return conexion.ejecutarDmlSp("sp_eliminar_cliente", parametros);            
         }
 
         public DataTable listarClientes(int numero_pagina, int numero_elementos)
         {
-            DataTable dataTable = new DataTable();
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos),
+            };
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_paginacion_listar_clientes", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-                
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-                
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                conexion.CerrarConexion();
-            }
-
-            return dataTable;
+            return conexion.obtenerDatosSp("sp_paginacion_listar_clientes", parametros);
         }
 
         public DataTable buscarClientes(int numero_pagina, int numero_elementos, string texto_buscar)
         {
-            DataTable dataTable = new DataTable();
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
+                new SqlParameter("@texto_buscar", texto_buscar),
+                new SqlParameter("@numero_pagina", numero_pagina),
+                new SqlParameter("@numero_elementos", numero_elementos),
+            };
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_paginacion_buscar_cliente", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@texto_buscar", texto_buscar);
-                cmd.Parameters.AddWithValue("@numero_pagina", numero_pagina);
-                cmd.Parameters.AddWithValue("@numero_elementos", numero_elementos);
-
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                conexion.CerrarConexion();
-            }
-
-            return dataTable;
+            return conexion.obtenerDatosSp("sp_paginacion_buscar_cliente", parametros);
         }
 
         public DataTable getCliente(string id_cliente)
         {
-            DataTable dataTable = new DataTable();
-            try
+            SqlParameter[] parametros =
             {
-                conexion.AbrirConexion();
+                new SqlParameter("@id_cliente", id_cliente)              
+            };
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter();
-                SqlCommand cmd = new SqlCommand("sp_get_cliente", conexion.ConexionSQL);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
-
-                dataAdapter.SelectCommand = cmd;
-                dataAdapter.Fill(dataTable);
-
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                conexion.CerrarConexion();
-            }
-
-            return dataTable;
+            return conexion.obtenerDatosSp("sp_get_cliente", parametros);            
         }
 
     }
