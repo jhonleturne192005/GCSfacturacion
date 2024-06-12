@@ -30,6 +30,7 @@ namespace SistemaFacturacion.Vista.Productofrm
 
         private void cargarDGV(DataGridView dgv, List<DTO.Producto> data)
         {
+            ELEMENTOS_OBTENIDOS = data.Count;
             lstProductos = data;
 
             //Reiniciar la cantidad de filas del datagridview
@@ -39,7 +40,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             int filas_dgv = ELEMENTOS_OBTENIDOS == ELEMENTOS_PAGINA ? ELEMENTOS_OBTENIDOS - 1 : ELEMENTOS_OBTENIDOS;
 
             //Establecer los datos de la página actual en el dgv            
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < filas_dgv; i++)
             {
                 int fila_indice = dgv.Rows.Add();
                 dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_producto;
@@ -47,6 +48,9 @@ namespace SistemaFacturacion.Vista.Productofrm
                 dgv.Rows[fila_indice].Cells[2].Value = data[i].Precio_unitario;
                 dgv.Rows[fila_indice].Cells[3].Value = data[i].Iva;
             }
+
+            aplicarPaginacion();
+
         }
         private void aplicarPaginacion()
         {
@@ -77,7 +81,7 @@ namespace SistemaFacturacion.Vista.Productofrm
         {
             PAGINA_ACTUAL = PAGINA_ACTUAL + 1;
             cargarDGV(dgvProducto, productoCtrl.buscarProducto(PAGINA_ACTUAL, ELEMENTOS_PAGINA, txtTextoBuscar.Text));
-            aplicarPaginacion();
+            
         }
 
         private void btnPagAnterior_Click(object sender, EventArgs e)
@@ -107,14 +111,13 @@ namespace SistemaFacturacion.Vista.Productofrm
             {
                 eliminarProducto(id_producto);
                 cargarDGV(dgvProducto, productoCtrl.buscarProducto(PAGINA_ACTUAL, ELEMENTOS_PAGINA, txtTextoBuscar.Text));
+                aplicarPaginacion();
             }
             else if (e.ColumnIndex == modificar_indice)
             {
                 frmEditarProducto frmVerCliente = new frmEditarProducto(id_producto);
-                frmVerCliente.Show();
-
-                cargarDGV(dgvProducto, productoCtrl.buscarProducto(PAGINA_ACTUAL, ELEMENTOS_PAGINA, txtTextoBuscar.Text));
-            }
+                frmVerCliente.ShowDialog();
+                cargarDGV(dgvProducto, productoCtrl.buscarProducto(PAGINA_ACTUAL, ELEMENTOS_PAGINA, txtTextoBuscar.Text));            }
             else if (e.ColumnIndex == visualizar_indice)
             {
                 frmVisualizarProducto frmproductovista = new frmVisualizarProducto(id_producto);
@@ -143,7 +146,7 @@ namespace SistemaFacturacion.Vista.Productofrm
 
             //Cargar los datos en el datagridview
             cargarDGV(dgvProducto, productoCtrl.listarProductos(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
-
+            //aplicarPaginacion();
 
             //Dibujar los bordes según los lados deseados
             pnlEncabezado.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
