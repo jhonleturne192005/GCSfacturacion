@@ -49,16 +49,6 @@ namespace SistemaFacturacion.DAO
             return conexion.obtenerDatosSp("sp_paginacion_listar_facturas", parametros);
         }
 
-        public DataTable listarDetalleFactura(int id_factura)
-        {
-            SqlParameter[] parametros =
-            {
-                new SqlParameter("@id_factura", id_factura)
-            };
-
-            return conexion.obtenerDatosSp("sp_paginacion_listar_facturas", parametros);
-        }
-
         public DataTable buscarFactura(int numero_pagina, int numero_elementos, string texto_buscar)
         {
             SqlParameter[] parametros =

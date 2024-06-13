@@ -44,10 +44,10 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlClientes = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.pnlInterfaz = new System.Windows.Forms.Panel();
-            this.pnlMenuIzquierdo = new System.Windows.Forms.Panel();
-            this.pnlEncFormulario = new System.Windows.Forms.Panel();
             this.pnlFormulario = new System.Windows.Forms.Panel();
+            this.pnlEncFormulario = new System.Windows.Forms.Panel();
             this.lblTituloForm = new System.Windows.Forms.Label();
+            this.pnlMenuIzquierdo = new System.Windows.Forms.Panel();
             this.pnlImagen.SuspendLayout();
             this.pnlSubmenus.SuspendLayout();
             this.pnlFacturar.SuspendLayout();
@@ -55,8 +55,8 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlProductos.SuspendLayout();
             this.pnlClientes.SuspendLayout();
             this.pnlInterfaz.SuspendLayout();
-            this.pnlMenuIzquierdo.SuspendLayout();
             this.pnlEncFormulario.SuspendLayout();
+            this.pnlMenuIzquierdo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlImagen
@@ -243,19 +243,13 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlInterfaz.Size = new System.Drawing.Size(1103, 668);
             this.pnlInterfaz.TabIndex = 5;
             // 
-            // pnlMenuIzquierdo
+            // pnlFormulario
             // 
-            this.pnlMenuIzquierdo.AutoScroll = true;
-            this.pnlMenuIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.pnlMenuIzquierdo.Controls.Add(this.pnlSubmenus);
-            this.pnlMenuIzquierdo.Controls.Add(this.pnlImagen);
-            this.pnlMenuIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenuIzquierdo.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenuIzquierdo.MaximumSize = new System.Drawing.Size(180, 668);
-            this.pnlMenuIzquierdo.MinimumSize = new System.Drawing.Size(60, 668);
-            this.pnlMenuIzquierdo.Name = "pnlMenuIzquierdo";
-            this.pnlMenuIzquierdo.Size = new System.Drawing.Size(180, 668);
-            this.pnlMenuIzquierdo.TabIndex = 4;
+            this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFormulario.Location = new System.Drawing.Point(2, 56);
+            this.pnlFormulario.Name = "pnlFormulario";
+            this.pnlFormulario.Size = new System.Drawing.Size(1101, 612);
+            this.pnlFormulario.TabIndex = 2;
             // 
             // pnlEncFormulario
             // 
@@ -265,14 +259,6 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlEncFormulario.Name = "pnlEncFormulario";
             this.pnlEncFormulario.Size = new System.Drawing.Size(1101, 56);
             this.pnlEncFormulario.TabIndex = 1;
-            // 
-            // pnlFormulario
-            // 
-            this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormulario.Location = new System.Drawing.Point(2, 56);
-            this.pnlFormulario.Name = "pnlFormulario";
-            this.pnlFormulario.Size = new System.Drawing.Size(1101, 612);
-            this.pnlFormulario.TabIndex = 2;
             // 
             // lblTituloForm
             // 
@@ -286,6 +272,20 @@ namespace SistemaFacturacion.Vista.Menu
             this.lblTituloForm.Size = new System.Drawing.Size(169, 21);
             this.lblTituloForm.TabIndex = 6;
             this.lblTituloForm.Text = "Título del formulario";
+            // 
+            // pnlMenuIzquierdo
+            // 
+            this.pnlMenuIzquierdo.AutoScroll = true;
+            this.pnlMenuIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlMenuIzquierdo.Controls.Add(this.pnlSubmenus);
+            this.pnlMenuIzquierdo.Controls.Add(this.pnlImagen);
+            this.pnlMenuIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenuIzquierdo.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuIzquierdo.MaximumSize = new System.Drawing.Size(180, 668);
+            this.pnlMenuIzquierdo.MinimumSize = new System.Drawing.Size(60, 668);
+            this.pnlMenuIzquierdo.Name = "pnlMenuIzquierdo";
+            this.pnlMenuIzquierdo.Size = new System.Drawing.Size(180, 668);
+            this.pnlMenuIzquierdo.TabIndex = 4;
             // 
             // frmMnu
             // 
@@ -305,9 +305,9 @@ namespace SistemaFacturacion.Vista.Menu
             this.pnlProductos.ResumeLayout(false);
             this.pnlClientes.ResumeLayout(false);
             this.pnlInterfaz.ResumeLayout(false);
-            this.pnlMenuIzquierdo.ResumeLayout(false);
             this.pnlEncFormulario.ResumeLayout(false);
             this.pnlEncFormulario.PerformLayout();
+            this.pnlMenuIzquierdo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

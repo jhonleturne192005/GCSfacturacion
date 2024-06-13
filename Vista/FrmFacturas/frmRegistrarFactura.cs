@@ -51,7 +51,14 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void restaurarCodigoProductoFactura(int indice_fila)
         {
-            dgvProductosFactura.Rows[indice_fila].Cells[0].Value = dgvProductosFactura.Rows[indice_fila].Cells[6].Value;
+            try
+            {
+                dgvProductosFactura.Rows[indice_fila].Cells[0].Value = dgvProductosFactura.Rows[indice_fila].Cells[6].Value;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void actualizarDetalleDGV(int indice_fila, DTO.FacturaDetalle detalle)
@@ -152,6 +159,8 @@ namespace SistemaFacturacion.Vista.Factura
         
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             //Obtener el producto seleccionado por el usuario
             fila_producto_seleccionada = e.RowIndex;
         }
@@ -169,6 +178,7 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             if (dgvProductos.RowCount == 0) return;
 
             //Obtener el producto seleccionado
@@ -180,13 +190,15 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void dgvProductosFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             //Obtener la celda que se finalizó de editar
             DataGridViewCell dgvFilaSeleccionada = dgvProductosFactura.Rows[e.RowIndex].Cells[e.ColumnIndex];
             bool se_inserto_producto = false;
 
             //Modificación del código del producto
-            if (e.ColumnIndex == 0) { 
-
+            if (e.ColumnIndex == 0)
+            {               
                 //Verificar que el valor de la celda no sea nulo, sí es nulo restaurar al valor previo
                 if (dgvFilaSeleccionada.Value == null)
                 {
@@ -196,7 +208,11 @@ namespace SistemaFacturacion.Vista.Factura
 
                 //Verificar que el valor ingresado sea numérico
                 int id_producto = 0;
-                if (!int.TryParse(dgvFilaSeleccionada.Value.ToString(), out id_producto)) return;
+                if (!int.TryParse(dgvFilaSeleccionada.Value.ToString(), out id_producto))
+                {
+                    restaurarCodigoProductoFactura(e.RowIndex);
+                    return;
+                }
 
                 //Verificar si es posible agregar el producto a lista de detalle de la factura
                 se_inserto_producto = agregarProductoFactura(e.RowIndex, id_producto);
@@ -225,8 +241,7 @@ namespace SistemaFacturacion.Vista.Factura
                 {
                     cantidad = 1;
                 }
-
-                if (cantidad < 0)
+                if (cantidad <= 0)
                 {
                     cantidad = 1;
                 }
@@ -242,7 +257,11 @@ namespace SistemaFacturacion.Vista.Factura
         }
         private void dgvProductosFactura_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            //Validar que puedan eliminarse los valores
             if (e.RowIndex < 0) return;
+
+            //Verificar que la fila a eliminar exista en la lista del detalle de la factura
+            if (facturaDto.Factura_Detalle.Count >= e.RowIndex) return;
 
             //Remover de la lista de productos el índice seleccionado
             facturaDto.Factura_Detalle.RemoveAt(e.RowIndex);
@@ -317,11 +336,21 @@ namespace SistemaFacturacion.Vista.Factura
                     frmVisualizarReporte frmReporte = new frmVisualizarReporte(facturaRep.getFactura(int.Parse(r.Id)));
                     frmReporte.Show();
                 }
+
+                //Reiniciar el formulario
+                this.Close();
+                frmMenuVD.frmMenu.abrirFormulario(new frmRegistrarFactura());
             }
 
-            //Reiniciar el formulario
-            this.Close();
-            frmMenuVD.frmMenu.abrirFormulario(new frmRegistrarFactura());
+        }
+
+        private void dgvProductosFactura_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            //No permitir eliminar si solo existe una fila en el detalle
+            if (dgvProductosFactura.RowCount <= 1)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

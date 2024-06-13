@@ -41,6 +41,14 @@ namespace SistemaFacturacion.Vista.Factura
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblNumeroRegistros = new System.Windows.Forms.Label();
             this.pnlDgvClientes = new System.Windows.Forms.Panel();
+            this.dgvFacturas = new System.Windows.Forms.DataGridView();
+            this.txtIDFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtImpuestosFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtFechaFacturaa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerFactura = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlOpcionesDgv = new System.Windows.Forms.Panel();
             this.lblTituloNumRegistros = new System.Windows.Forms.Label();
             this.btnPagAnterior = new System.Windows.Forms.Button();
@@ -51,22 +59,14 @@ namespace SistemaFacturacion.Vista.Factura
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvFacturas = new System.Windows.Forms.DataGridView();
-            this.txtIDFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtImpuestosFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTotalFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtFechaFacturaa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVerFactura = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlOpcionesEncabezado.SuspendLayout();
             this.pnlContenedorBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlDgvClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             this.pnlOpcionesDgv.SuspendLayout();
             this.pnlDatosClientes.SuspendLayout();
             this.pnlEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlOpcionesEncabezado
@@ -149,117 +149,6 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlDgvClientes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.pnlDgvClientes.Size = new System.Drawing.Size(1002, 420);
             this.pnlDgvClientes.TabIndex = 9;
-            // 
-            // pnlOpcionesDgv
-            // 
-            this.pnlOpcionesDgv.Controls.Add(this.lblTituloNumRegistros);
-            this.pnlOpcionesDgv.Controls.Add(this.lblNumeroRegistros);
-            this.pnlOpcionesDgv.Controls.Add(this.btnPagAnterior);
-            this.pnlOpcionesDgv.Controls.Add(this.btnPagSiguiente);
-            this.pnlOpcionesDgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlOpcionesDgv.Location = new System.Drawing.Point(0, 482);
-            this.pnlOpcionesDgv.Name = "pnlOpcionesDgv";
-            this.pnlOpcionesDgv.Size = new System.Drawing.Size(1002, 60);
-            this.pnlOpcionesDgv.TabIndex = 8;
-            // 
-            // lblTituloNumRegistros
-            // 
-            this.lblTituloNumRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTituloNumRegistros.AutoSize = true;
-            this.lblTituloNumRegistros.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTituloNumRegistros.Location = new System.Drawing.Point(7, 19);
-            this.lblTituloNumRegistros.Name = "lblTituloNumRegistros";
-            this.lblTituloNumRegistros.Size = new System.Drawing.Size(80, 19);
-            this.lblTituloNumRegistros.TabIndex = 3;
-            this.lblTituloNumRegistros.Text = "Mostrando:";
-            // 
-            // btnPagAnterior
-            // 
-            this.btnPagAnterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPagAnterior.BackColor = System.Drawing.Color.White;
-            this.btnPagAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPagAnterior.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPagAnterior.Location = new System.Drawing.Point(765, 14);
-            this.btnPagAnterior.Name = "btnPagAnterior";
-            this.btnPagAnterior.Size = new System.Drawing.Size(108, 32);
-            this.btnPagAnterior.TabIndex = 1;
-            this.btnPagAnterior.Text = "<< Anterior";
-            this.btnPagAnterior.UseVisualStyleBackColor = false;
-            this.btnPagAnterior.Click += new System.EventHandler(this.btnPagAnterior_Click);
-            // 
-            // btnPagSiguiente
-            // 
-            this.btnPagSiguiente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPagSiguiente.BackColor = System.Drawing.Color.White;
-            this.btnPagSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPagSiguiente.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPagSiguiente.Location = new System.Drawing.Point(879, 14);
-            this.btnPagSiguiente.Name = "btnPagSiguiente";
-            this.btnPagSiguiente.Size = new System.Drawing.Size(111, 32);
-            this.btnPagSiguiente.TabIndex = 6;
-            this.btnPagSiguiente.Text = "Siguiente >>";
-            this.btnPagSiguiente.UseVisualStyleBackColor = false;
-            this.btnPagSiguiente.Click += new System.EventHandler(this.btnPagSiguiente_Click);
-            // 
-            // pnlDatosClientes
-            // 
-            this.pnlDatosClientes.Controls.Add(this.pnlDgvClientes);
-            this.pnlDatosClientes.Controls.Add(this.pnlOpcionesDgv);
-            this.pnlDatosClientes.Controls.Add(this.pnlOpcionesEncabezado);
-            this.pnlDatosClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDatosClientes.Location = new System.Drawing.Point(0, 50);
-            this.pnlDatosClientes.Name = "pnlDatosClientes";
-            this.pnlDatosClientes.Size = new System.Drawing.Size(1002, 542);
-            this.pnlDatosClientes.TabIndex = 9;
-            // 
-            // pnlEncabezado
-            // 
-            this.pnlEncabezado.Controls.Add(this.lblTitulo);
-            this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
-            this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(1002, 50);
-            this.pnlEncabezado.TabIndex = 8;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(15, 17);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(69, 21);
-            this.lblTitulo.TabIndex = 5;
-            this.lblTitulo.Text = "Facturas";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Modificar";
-            this.dataGridViewImageColumn1.Image = global::SistemaFacturacion.Properties.Resources.editar;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 137;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn3.Image = global::SistemaFacturacion.Properties.Resources.borrar;
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 136;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn2.Image = global::SistemaFacturacion.Properties.Resources.borrar;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 136;
             // 
             // dgvFacturas
             // 
@@ -375,6 +264,117 @@ namespace SistemaFacturacion.Vista.Factura
             this.btnVerFactura.ReadOnly = true;
             this.btnVerFactura.Width = 37;
             // 
+            // pnlOpcionesDgv
+            // 
+            this.pnlOpcionesDgv.Controls.Add(this.lblTituloNumRegistros);
+            this.pnlOpcionesDgv.Controls.Add(this.lblNumeroRegistros);
+            this.pnlOpcionesDgv.Controls.Add(this.btnPagAnterior);
+            this.pnlOpcionesDgv.Controls.Add(this.btnPagSiguiente);
+            this.pnlOpcionesDgv.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlOpcionesDgv.Location = new System.Drawing.Point(0, 482);
+            this.pnlOpcionesDgv.Name = "pnlOpcionesDgv";
+            this.pnlOpcionesDgv.Size = new System.Drawing.Size(1002, 60);
+            this.pnlOpcionesDgv.TabIndex = 8;
+            // 
+            // lblTituloNumRegistros
+            // 
+            this.lblTituloNumRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTituloNumRegistros.AutoSize = true;
+            this.lblTituloNumRegistros.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblTituloNumRegistros.Location = new System.Drawing.Point(7, 19);
+            this.lblTituloNumRegistros.Name = "lblTituloNumRegistros";
+            this.lblTituloNumRegistros.Size = new System.Drawing.Size(80, 19);
+            this.lblTituloNumRegistros.TabIndex = 3;
+            this.lblTituloNumRegistros.Text = "Mostrando:";
+            // 
+            // btnPagAnterior
+            // 
+            this.btnPagAnterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPagAnterior.BackColor = System.Drawing.Color.White;
+            this.btnPagAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPagAnterior.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPagAnterior.Location = new System.Drawing.Point(765, 14);
+            this.btnPagAnterior.Name = "btnPagAnterior";
+            this.btnPagAnterior.Size = new System.Drawing.Size(108, 32);
+            this.btnPagAnterior.TabIndex = 1;
+            this.btnPagAnterior.Text = "<< Anterior";
+            this.btnPagAnterior.UseVisualStyleBackColor = false;
+            this.btnPagAnterior.Click += new System.EventHandler(this.btnPagAnterior_Click);
+            // 
+            // btnPagSiguiente
+            // 
+            this.btnPagSiguiente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPagSiguiente.BackColor = System.Drawing.Color.White;
+            this.btnPagSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPagSiguiente.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPagSiguiente.Location = new System.Drawing.Point(879, 14);
+            this.btnPagSiguiente.Name = "btnPagSiguiente";
+            this.btnPagSiguiente.Size = new System.Drawing.Size(111, 32);
+            this.btnPagSiguiente.TabIndex = 6;
+            this.btnPagSiguiente.Text = "Siguiente >>";
+            this.btnPagSiguiente.UseVisualStyleBackColor = false;
+            this.btnPagSiguiente.Click += new System.EventHandler(this.btnPagSiguiente_Click);
+            // 
+            // pnlDatosClientes
+            // 
+            this.pnlDatosClientes.Controls.Add(this.pnlDgvClientes);
+            this.pnlDatosClientes.Controls.Add(this.pnlOpcionesDgv);
+            this.pnlDatosClientes.Controls.Add(this.pnlOpcionesEncabezado);
+            this.pnlDatosClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDatosClientes.Location = new System.Drawing.Point(0, 50);
+            this.pnlDatosClientes.Name = "pnlDatosClientes";
+            this.pnlDatosClientes.Size = new System.Drawing.Size(1002, 542);
+            this.pnlDatosClientes.TabIndex = 9;
+            // 
+            // pnlEncabezado
+            // 
+            this.pnlEncabezado.Controls.Add(this.lblTitulo);
+            this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
+            this.pnlEncabezado.Name = "pnlEncabezado";
+            this.pnlEncabezado.Size = new System.Drawing.Size(1002, 50);
+            this.pnlEncabezado.TabIndex = 8;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(15, 17);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(69, 21);
+            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.Text = "Facturas";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Modificar";
+            this.dataGridViewImageColumn1.Image = global::SistemaFacturacion.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 137;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn3.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 136;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 136;
+            // 
             // frmListarFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,12 +393,12 @@ namespace SistemaFacturacion.Vista.Factura
             this.pnlContenedorBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlDgvClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             this.pnlOpcionesDgv.ResumeLayout(false);
             this.pnlOpcionesDgv.PerformLayout();
             this.pnlDatosClientes.ResumeLayout(false);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             this.ResumeLayout(false);
 
         }
