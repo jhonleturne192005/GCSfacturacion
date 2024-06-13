@@ -12,6 +12,7 @@ namespace SistemaFacturacion.DTO
     {
         public int Id_factura { get; set; }
         public Cliente Id_cliente { get; set; }
+        public string Fecha { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Total { get; set; }
         public List<FacturaDetalle> Factura_Detalle { get; set; }

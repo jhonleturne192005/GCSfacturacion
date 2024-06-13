@@ -172,6 +172,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegistrarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Producto";
             this.Load += new System.EventHandler(this.frmRegistrarProducto_Load);
             this.panel3.ResumeLayout(false);

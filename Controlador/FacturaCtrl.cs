@@ -56,8 +56,10 @@ namespace SistemaFacturacion.Controlador
                 facturaDto.Id_cliente.Apellidos = drfactura[2].ToString();
                 facturaDto.Id_cliente.Nombres = drfactura[3].ToString();
 
-                facturaDto.Subtotal = decimal.Parse(drfactura[4].ToString());
-                facturaDto.Total = decimal.Parse(drfactura[5].ToString());
+                facturaDto.Fecha = drfactura[4].ToString();
+
+                facturaDto.Subtotal = decimal.Parse(drfactura[5].ToString());
+                facturaDto.Total = decimal.Parse(drfactura[6].ToString());
 
                 lstFacturas.Add(facturaDto);
             }
@@ -81,8 +83,10 @@ namespace SistemaFacturacion.Controlador
                 facturaDto.Id_cliente.Apellidos = drfactura[2].ToString();
                 facturaDto.Id_cliente.Nombres = drfactura[3].ToString();
 
-                facturaDto.Subtotal = decimal.Parse(drfactura[4].ToString());
-                facturaDto.Total = decimal.Parse(drfactura[5].ToString());
+                facturaDto.Fecha = drfactura[4].ToString();
+
+                facturaDto.Subtotal = decimal.Parse(drfactura[5].ToString());
+                facturaDto.Total = decimal.Parse(drfactura[6].ToString());
 
                 lstFacturas.Add(facturaDto);
             }

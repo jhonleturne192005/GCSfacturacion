@@ -45,8 +45,8 @@ namespace SistemaFacturacion.Vista.Productofrm
                 int fila_indice = dgv.Rows.Add();
                 dgv.Rows[fila_indice].Cells[0].Value = data[i].Id_producto;
                 dgv.Rows[fila_indice].Cells[1].Value = data[i].Nombre_producto;
-                dgv.Rows[fila_indice].Cells[2].Value = data[i].Precio_unitario;
-                dgv.Rows[fila_indice].Cells[3].Value = data[i].Iva;
+                dgv.Rows[fila_indice].Cells[2].Value = Math.Round(data[i].Precio_unitario, 2);
+                dgv.Rows[fila_indice].Cells[3].Value = Math.Round(data[i].Iva, 2);
             }
 
             aplicarPaginacion();

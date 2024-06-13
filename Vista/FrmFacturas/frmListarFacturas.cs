@@ -71,6 +71,7 @@ namespace SistemaFacturacion.Vista.Factura
                 dgv.Rows[fila_indice].Cells[2].Value = Math.Round(data[i].Subtotal, 2);
                 dgv.Rows[fila_indice].Cells[3].Value = Math.Round(data[i].Total - data[i].Subtotal, 2);
                 dgv.Rows[fila_indice].Cells[4].Value = Math.Round(data[i].Total, 2);
+                dgv.Rows[fila_indice].Cells[5].Value = DateTime.Parse(data[i].Fecha).ToString("dd-MM-yyyy");
             }
 
             //Posterior a la carga de datos, habilitar o no las opciones de cambio
@@ -100,11 +101,6 @@ namespace SistemaFacturacion.Vista.Factura
 
             int id_factura = int.Parse(dgvFacturas.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            if (e.ColumnIndex == dgvFacturas.ColumnCount)
-            {
-                Form1 frmReporte = new Form1();
-                frmReporte.Show();
-            }
             if (e.ColumnIndex == dgvFacturas.ColumnCount - 1)
             {
                 FacturaRepCtrl facturaRep = new FacturaRepCtrl();
