@@ -334,7 +334,7 @@ namespace SistemaFacturacion.Vista.Factura
                 if (visualizar)
                 {                    
                     frmVisualizarReporte frmReporte = new frmVisualizarReporte(facturaRep.getFactura(int.Parse(r.Id)));
-                    frmReporte.Show();
+                    frmReporte.ShowDialog();
                 }
 
                 //Reiniciar el formulario
