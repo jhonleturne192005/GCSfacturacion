@@ -1,3 +1,5 @@
+SISTEMA DE FACTURACIÓN
+
 Este repositorio contiene todos los items de configuración de software (ICS) correspondientes al Sistema de Facturación. En este repositorio podrá encontrar la planificación de la línea base; o, en otras palabras la versión inicial del sistema.
 
 También, encontrará la documentación técnica (que se encuentra en la carpeta con el mismo nombre), que contiene la metodología seleccionada, los desarrolladores, roles, casos de uso extendidos y diagramas especificados.
