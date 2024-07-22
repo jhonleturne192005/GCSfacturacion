@@ -76,7 +76,9 @@ namespace SistemaFacturacion.Vista.FrmMenu
 
             //Cargar los datos de la sesión activa
             if (DatosSesion.Empleado == null) return;
-            
+            if (DatosSesion.Empleado.Usuario == null) return;
+            if (DatosSesion.Empleado.Usuario.Tipo_usuario == null) return;
+
             //Cargar el nombre en el formulario
             lblNombreUsuario.Text = DatosSesion.Empleado.Usuario.Nombre_usuario;
             lblRol.Text = DatosSesion.Empleado.Usuario.Tipo_usuario.Tipo_usuario;

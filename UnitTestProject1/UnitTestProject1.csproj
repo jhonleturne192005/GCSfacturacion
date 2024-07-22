@@ -62,7 +62,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PROYECTO\SistemaFacturacion.csproj">
+    <ProjectReference Include="..\Código fuente\SistemaFacturacion.csproj">
       <Project>{f51d8fca-c6c2-4f03-83da-e3a96b5883c4}</Project>
       <Name>SistemaFacturacion</Name>
     </ProjectReference>

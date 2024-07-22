@@ -51,16 +51,16 @@ namespace SistemaFacturacion.Vista.Clientes
                 cliente_seleccionado = null;
 
                 //Configurar los componentes de diseño
-                btnAgregar.Visible = false;
+                //btnAgregar.Visible = false;
                 btnSeleccionar.Visible = true;
-                btnSeleccionar.Location = btnAgregar.Location;
+                //btnSeleccionar.Location = btnAgregar.Location;
 
                 dgvCliente.MultiSelect = false;
 
                 //Esconder los elementos de transacción del dgv
                 //Orden: Eliminar, modificar, visualizar
                 dgvCliente.Columns[dgvCliente.Columns.Count - 1].Visible = false;
-                dgvCliente.Columns[dgvCliente.Columns.Count - 2].Visible = false;
+                dgvCliente.Columns[dgvCliente.Columns.Count - 2].Visible = true;
                 dgvCliente.Columns[dgvCliente.Columns.Count - 3].Visible = true;
             }
         }
