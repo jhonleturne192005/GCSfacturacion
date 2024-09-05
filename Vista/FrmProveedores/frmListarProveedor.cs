@@ -182,6 +182,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             {
                 eliminarProveedor(idProveedor);
                 actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
+                return;
             }
             else if (e.ColumnIndex == modificar_indice)
             {
@@ -196,9 +197,10 @@ namespace SistemaFacturacion.Vista.FrmProveedores
                 frmVerCliente.ShowDialog();
             }
 
-            proveedor_seleccionado = proveedorLst[e.RowIndex];
-
-
+            if (SELECCIONAR)
+            {
+                proveedor_seleccionado = proveedorLst[e.RowIndex];
+            }
         }
 
         private void eliminarProveedor(int id_cliente)
