@@ -205,7 +205,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
 
         private void eliminarProveedor(int id_cliente)
         {
-            bool desea_eliminar = Mensaje.pregunta($"¿Está seguro que desea eliminar al Proveedor con la identificación {id_cliente}?");
+            bool desea_eliminar = Mensaje.pregunta($"¿Está seguro que desea eliminar al Proveedor?");
             if (desea_eliminar)
             {
                 Respuesta r = proveedorCtrl.eliminarProveedor(id_cliente);
