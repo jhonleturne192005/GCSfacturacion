@@ -94,7 +94,13 @@ namespace SistemaFacturacion.Vista.Productofrm
                 return;
             }
 
-            if (txtProveedor.Text.Trim() == "")
+            if (proveedor == null)
+            {
+                Mensaje.advertencia("Debe seleccionar un proveedor");
+                return;
+            }
+
+            if (txtCedulaProveedor.Text.Trim() == "")
             {
                 Mensaje.advertencia("Debe seleccionar un proveedor");
                 return;
@@ -104,6 +110,8 @@ namespace SistemaFacturacion.Vista.Productofrm
             productoDto.Nombre_producto = nombre_producto;
             productoDto.Precio_unitario = precio_unitario;
             productoDto.Iva = iva;
+
+            //Asignar el objeto proveedor al producto para su posterior inserción
             productoDto.Proveedor = this.proveedor;
 
             //Ejecutar el procedimiento para la inserción del producto
@@ -121,13 +129,15 @@ namespace SistemaFacturacion.Vista.Productofrm
             frmListarProveedor frmSeleccionar = new frmListarProveedor(seleccionar: true);
             frmSeleccionar.ShowDialog();
 
-            //Solo sí se seleccionó un cliente establecer los valores
+            //Solo sí se seleccionó un proveedor establecer los valores
             if (frmSeleccionar.proveedor_seleccionado != null)
             {
                 this.proveedor = frmSeleccionar.proveedor_seleccionado;
-                txtProveedor.Text = frmSeleccionar.proveedor_seleccionado.Apellidos + " "+
+
+                this.txtCedulaProveedor.Text = frmSeleccionar.proveedor_seleccionado.Cedula;
+                this.txtNombreProveedor.Text = frmSeleccionar.proveedor_seleccionado.Apellidos + " " +
                     frmSeleccionar.proveedor_seleccionado.Nombres;
-                
+
             }
         }
 

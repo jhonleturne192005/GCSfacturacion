@@ -50,7 +50,9 @@ namespace SistemaFacturacion.Vista.Productofrm
                 txtNombreProducto.Text = productoDto.Nombre_producto;
                 txtPrecioUnitario.Text = productoDto.Precio_unitario.ToString();
                 txtIva.Text = productoDto.Iva.ToString();
-                txtProveedor.Text = $"{this.proveedor.Apellidos}";
+
+                txtNombreProveedor.Text = $"{this.proveedor.Apellidos} {this.proveedor.Nombres}";
+                txtCedulaProveedor.Text = $"{this.proveedor.Cedula}";
             }
 
             pnlEncabezado.Paint += (s, ev) => Disenio.dibujarBordesControl(s, ev, 'D');
@@ -116,7 +118,14 @@ namespace SistemaFacturacion.Vista.Productofrm
                 Mensaje.advertencia("El IVA debe estar en un porcentaje entre 0 y 100");
                 return;
             }
-            if (txtProveedor.Text.Trim() == "")
+
+            if (proveedor == null)
+            {
+                Mensaje.advertencia("Debe seleccionar un proveedor");
+                return;
+            }
+
+            if (txtCedulaProveedor.Text.Trim() == "")
             {
                 Mensaje.advertencia("Debe seleccionar un proveedor");
                 return;
@@ -147,7 +156,9 @@ namespace SistemaFacturacion.Vista.Productofrm
             if (frmSeleccionar.proveedor_seleccionado != null)
             {
                 this.proveedor = frmSeleccionar.proveedor_seleccionado;
-                txtProveedor.Text = frmSeleccionar.proveedor_seleccionado.Apellidos + " " +
+
+                this.txtCedulaProveedor.Text = frmSeleccionar.proveedor_seleccionado.Cedula;
+                this.txtNombreProveedor.Text = frmSeleccionar.proveedor_seleccionado.Apellidos + " " +
                     frmSeleccionar.proveedor_seleccionado.Nombres;
 
             }

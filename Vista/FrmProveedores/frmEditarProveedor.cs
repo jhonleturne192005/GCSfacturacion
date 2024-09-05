@@ -69,7 +69,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
 
             //Realizar validaciones
             //Longitud de cédula
-            if (cedula_str.Length < 10 )
+            if (cedula_str.Length < 10)
             {
                 Mensaje.advertencia("La cantidad de digitos ingresados  cédula 10 ó 13 si es Ruc");
                 return;

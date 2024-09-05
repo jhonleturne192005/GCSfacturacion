@@ -100,7 +100,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(45, 16);
+            this.btnAgregar.Location = new System.Drawing.Point(24, 16);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(347, 30);
             this.btnAgregar.TabIndex = 0;
@@ -189,6 +189,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(413, 466);
             this.Controls.Add(this.pnlDatosRegistro);
             this.Controls.Add(this.pnlEncabezado);

@@ -88,22 +88,20 @@ namespace SistemaFacturacion.Vista.Productofrm
         {
             frmRegistrarProducto fmrregistroproducto = new frmRegistrarProducto();
             fmrregistroproducto.ShowDialog();
-            actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
-            aplicarPaginacion();
+
+            //actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
         }
 
         private void btnPagSiguiente_Click(object sender, EventArgs e)
         {
             PAGINA_ACTUAL = PAGINA_ACTUAL + 1;
             actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
-            aplicarPaginacion();
         }
 
         private void btnPagAnterior_Click(object sender, EventArgs e)
         {
             PAGINA_ACTUAL = PAGINA_ACTUAL - 1;
             actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
-            aplicarPaginacion();
         }
         private void eliminarProducto(int id_producto)
         {

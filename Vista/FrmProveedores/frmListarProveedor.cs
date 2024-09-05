@@ -164,7 +164,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             frmRegistrarProveedor frmRegistro = new frmRegistrarProveedor();
             frmRegistro.ShowDialog();
 
-            actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
+            //actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
         }
 
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -212,12 +212,21 @@ namespace SistemaFacturacion.Vista.FrmProveedores
         }
 
         private void dgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {            
             if (e.RowIndex < 0) return;
 
-            //Cargar los datos del cliente seleccionado
-            proveedor_seleccionado = proveedorLst[e.RowIndex];
-            this.Close();
+            if (SELECCIONAR)
+            {
+                //Cargar los datos del cliente seleccionado
+                proveedor_seleccionado = proveedorLst[e.RowIndex];
+
+                //Si no se ha seleccionado un cliente no permitir cerrar el formulario
+                //mediante el click al botón
+                if (proveedor_seleccionado != null)
+                {
+                    this.Close();
+                }
+            }
         }
 
         private void txtTextoBuscar_TextChanged(object sender, EventArgs e)

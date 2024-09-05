@@ -40,9 +40,18 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.cmbFiltros = new System.Windows.Forms.ComboBox();
             this.pnlContenedorBusqueda = new System.Windows.Forms.Panel();
             this.txtTextoBuscar = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNumeroRegistros = new System.Windows.Forms.Label();
             this.pnlDgvClientes = new System.Windows.Forms.Panel();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
+            this.txtIdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlOpcionesDgv = new System.Windows.Forms.Panel();
             this.btnPagAnterior = new System.Windows.Forms.Button();
             this.btnPagSiguiente = new System.Windows.Forms.Button();
@@ -50,26 +59,17 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.pnlDatosClientes = new System.Windows.Forms.Panel();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtIdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlOpcionesEncabezado.SuspendLayout();
             this.pnlContenedorBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlDgvClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.pnlOpcionesDgv.SuspendLayout();
             this.pnlDatosClientes.SuspendLayout();
             this.pnlEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -147,6 +147,17 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.txtTextoBuscar.TabIndex = 9;
             this.txtTextoBuscar.TextChanged += new System.EventHandler(this.txtTextoBuscar_TextChanged);
             this.txtTextoBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTextoBuscar_KeyPress);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SistemaFacturacion.Properties.Resources.search_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Location = new System.Drawing.Point(167, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lblNumeroRegistros
             // 
@@ -230,6 +241,72 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.dgvProducto.Size = new System.Drawing.Size(982, 408);
             this.dgvProducto.TabIndex = 0;
             this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.HeaderText = "ID";
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.ReadOnly = true;
+            this.txtIdProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtIdProducto.Width = 28;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtNombres.HeaderText = "Producto";
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.ReadOnly = true;
+            this.txtNombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtApellidos.HeaderText = "Precio Unitario";
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.ReadOnly = true;
+            this.txtApellidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtIdentificacion
+            // 
+            this.txtIdentificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtIdentificacion.HeaderText = "IVA";
+            this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.ReadOnly = true;
+            this.txtIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colProveedor
+            // 
+            this.colProveedor.HeaderText = "Proveedor";
+            this.colProveedor.Name = "colProveedor";
+            this.colProveedor.ReadOnly = true;
+            this.colProveedor.Width = 104;
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.HeaderText = "       ";
+            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
+            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.ReadOnly = true;
+            this.btnVisualizar.Width = 37;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.HeaderText = "       ";
+            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
+            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ReadOnly = true;
+            this.btnModificar.Width = 37;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "       ";
+            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Width = 37;
             // 
             // pnlOpcionesDgv
             // 
@@ -315,45 +392,6 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "Productos";
             // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.HeaderText = "ID";
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.ReadOnly = true;
-            this.txtIdProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.txtIdProducto.Width = 28;
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtNombres.HeaderText = "Producto";
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.ReadOnly = true;
-            this.txtNombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtApellidos.HeaderText = "Precio Unitario";
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.ReadOnly = true;
-            this.txtApellidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtIdentificacion
-            // 
-            this.txtIdentificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtIdentificacion.HeaderText = "IVA";
-            this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.ReadOnly = true;
-            this.txtIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colProveedor
-            // 
-            this.colProveedor.HeaderText = "Proveedor";
-            this.colProveedor.Name = "colProveedor";
-            this.colProveedor.ReadOnly = true;
-            this.colProveedor.Width = 104;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Modificar";
@@ -381,44 +419,6 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 136;
             // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.HeaderText = "       ";
-            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
-            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.ReadOnly = true;
-            this.btnVisualizar.Width = 37;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.HeaderText = "       ";
-            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
-            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.ReadOnly = true;
-            this.btnModificar.Width = 37;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "       ";
-            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
-            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            this.btnEliminar.Width = 37;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SistemaFacturacion.Properties.Resources.search_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(167, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmListarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +436,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.pnlOpcionesEncabezado.PerformLayout();
             this.pnlContenedorBusqueda.ResumeLayout(false);
             this.pnlContenedorBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlDgvClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.pnlOpcionesDgv.ResumeLayout(false);
@@ -443,7 +444,6 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.pnlDatosClientes.ResumeLayout(false);
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

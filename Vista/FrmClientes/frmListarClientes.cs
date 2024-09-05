@@ -209,7 +209,7 @@ namespace SistemaFacturacion.Vista.Clientes
             frmRegistrarCliente.ShowDialog();
 
             //Una vez se haya cerrado el formulario de registro, recargar la lista de clientes
-            cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
+            //cargarDGV(dgvCliente, clienteCtrl.listarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA));
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)

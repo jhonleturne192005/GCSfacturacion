@@ -42,6 +42,9 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             this.txtApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlOpcionesDgv = new System.Windows.Forms.Panel();
             this.btnPagAnterior = new System.Windows.Forms.Button();
             this.btnPagSiguiente = new System.Windows.Forms.Button();
@@ -52,23 +55,20 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             this.cmbFiltros = new System.Windows.Forms.ComboBox();
             this.pnlContenedorBusqueda = new System.Windows.Forms.Panel();
             this.txtTextoBuscar = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pnlEncabezado = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnVisualizar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlDatosClientes.SuspendLayout();
             this.pnlDgvClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.pnlOpcionesDgv.SuspendLayout();
             this.pnlOpcionesEncabezado.SuspendLayout();
             this.pnlContenedorBusqueda.SuspendLayout();
-            this.pnlEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlEncabezado.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -198,6 +198,33 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             this.txtFechaNacimiento.ReadOnly = true;
             this.txtFechaNacimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.HeaderText = "       ";
+            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
+            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.ReadOnly = true;
+            this.btnVisualizar.Width = 37;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.HeaderText = "       ";
+            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
+            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ReadOnly = true;
+            this.btnModificar.Width = 37;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "       ";
+            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
+            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            this.btnEliminar.Width = 37;
+            // 
             // pnlOpcionesDgv
             // 
             this.pnlOpcionesDgv.Controls.Add(this.btnPagAnterior);
@@ -319,6 +346,17 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             this.txtTextoBuscar.TabIndex = 9;
             this.txtTextoBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTextoBuscar_KeyPress);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SistemaFacturacion.Properties.Resources.search_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Location = new System.Drawing.Point(167, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -371,44 +409,6 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 136;
             // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.HeaderText = "       ";
-            this.btnVisualizar.Image = global::SistemaFacturacion.Properties.Resources.visualizar;
-            this.btnVisualizar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.ReadOnly = true;
-            this.btnVisualizar.Width = 37;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.HeaderText = "       ";
-            this.btnModificar.Image = global::SistemaFacturacion.Properties.Resources.editar;
-            this.btnModificar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.ReadOnly = true;
-            this.btnModificar.Width = 37;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "       ";
-            this.btnEliminar.Image = global::SistemaFacturacion.Properties.Resources.borrar;
-            this.btnEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            this.btnEliminar.Width = 37;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SistemaFacturacion.Properties.Resources.search_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(167, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmListarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,9 +431,9 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             this.pnlOpcionesEncabezado.PerformLayout();
             this.pnlContenedorBusqueda.ResumeLayout(false);
             this.pnlContenedorBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlEncabezado.ResumeLayout(false);
             this.pnlEncabezado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

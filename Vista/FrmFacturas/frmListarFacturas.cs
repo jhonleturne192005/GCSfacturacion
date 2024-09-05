@@ -159,10 +159,12 @@ namespace SistemaFacturacion.Vista.Factura
 
         private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
         {
+            dtpFechaFin.MinDate = dtpFechaInicio.Value;
         }
 
         private void dtpFechaFin_ValueChanged(object sender, EventArgs e)
         {
+            
         }
 
         private void txtTextoBuscar_KeyPress(object sender, KeyPressEventArgs e)

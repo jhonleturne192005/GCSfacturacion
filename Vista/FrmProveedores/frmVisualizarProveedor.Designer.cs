@@ -69,7 +69,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 279);
+            this.label3.Location = new System.Drawing.Point(23, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 15;
@@ -78,7 +78,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(24, 311);
+            this.txtEmail.Location = new System.Drawing.Point(27, 295);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(347, 26);
@@ -113,7 +113,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(20, 24);
+            this.lblCedula.Location = new System.Drawing.Point(23, 14);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(100, 20);
             this.lblCedula.TabIndex = 1;
@@ -123,7 +123,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 110);
+            this.label1.Location = new System.Drawing.Point(23, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 3;
@@ -133,7 +133,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 193);
+            this.label2.Location = new System.Drawing.Point(23, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 5;
@@ -142,7 +142,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // txtApellidos
             // 
             this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.Location = new System.Drawing.Point(24, 225);
+            this.txtApellidos.Location = new System.Drawing.Point(27, 215);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.ReadOnly = true;
             this.txtApellidos.Size = new System.Drawing.Size(347, 26);
@@ -151,7 +151,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(24, 59);
+            this.txtCedula.Location = new System.Drawing.Point(27, 49);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(347, 26);
@@ -160,7 +160,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             // txtNombres
             // 
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.Location = new System.Drawing.Point(24, 143);
+            this.txtNombres.Location = new System.Drawing.Point(27, 133);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.ReadOnly = true;
             this.txtNombres.Size = new System.Drawing.Size(347, 26);

@@ -118,9 +118,10 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             {
                 if (DatosSesion.Empleado.Id_empleado == id_empleado)
                 {
-                    Mensaje.error("No puede eliminar el usuario actual");
+                    Mensaje.error("No es posible eliminar el usuario actual");
                     return;
                 }
+
                 eliminarEmpleado(id_empleado);
                 actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
             }
@@ -143,7 +144,7 @@ namespace SistemaFacturacion.Vista.FrmEmpleados
             frmRegistrarEmpleado frmRegistro = new frmRegistrarEmpleado();
             frmRegistro.ShowDialog();
 
-            actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
+            //actualizarBusqueda(PAGINA_ACTUAL, ELEMENTOS_PAGINA);
         }
 
         private void frmListarEmpleados_Load(object sender, EventArgs e)
