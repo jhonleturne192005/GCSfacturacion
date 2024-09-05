@@ -63,7 +63,7 @@ namespace SistemaFacturacion.Vista.FrmProveedores
             filtros.Add(new Filtros("campo_busqueda", cmbFiltros.SelectedValue.ToString()));
             filtros.Add(new Filtros("texto_buscar", txtTextoBuscar.Text));
 
-            cargarDGV(dgvCliente, proveedorCtrl.buscarClientes(PAGINA_ACTUAL, ELEMENTOS_PAGINA, Filtros.filtros_a_xml("Filtros", filtros)));
+            cargarDGV(dgvCliente, proveedorCtrl.buscarProveedores(PAGINA_ACTUAL, ELEMENTOS_PAGINA, Filtros.filtros_a_xml("Filtros", filtros)));
         }
         private void frmListarProveedor_Load(object sender, EventArgs e)
         {

@@ -41,7 +41,7 @@ namespace SistemaFacturacion.Controlador
             return lstProveedor;
         }
 
-        public List<Proveedor> buscarClientes(int numero_pagina, int numero_elementos, string xml_filtros_busqueda)
+        public List<Proveedor> buscarProveedores(int numero_pagina, int numero_elementos, string xml_filtros_busqueda)
         {
             List<Proveedor> lstProveedor = new List<Proveedor>();
             DataTable dtClientes = proveedorDao.buscarProveedor(numero_pagina, numero_elementos, xml_filtros_busqueda);
@@ -146,6 +146,26 @@ namespace SistemaFacturacion.Controlador
             return new Respuesta(completado, mensaje);
         }
 
+        public Proveedor getProveedorPorCedula(string cedula_proveedor)
+        {
+            Proveedor proveedor = null;
+            DataTable dtProveedor = proveedorDao.getProveedorPorCedula(cedula_proveedor);
+
+            if (dtProveedor.Rows.Count == 1)
+            {
+                proveedor = new Proveedor();
+
+                DataRow drProveedor = dtProveedor.Rows[0];
+
+                proveedor.IdProveedor = int.Parse(drProveedor[0].ToString());
+                proveedor.Cedula = drProveedor["cedula"].ToString();
+                proveedor.Apellidos = drProveedor["apellidos"].ToString();
+                proveedor.Nombres = drProveedor["nombres"].ToString();
+                proveedor.Email = drProveedor["email"].ToString();
+            }
+
+            return proveedor;
+        }
 
         public Proveedor getProveedorPorId(int IdProveedor)
         {
@@ -168,7 +188,5 @@ namespace SistemaFacturacion.Controlador
 
             return proveedor;
         }
-
-
     }
 }

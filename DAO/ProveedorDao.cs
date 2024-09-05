@@ -71,7 +71,7 @@ namespace SistemaFacturacion.DAO
             return conexion.obtenerDatosSp("sp_get_proveedor", parametros);
         }
 
-        public DataTable getClientePorCedula(string cedula)
+        public DataTable getProveedorPorCedula(string cedula)
         {
             SqlParameter[] parametros =
             {
