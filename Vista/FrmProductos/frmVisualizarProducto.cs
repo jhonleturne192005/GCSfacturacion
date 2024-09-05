@@ -31,11 +31,15 @@ namespace SistemaFacturacion.Vista.Productofrm
 
             if (productoDto != null)
             {
+                //Datos del producto
                 txtNombreProducto.Text = productoDto.Nombre_producto;
                 txtPrecioUnitario.Text = productoDto.Precio_unitario.ToString();
                 txtIva.Text = productoDto.Iva.ToString();
-                txtNomProveedor.Text = productoDto.Proveedor.Nombres;
-                txtApellidosProveedor.Text = productoDto.Proveedor.Apellidos;
+
+
+                //Datos del proveedor del producto
+                txtCedulaProveedor.Text = productoDto.Proveedor.Cedula;
+                txtNombreProveedor.Text = $"{productoDto.Proveedor.Apellidos} {productoDto.Proveedor.Nombres}";
                 txtEmailProveedor.Text = productoDto.Proveedor.Email;
             }
 

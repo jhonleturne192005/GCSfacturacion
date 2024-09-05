@@ -135,6 +135,7 @@ namespace SistemaFacturacion.Vista.Productofrm
                 this.proveedor = frmSeleccionar.proveedor_seleccionado;
 
                 this.txtCedulaProveedor.Text = frmSeleccionar.proveedor_seleccionado.Cedula;
+                this.txtEmailProveedor.Text = frmSeleccionar.proveedor_seleccionado.Email;
                 this.txtNombreProveedor.Text = frmSeleccionar.proveedor_seleccionado.Apellidos + " " +
                     frmSeleccionar.proveedor_seleccionado.Nombres;
 

@@ -52,6 +52,7 @@ namespace SistemaFacturacion.Vista.Productofrm
                 txtIva.Text = productoDto.Iva.ToString();
 
                 txtNombreProveedor.Text = $"{this.proveedor.Apellidos} {this.proveedor.Nombres}";
+                txtEmailProveedor.Text = $"{this.proveedor.Email}";
                 txtCedulaProveedor.Text = $"{this.proveedor.Cedula}";
             }
 
@@ -158,6 +159,7 @@ namespace SistemaFacturacion.Vista.Productofrm
                 this.proveedor = frmSeleccionar.proveedor_seleccionado;
 
                 this.txtCedulaProveedor.Text = frmSeleccionar.proveedor_seleccionado.Cedula;
+                this.txtEmailProveedor.Text = frmSeleccionar.proveedor_seleccionado.Email;
                 this.txtNombreProveedor.Text = frmSeleccionar.proveedor_seleccionado.Apellidos + " " +
                     frmSeleccionar.proveedor_seleccionado.Nombres;
 

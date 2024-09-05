@@ -48,6 +48,8 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.pbBuscar = new System.Windows.Forms.PictureBox();
+            this.txtEmailProveedor = new System.Windows.Forms.TextBox();
+            this.lblEmailProveedor = new System.Windows.Forms.Label();
             this.pnlDatosRegistro.SuspendLayout();
             this.pnlOpciones.SuspendLayout();
             this.pnlEncabezado.SuspendLayout();
@@ -63,24 +65,24 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.pnlDatosRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDatosRegistro.Location = new System.Drawing.Point(0, 46);
             this.pnlDatosRegistro.Name = "pnlDatosRegistro";
-            this.pnlDatosRegistro.Size = new System.Drawing.Size(761, 358);
+            this.pnlDatosRegistro.Size = new System.Drawing.Size(761, 314);
             this.pnlDatosRegistro.TabIndex = 17;
             // 
             // lblCIProveedor
             // 
             this.lblCIProveedor.AutoSize = true;
             this.lblCIProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCIProveedor.Location = new System.Drawing.Point(6, 59);
+            this.lblCIProveedor.Location = new System.Drawing.Point(16, 36);
             this.lblCIProveedor.Name = "lblCIProveedor";
-            this.lblCIProveedor.Size = new System.Drawing.Size(113, 20);
+            this.lblCIProveedor.Size = new System.Drawing.Size(70, 20);
             this.lblCIProveedor.TabIndex = 12;
-            this.lblCIProveedor.Text = "C.I. Proveedor:";
+            this.lblCIProveedor.Text = "CI / Ruc:";
             this.lblCIProveedor.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtCedulaProveedor
             // 
             this.txtCedulaProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedulaProveedor.Location = new System.Drawing.Point(10, 94);
+            this.txtCedulaProveedor.Location = new System.Drawing.Point(20, 71);
             this.txtCedulaProveedor.Name = "txtCedulaProveedor";
             this.txtCedulaProveedor.ReadOnly = true;
             this.txtCedulaProveedor.Size = new System.Drawing.Size(312, 26);
@@ -91,7 +93,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(22, 59);
+            this.lblNombre.Location = new System.Drawing.Point(13, 36);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(69, 20);
             this.lblNombre.TabIndex = 1;
@@ -101,7 +103,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(22, 145);
+            this.lblPrecio.Location = new System.Drawing.Point(13, 122);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(113, 20);
             this.lblPrecio.TabIndex = 3;
@@ -111,7 +113,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // 
             this.lblIva.AutoSize = true;
             this.lblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIva.Location = new System.Drawing.Point(22, 228);
+            this.lblIva.Location = new System.Drawing.Point(13, 205);
             this.lblIva.Name = "lblIva";
             this.lblIva.Size = new System.Drawing.Size(40, 20);
             this.lblIva.TabIndex = 5;
@@ -120,7 +122,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // txtIva
             // 
             this.txtIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIva.Location = new System.Drawing.Point(26, 260);
+            this.txtIva.Location = new System.Drawing.Point(17, 237);
             this.txtIva.Name = "txtIva";
             this.txtIva.Size = new System.Drawing.Size(347, 26);
             this.txtIva.TabIndex = 11;
@@ -128,7 +130,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // txtNombreProducto
             // 
             this.txtNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProducto.Location = new System.Drawing.Point(26, 94);
+            this.txtNombreProducto.Location = new System.Drawing.Point(17, 71);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(347, 26);
             this.txtNombreProducto.TabIndex = 9;
@@ -136,7 +138,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // txtPrecioUnitario
             // 
             this.txtPrecioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(26, 178);
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(17, 155);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Size = new System.Drawing.Size(347, 26);
             this.txtPrecioUnitario.TabIndex = 10;
@@ -174,7 +176,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             // 
             this.pnlOpciones.Controls.Add(this.btnAgregar);
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlOpciones.Location = new System.Drawing.Point(0, 404);
+            this.pnlOpciones.Location = new System.Drawing.Point(0, 360);
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(761, 67);
             this.pnlOpciones.TabIndex = 16;
@@ -190,15 +192,17 @@ namespace SistemaFacturacion.Vista.Productofrm
             // 
             // gbProveedor
             // 
+            this.gbProveedor.Controls.Add(this.txtEmailProveedor);
+            this.gbProveedor.Controls.Add(this.lblEmailProveedor);
             this.gbProveedor.Controls.Add(this.pbBuscar);
             this.gbProveedor.Controls.Add(this.txtNombreProveedor);
             this.gbProveedor.Controls.Add(this.lblNombreProveedor);
             this.gbProveedor.Controls.Add(this.txtCedulaProveedor);
             this.gbProveedor.Controls.Add(this.lblCIProveedor);
             this.gbProveedor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbProveedor.Location = new System.Drawing.Point(393, 0);
+            this.gbProveedor.Location = new System.Drawing.Point(370, 0);
             this.gbProveedor.Name = "gbProveedor";
-            this.gbProveedor.Size = new System.Drawing.Size(368, 358);
+            this.gbProveedor.Size = new System.Drawing.Size(391, 314);
             this.gbProveedor.TabIndex = 15;
             this.gbProveedor.TabStop = false;
             this.gbProveedor.Text = "Proveedor";
@@ -214,7 +218,7 @@ namespace SistemaFacturacion.Vista.Productofrm
             this.gbProducto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbProducto.Location = new System.Drawing.Point(0, 0);
             this.gbProducto.Name = "gbProducto";
-            this.gbProducto.Size = new System.Drawing.Size(393, 358);
+            this.gbProducto.Size = new System.Drawing.Size(370, 314);
             this.gbProducto.TabIndex = 16;
             this.gbProducto.TabStop = false;
             this.gbProducto.Text = "Datos del producto";
@@ -222,8 +226,9 @@ namespace SistemaFacturacion.Vista.Productofrm
             // txtNombreProveedor
             // 
             this.txtNombreProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(10, 178);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(20, 155);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.ReadOnly = true;
             this.txtNombreProveedor.Size = new System.Drawing.Size(347, 26);
             this.txtNombreProveedor.TabIndex = 13;
             // 
@@ -231,29 +236,48 @@ namespace SistemaFacturacion.Vista.Productofrm
             // 
             this.lblNombreProveedor.AutoSize = true;
             this.lblNombreProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProveedor.Location = new System.Drawing.Point(6, 145);
+            this.lblNombreProveedor.Location = new System.Drawing.Point(16, 122);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
-            this.lblNombreProveedor.Size = new System.Drawing.Size(152, 20);
+            this.lblNombreProveedor.Size = new System.Drawing.Size(77, 20);
             this.lblNombreProveedor.TabIndex = 12;
-            this.lblNombreProveedor.Text = "Nombres proveedor:";
+            this.lblNombreProveedor.Text = "Nombres:";
             // 
             // pbBuscar
             // 
             this.pbBuscar.BackgroundImage = global::SistemaFacturacion.Properties.Resources.search_icon;
             this.pbBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbBuscar.Location = new System.Drawing.Point(328, 94);
+            this.pbBuscar.Location = new System.Drawing.Point(342, 71);
             this.pbBuscar.Name = "pbBuscar";
             this.pbBuscar.Size = new System.Drawing.Size(28, 26);
             this.pbBuscar.TabIndex = 15;
             this.pbBuscar.TabStop = false;
             this.pbBuscar.Click += new System.EventHandler(this.btnSeleccionarCliente_Click);
             // 
+            // txtEmailProveedor
+            // 
+            this.txtEmailProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailProveedor.Location = new System.Drawing.Point(20, 237);
+            this.txtEmailProveedor.Name = "txtEmailProveedor";
+            this.txtEmailProveedor.ReadOnly = true;
+            this.txtEmailProveedor.Size = new System.Drawing.Size(350, 26);
+            this.txtEmailProveedor.TabIndex = 17;
+            // 
+            // lblEmailProveedor
+            // 
+            this.lblEmailProveedor.AutoSize = true;
+            this.lblEmailProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailProveedor.Location = new System.Drawing.Point(20, 205);
+            this.lblEmailProveedor.Name = "lblEmailProveedor";
+            this.lblEmailProveedor.Size = new System.Drawing.Size(52, 20);
+            this.lblEmailProveedor.TabIndex = 16;
+            this.lblEmailProveedor.Text = "Email:";
+            // 
             // frmRegistrarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(761, 471);
+            this.ClientSize = new System.Drawing.Size(761, 427);
             this.Controls.Add(this.pnlDatosRegistro);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlEncabezado);
@@ -295,5 +319,7 @@ namespace SistemaFacturacion.Vista.Productofrm
         private System.Windows.Forms.TextBox txtNombreProveedor;
         private System.Windows.Forms.Label lblNombreProveedor;
         private System.Windows.Forms.PictureBox pbBuscar;
+        private System.Windows.Forms.TextBox txtEmailProveedor;
+        private System.Windows.Forms.Label lblEmailProveedor;
     }
 }
